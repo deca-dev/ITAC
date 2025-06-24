@@ -59,7 +59,7 @@ const WorkInProgress = () => {
           <div className="flex items-center justify-center mb-8">
             <div className="w-20 h-20 rounded-2xl flex items-center justify-center mr-4 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
               {/* <Brain className="w-10 h-10 text-white" /> */}
-              <img className="w-20 h-20" src="./src/assets/logo/Logo_1.png" alt="" />
+              <img className="w-20 h-20" src="/assets/logo/Logo_1.png" alt="" />
             </div>
             <div className="text-left">
               <h1 className="text-2xl font-bold text-white">INSTITUTO DE TERAPIA Y</h1>
