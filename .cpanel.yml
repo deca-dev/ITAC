@@ -1,18 +1,4 @@
 ---
 deployment:
   tasks:
-    - echo "👉 working directory: $(pwd)"
-    - echo "📂 root contents:"
-    - ls -la
-    - echo "🔧 Installing dependencies"
-    - npm ci
-    - echo "📦 Running build"
-    - npm run build
-    - echo "📂 dist contents:"
-    - ls -la dist
-    - echo "🚚 Deploying into public_html"
-    - mkdir -p /home/cusop751wkat/public_html
-    - cp -R dist/. /home/cusop751wkat/public_html
-    - echo "✅ Deploy done, public_html now contains:"
-    - ls -la /home/cusop751wkat/public_html
-    
+    - echo "✅ cPanel can see and run my tasks!"
