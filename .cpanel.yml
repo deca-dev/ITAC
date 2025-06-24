@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - echo "✅ cPanel can see and run my tasks!"
+    - echo "cPanel can see and run my tasks!"
