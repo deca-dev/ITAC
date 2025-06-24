@@ -125,14 +125,14 @@ const WorkInProgress = () => {
             {/* Contact Information */}
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="bg-gradient-to-br from-teal-600 to-teal-700 rounded-2xl p-6 text-white">
-                <div className="flex items-center mb-3">
+                <div className="flex items-start mb-3">
                   <Mail className="w-6 h-6 mr-3" />
                   <h4 className="font-semibold">Contáctanos</h4>
                 </div>
                 <p className="text-teal-100">informes@institutoterapiaconductual.com</p>
               </div>
               <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white">
-                <div className="flex items-center mb-3">
+                <div className="flex items-start mb-3">
                   <Phone className="w-6 h-6 mr-3" />
                   <h4 className="font-semibold">Llámanos</h4>
                 </div>
@@ -149,15 +149,6 @@ const WorkInProgress = () => {
                 Agenda una consulta
               </button>
             </div> */}
-          </div>
-
-          {/* Footer */}
-          <div className="mt-8 text-center">
-            <p className="text-gray-400">
-              © 2025 Instituto de Terapia y Análisis de la Conducta. 
-              <br className="md:hidden" />
-              <span className="md:ml-2">Todos los derechos reservados.</span>
-            </p>
           </div>
         </div>
       </div>
