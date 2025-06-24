@@ -1,11 +1,4 @@
 ---
 deployment:
   tasks:
-    - echo "🔧 Installing dependencies"
-    - npm ci
-    - echo "🏗  Building production bundle"
-    - npm run build
-    - echo "🚚 Deploying to public_html"
-    - export DEPLOYPATH=/home/cusop751wkat/public_html 
-    - cp index.html $DEPLOYPATH
-    - cp -R dist/* $DEPLOYPATH
+    - echo "✅ cPanel sees me!"
