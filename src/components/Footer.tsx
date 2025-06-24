@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Twitter, Facebook, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import {Twitter, Facebook, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -8,13 +8,13 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center">
-                <Brain className="w-6 h-6 text-white" />
+              <div className="w-48 flex items-center justify-center">
+             <img src="/assets/logo/logo-footer.png" alt="" />
               </div>
-              <div>
+              {/* <div>
                 <h3 className="text-lg font-semibold">ITAC</h3>
                 <p className="text-sm text-gray-400">Instituto de Terapia y Análisis de la Conducta</p>
-              </div>
+              </div> */}
             </div>
             <p className="text-gray-400 text-sm mb-6">
               Desde 2016. Somos una institución especializada en Terapia Conductual que brinda servicios y cursos de formación.

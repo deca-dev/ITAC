@@ -15,13 +15,13 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center">
-              <Brain className="w-6 h-6 text-white" />
+            <div className="w-48 rounded-full flex items-center justify-center">
+              <img src="/assets/logo/logo-horizontal-black.png" alt="" />
             </div>
-            <div>
+            {/* <div>
               <h1 className="text-lg font-semibold text-gray-900">INSTITUTO DE TERAPIA Y</h1>
               <p className="text-sm text-gray-600">ANÁLISIS DE LA CONDUCTA</p>
-            </div>
+            </div> */}
           </Link>
           
           <nav className="hidden lg:flex space-x-8">
@@ -32,13 +32,15 @@ const Header = () => {
               Inicio
             </Link>
             <Link 
-              to="/academic-offer" 
+              // to="/academic-offer" 
+              to="/" 
               className={`transition-colors ${isActive('/academic-offer') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
             >
               Oferta Académica
             </Link>
             <Link 
-              to="/team" 
+              // to="/team" 
+               to="/" 
               className={`transition-colors ${isActive('/team') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
             >
               Equipo
