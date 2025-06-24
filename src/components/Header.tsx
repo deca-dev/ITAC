@@ -1,0 +1,94 @@
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Brain, Menu, X } from 'lucide-react';
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
+  return (
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center">
+              <Brain className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h1 className="text-lg font-semibold text-gray-900">INSTITUTO DE TERAPIA Y</h1>
+              <p className="text-sm text-gray-600">ANÁLISIS DE LA CONDUCTA</p>
+            </div>
+          </Link>
+          
+          <nav className="hidden lg:flex space-x-8">
+            <Link 
+              to="/" 
+              className={`transition-colors ${isActive('/') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+            >
+              Inicio
+            </Link>
+            <Link 
+              to="/academic-offer" 
+              className={`transition-colors ${isActive('/academic-offer') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+            >
+              Oferta Académica
+            </Link>
+            <Link 
+              to="/team" 
+              className={`transition-colors ${isActive('/team') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+            >
+              Equipo
+            </Link>
+            <a href="#servicios" className="text-gray-700 hover:text-teal-600 transition-colors">Servicios</a>
+            <a href="#blog" className="text-gray-700 hover:text-teal-600 transition-colors">Blog</a>
+            <a href="#contacto" className="text-gray-700 hover:text-teal-600 transition-colors">Contacto</a>
+          </nav>
+
+          <button 
+            className="lg:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {isMenuOpen && (
+          <div className="lg:hidden py-4 border-t">
+            <nav className="flex flex-col space-y-4">
+              <Link 
+                to="/" 
+                className={`transition-colors ${isActive('/') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Inicio
+              </Link>
+              <Link 
+                to="/academic-offer" 
+                className={`transition-colors ${isActive('/academic-offer') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Oferta Académica
+              </Link>
+              <Link 
+                to="/team" 
+                className={`transition-colors ${isActive('/team') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Equipo
+              </Link>
+              <a href="#servicios" className="text-gray-700 hover:text-teal-600 transition-colors">Servicios</a>
+              <a href="#blog" className="text-gray-700 hover:text-teal-600 transition-colors">Blog</a>
+              <a href="#contacto" className="text-gray-700 hover:text-teal-600 transition-colors">Contacto</a>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
