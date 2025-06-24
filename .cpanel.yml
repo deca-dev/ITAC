@@ -12,7 +12,7 @@ deployment:
     - ls -la dist
     - echo "🚚 Deploying into public_html"
     - mkdir -p /home/cusop751wkat/public_html
-    # copy everything *inside* dist, not the folder
     - cp -R dist/. /home/cusop751wkat/public_html
     - echo "✅ Deploy done, public_html now contains:"
     - ls -la /home/cusop751wkat/public_html
+    
