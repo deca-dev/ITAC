@@ -1,0 +1,13 @@
+# .cpanel.yml
+---
+deployment:
+  # each line here runs in sequence on the server
+  tasks:
+    - echo "🔧 Installing dependencies"
+    - npm ci
+    - echo "🏗️  Building production bundle"
+    - npm run build
+    - echo "🚚 Deploying to public_html"
+    # adjust the paths below to match your cPanel username
+    - rm -rf /home/cusop751wkat/public_html/*
+    - cp -r dist/* /home/cusop751wkat/public_html
