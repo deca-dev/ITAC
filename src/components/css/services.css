@@ -1,0 +1,28 @@
+.font-serif {
+    font-family: serif;
+}
+
+.filter-invert {
+    filter: invert(1);
+}
+
+/* ============= */
+
+
+.services__header__anchor {
+    color: #1E5864;
+    font-weight: 800;
+}
+
+.services__explore__services__container {
+    background-color: #A2C6D2; 
+    padding: 1.5rem; 
+    border-radius: 0.5rem; 
+}
+
+.services__explore__services__container h3 {
+    font-family: serif;
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: 400;
+}

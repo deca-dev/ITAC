@@ -57,7 +57,7 @@ const Header = () => {
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-
+{/* ================================ Mobile header============================ */}
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t">
             <nav className="flex flex-col space-y-4">
@@ -69,14 +69,14 @@ const Header = () => {
                 Inicio
               </Link>
               <Link 
-                to="/academic-offer" 
+                to="/" 
                 className={`transition-colors ${isActive('/academic-offer') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Oferta Académica
               </Link>
               <Link 
-                to="/team" 
+                to="/" 
                 className={`transition-colors ${isActive('/team') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
