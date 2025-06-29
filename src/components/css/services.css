@@ -6,6 +6,10 @@
     filter: invert(1);
 }
 
+.max-width-80 {
+    max-width: 80%;
+}
+
 /* ============= */
 
 

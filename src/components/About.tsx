@@ -23,11 +23,11 @@ const About = () => {
     <section className="pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="flex justify-center mb-4 lg:mb-0">
             <img
               src="/assets/photos/Team_1.png"
               alt="Profesional de la salud mental"
-              className="w-full object-cover"
+              className="max-width-80 object-cover"
             />
           </div>
           <div>
