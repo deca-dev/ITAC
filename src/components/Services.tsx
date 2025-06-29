@@ -9,22 +9,22 @@ const Services = () => {
     {
       title: "Activación Conductual",
       image: "https://images.pexels.com/photos/7176026/pexels-photo-7176026.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
-      description: "Aplicación Conductual del Análisis Funcional en el tratamiento de los trastornos de ansiedad y depresión. Una terapia basada en evidencia que se enfoca en aumentar las actividades significativas y placenteras para mejorar el estado de ánimo y reducir los síntomas depresivos."
+      description: "Activación Conductual (BA) es un tratamiento con respaldo empírico que aborda la depresión modificando factores contextuales. Considera el ánimo bajo como respuesta normal a circunstancias vitales y emplea estrategias como programación de actividades y reforzamiento positivo. En México ha mostrado eficacia en depresión y adicciones."
     },
     {
       title: "Terapia de Aceptación y Compromiso",
-      image: "https://images.pexels.com/photos/7176319/pexels-photo-7176319.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
-      description: "ACT: una nueva forma de abordar los problemas de salud mental desde una perspectiva contextual. Esta terapia ayuda a las personas a desarrollar flexibilidad psicológica, aceptar experiencias difíciles y comprometerse con acciones basadas en valores personales."
+      image: "/assets/photos/woman-therapy.jpg",
+      description: "ACT, con más de 35 años de investigación, cambia el enfoque de eliminar conductas problema a aceptar sensaciones, pensamientos y emociones aversivas. Al dejar de luchar contra el malestar, se avanza hacia objetivos valiosos. Considera muchos trastornos como evitación experiencial y ha demostrado eficacia, incluso en estudios realizados en México."
     },
     {
       title: "Terapia Cognitivo Conductual",
-      image: "https://images.pexels.com/photos/7176305/pexels-photo-7176305.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
-      description: "La terapia cognitivo conductual como tratamiento de primera línea para diversos trastornos psicológicos. Se enfoca en identificar y modificar patrones de pensamiento y comportamiento disfuncionales para mejorar el bienestar emocional."
+      image: "/assets/photos/couple.jpg",
+      description: "La FAP, surgida hace 30 años, se basa en reforzar de manera natural conductas alternativas en la relación terapeuta-cliente. Ofrece soluciones para problemas cotidianos y múltiples trastornos, aportando también una teoría de la personalidad. En México, se ha investigado su eficacia y publicado manuales sobre su aplicación."
     },
     {
-      title: "Terapia de Pareja y Familia",
-      image: "https://images.pexels.com/photos/7176325/pexels-photo-7176325.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
-      description: "Un enfoque sistémico para abordar los conflictos familiares y de pareja desde una perspectiva conductual. Trabajamos en mejorar la comunicación, resolver conflictos y fortalecer los vínculos familiares a través de técnicas basadas en evidencia."
+      title: "Psicoterapia analitica funcional",
+      image: "/assets/photos/guy-therapy.jpg",
+      description: "DBT combina análisis conductual, budismo Zen y dialéctica, y consta de terapia individual, entrenamiento grupal, soporte telefónico y consulta al terapeuta. Tiene fuerte evidencia en TLP y se adapta a otras patologías. Nuestro equipo investiga versiones abreviadas y adaptaciones para población estudiantil en México."
     }
   ];
 

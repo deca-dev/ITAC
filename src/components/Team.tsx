@@ -63,8 +63,8 @@ const Team = () => {
   return (
     <section className="pt-16 bg-[#1A3459] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Nuestro Equipo</h2>
+        <div className="mb-12">
+          <h2 className="text-3xl mb-4 font-serif">Nuestro Equipo</h2>
         </div>
 
         <div className="relative">
@@ -138,8 +138,8 @@ const Team = () => {
           </div>
         </div>
 
-        <div className=" relative   bg-white p-6">
-          <div className="lg:top-[60px] bg-[#a7c9d5] px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="relative lg:top-[70px] bg-white p-6">
+          <div className=" bg-[#a7c9d5] px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Text */}
           <div className="text-white text-lg md:text-2xl font-serif leading-snug text-center md:text-left">
             <p className="font-semibold italic">¿Tienes dudas?</p>
