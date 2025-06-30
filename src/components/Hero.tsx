@@ -1,241 +1,234 @@
-// src/components/Hero.jsx
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
-
-export const slides = [
-  {
-    id: 1,
-    title: "Diplomado en Terapia de Aceptación y Compromiso",
-    subtitle: "Formación especializada en ACT (3ra Generación)",
-    date: "Marzo - Septiembre 2025",
-    schedule: "Sábados 9:00 - 14:00 hrs",
-    mode: "Presencial y Online",
-    icon: Brain,
-    bgGradient: "from-blue-600 to-indigo-700",
-    bgSvg: "/waves/wave1.svg",
-    features: [
-      "Certificación Universitaria",
-      "120 horas académicas",
-      "Práctica supervisada",
-      "Enfoque contextual",
-    ],
-  },
-  {
-    id: 2,
-    title: "Curso-Taller: DBT TEAMS",
-    subtitle: "Logrando los más altos estándares de calidad en DBT",
-    date: "31 de Mayo y 1 de Junio 2025",
-    schedule: "Intensivo de fin de semana",
-    mode: "Presencial y Online",
-    // icon: Users,
-    bgGradient: "from-teal-600 to-cyan-700",
-    bgSvg: "/waves/wave2.svg",
-    features: [
-      "Ponente: Ronda Reitz, PhD.",
-      "Metodología intensiva",
-      "Certificado internacional",
-      "Trabajo en equipo",
-    ],
-  },
-  {
-    id: 3,
-    title: "Diplomado en Fundamentos de Terapia Dialéctica Conductual",
-    subtitle: "DBT para población infantil y adolescente",
-    date: "06 – 07 Junio 2025",
-    schedule: "Guadalajara, México",
-    mode: "Presencial",
-    // icon: BookOpen,
-    bgGradient: "from-green-600 to-emerald-700",
-    bgSvg: "/waves/wave3.svg",
-    features: [
-      "Especialización infantil",
-      "Enfoque familiar",
-      "Técnicas adaptadas",
-      "Supervisión clínica",
-    ],
-  },
-  {
-    id: 4,
-    title: "Entrenamiento Intensivo en DBT-C",
-    subtitle: "Terapia Dialéctica Conductual para población infantil",
-    date: "Dic 2025 – Jul 2026",
-    schedule: "CDMX, México",
-    mode: "Programa extendido",
-    // icon: Award,
-    bgGradient: "from-purple-600 to-violet-700",
-    bgSvg: "/waves/wave4.svg",
-    features: [
-      "Ponentes internacionales",
-      "Certificación avanzada",
-      "Práctica clínica",
-      "Seguimiento personalizado",
-    ],
-  },
-];
+// src/components/Hero.tsx
+import { useState, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
+import "../components/css/hero.css"; // Import custom styles
 
 export default function Hero() {
-  const [current, setCurrent] = useState(0);
-  const length = slides.length;
+  const [current, setCurrent] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const length = 4;
+  const intervalRef = useRef<number | null>(null);
+
+  // Define control theme per slide
+  const controlThemes: ("light" | "dark")[] = [
+    "dark",  // Slide 1
+    "light",  // Slide 2
+    "light", // Slide 3
+    "dark", // Slide 4
+  ];
 
   const next = () => setCurrent((c) => (c + 1) % length);
   const prev = () => setCurrent((c) => (c - 1 + length) % length);
-  const goTo = (i) => setCurrent(i);
+  const goTo = (i: number) => setCurrent(i);
 
   useEffect(() => {
-    const t = setInterval(next, 6000);
-    return () => clearInterval(t);
-  }, []);
+    if (intervalRef.current != null) clearInterval(intervalRef.current);
+    if (!isPaused) intervalRef.current = window.setInterval(next, 6000);
+    return () => { if (intervalRef.current != null) clearInterval(intervalRef.current); };
+  }, [isPaused]);
+
+  const togglePause = () => setIsPaused((p) => !p);
+
+  // Determine button styles based on current slide theme
+  const btnClasses = controlThemes[current] === "light"
+    ? "bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white"
+    : "bg-black/20 backdrop-blur-sm hover:bg-black/30 text-black";
 
   return (
-    <section className="relative h-screen overflow-hidden">
-      {/* Slides */}
-      {slides.map((slide, i) => {
-        const Icon = slide.icon;
-        return (
-          <div
-            key={slide.id}
-            className={`
-              absolute inset-0 transition-all duration-800 ease-in-out
-              ${i === current ? "opacity-100 translate-x-0" : "opacity-0"}
-            `}
-          >
-            {/* background wave */}
-            <img
-              src={slide.bgSvg}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
-            />
-            {/* gradient overlay */}
-            <div
-              className={`relative h-full bg-gradient-to-br ${slide.bgGradient}`}
-            >
-              {/* content */}
-              <div className="relative h-full flex items-center">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                  <div
-                    className={`grid lg:grid-cols-2 gap-12 items-center ${
-                      i % 2 === 1 ? "lg:flex-row-reverse" : ""
-                    }`}
-                  >
-                    {/* Text block */}
-                    <div className="text-white z-10">
-                      <div className="flex items-center mb-6">
-                        <div
-                          className={`w-16 h-16 ${slide.bgGradient
-                            .split(" ")[0]
-                            .replace("from-", "bg-")} rounded-2xl
-                          flex items-center justify-center mr-4 shadow-lg`}
-                        >
-                          <Icon className="w-8 h-8 text-white" />
-                        </div>
-                        <div className="text-sm font-medium opacity-90">
-                          INSTITUTO DE TERAPIA Y ANÁLISIS DE LA CONDUCTA
-                        </div>
-                      </div>
-                      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                        {slide.title}
-                      </h1>
-                      <p className="text-xl md:text-2xl mb-8 opacity-90 font-light">
-                        {slide.subtitle}
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-4 mb-8">
-                        <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
-                          <div className="text-sm font-semibold mb-1">
-                            Fechas
-                          </div>
-                          <div className="text-lg">{slide.date}</div>
-                        </div>
-                        <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
-                          <div className="text-sm font-semibold mb-1">
-                            Modalidad
-                          </div>
-                          <div className="text-lg">{slide.mode}</div>
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap gap-2 mb-8 z-10">
-                        {slide.features.map((f, idx) => (
-                          <span
-                            key={idx}
-                            className="bg-white bg-opacity-20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium"
-                          >
-                            {f}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                          Más información
-                        </button>
-                        <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105">
-                          Inscríbete ahora
-                        </button>
-                      </div>
-                    </div>
-                    {/* Big decorative icon */}
-                    <div className="hidden lg:flex justify-center items-center z-10">
-                      <div className="relative">
-                        <div
-                          className={`w-80 h-80 ${slide.bgGradient
-                            .split(" ")[1]
-                            .replace("to-", "bg-")} rounded-3xl transform rotate-12 opacity-20`}
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-64 h-64 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                            <Icon className="w-32 h-32 text-white opacity-80" />
-                          </div>
-                        </div>
-                        <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white bg-opacity-30 rounded-full flex items-center justify-center">
-                          <div className="text-2xl font-bold text-white">
-                            {slide.id}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+    <section className="relative h-[400px] lg:h-[500px] overflow-hidden">
+
+      {/* Slide 1 */}
+      <div
+        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+          current === 0 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+        }`}
+      >
+        <img
+          src="/assets/bg/bg-banner-homepage-1.jpg"
+          alt="background"
+          className="absolute inset-0 w-full h-full object-cover object-left z-0"
+        />
+        <div className="relative h-full flex items-center z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="text-[#1A2F3F]">
+              <h2 className="text-3xl md:text-4xl mb-2">
+                Diplomado en <strong>Fundamentos de Terapia Dialéctica Conductual</strong> (7ma Generación)
+              </h2>
+              <div className="flex justify-center my-6 max-w-4xl mx-auto">
+                <img className="h-[40px] sm:h-[90px]" src="/assets/bg/bnr-1-1.png" alt="" />
+                <img className="h-[40px] sm:h-[90px]" src="/assets/bg/bnr-1-2.png" alt="" />
+                <img className="h-[40px] sm:h-[90px]" src="/assets/bg/bnr-1-3.png" alt="" />
+                <img className="h-[40px] sm:h-[90px]" src="/assets/bg/bnr-1-4.png" alt="" />
+              </div>
+              <div className="flex justify-content-space-around gap-6">
+                <div>
+                  <p className="text-base mt-1">04 abril - 24 octubre 2025</p>
+                </div>
+                <div>
+                  <p className="text-base mt-1 whitespace-pre-line">
+                    Jueves 19hrs - 20hrs
+                  </p>
+                  <p className="text-base mt-1 whitespace-pre-line">
+                    Viernes 17hrs - 21hrs
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        );
-      })}
+        </div>
+      </div>
 
-      {/* Arrows */}
+      {/* Slide 2 */}
+      <div
+        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+          current === 1 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+        }`}
+      >
+        <img
+          src="/assets/bg/bg-banner-homepage-2.jpg"
+          alt="background"
+          className="absolute inset-0 w-full h-full object-cover object-left md:object-right z-0"
+        />
+        <div className="relative h-full flex items-center z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full lg:flex">
+            <div className="text-white">
+              <h2 className="text-3xl md:text-4xl mb-2">
+               Curso-Taller: <br></br> <strong>DBT TEAMS - Logrando los más altos estándares de calidad en DBT</strong>
+              </h2>
+              <p className="text-lg md:text-xl mb-6 opacity-90">
+                Ponente: Ronda Reitz, PhD. 
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <p className="text-base mt-1 inline-block">31 de Mayo y 1 de Junio 2025.</p>
+                  <p className="text-base mt-1 inline-block ml-2"><strong>Presencial y Online</strong></p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Slide 3 */}
+      <div
+        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+          current === 2 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+        }`}
+      >
+        <img
+          src="/assets/bg/bg-banner-homepage-3.jpg"
+          alt="background"
+          className= "mx-auto absolute inset-0 w-full h-full object-cover object-left z-0"
+        />
+        <div className="max-w-7xl mx-auto relative h-full flex items-center z-10">
+          <div className="w-full md:w-[68%] px-4 sm:px-6 lg:px-8">
+            <div className="text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                Diplomado en Fundamentos de Terapia Dialéctica Conductual
+              </h2>
+              <p className="text-lg md:text-xl mb-6 opacity-90">
+                DBT para población infantil y adolescente
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <p className="text-sm uppercase opacity-80">Fechas</p>
+                  <p className="text-base mt-1">06 – 07 Junio 2025</p>
+                </div>
+                <div>
+                  <p className="text-sm uppercase opacity-80">Lugar</p>
+                  <p className="text-base mt-1">Guadalajara, México</p>
+                </div>
+              </div>
+              <p className="mt-6 text-sm opacity-90">
+                Modalidad: Presencial
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Slide 4 */}
+      <div
+        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+          current === 3 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+        }`}
+      >
+        <img
+          src="/assets/bg/bg-banner-homepage-4.jpg"
+          alt="background"
+          className="absolute inset-0 w-full h-full object-cover object-left lg:object-right z-0"
+        />
+        <div className="relative h-full flex items-center z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full lg:flex">
+            <div className="text-[#000000]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                Entrenamiento Intensivo en DBT-C
+              </h2>
+              <p className="text-lg md:text-xl mb-6 opacity-90">
+                Terapia Dialéctica Conductual para población infantil
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <p className="text-sm uppercase opacity-80">Fechas</p>
+                  <p className="text-base mt-1">Dic 2025 – Jul 2026</p>
+                </div>
+                <div>
+                  <p className="text-sm uppercase opacity-80">Lugar</p>
+                  <p className="text-base mt-1">CDMX, México</p>
+                </div>
+              </div>
+              <p className="mt-6 text-sm opacity-90">
+                Modalidad: Programa extendido
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation Arrows */}
       <button
         onClick={prev}
-        className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 text-white p-4 rounded-full transition transform hover:scale-110 z-10"
-        aria-label="Anterior"
+        className={`hidden md:block absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full transition hover:scale-110 ${btnClasses} z-10`}
+        aria-label="Prev"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={next}
-        className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 text-white p-4 rounded-full transition transform hover:scale-110 z-10"
-        aria-label="Siguiente"
+        className={`hidden md:block absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full transition hover:scale-110 ${btnClasses} z-10`}
+        aria-label="Next"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-5 h-5" />
       </button>
 
-      {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
-        {slides.map((_, idx) => (
+      {/* Dots and Pause/Play */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-4 z-10">
+        {[0, 1, 2, 3].map((idx) => (
           <button
             key={idx}
             onClick={() => goTo(idx)}
             className={`transition-all duration-300 ${
               idx === current
                 ? "w-12 h-3 bg-white rounded-full"
-                : "w-3 h-3 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full"
+                : `w-3 h-3 bg-white/50 hover:bg-white/75 rounded-full ${controlThemes[current] === 'light'? 'bg-white/75':'bg-black/75'}`
             }`}
-            aria-label={`Ir a la diapositiva ${idx + 1}`}
+            aria-label={`Go to slide ${idx + 1}`}
           />
         ))}
+        <button
+          onClick={togglePause}
+          className={`p-3 rounded-full transition hover:scale-110 ${btnClasses}`}
+          aria-label="Play/Pause"
+        >
+          {isPaused ? <Play className="w-5 h-5" /> : <Pause className="w-5 h-5" />}
+        </button>
       </div>
 
       {/* Progress bar */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-black bg-opacity-20 z-10">
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-black/20 z-10">
         <div
-          className="h-full bg-white transition-all duration-300 ease-linear"
+          className={`h-full transition-all duration-300 ease-linear ${btnClasses.includes('white')? 'bg-white':'bg-black'}`}
           style={{ width: `${((current + 1) / length) * 100}%` }}
         />
       </div>

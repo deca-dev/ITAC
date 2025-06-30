@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .controls-light .control-btn {
+    @apply bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white;
+  }
+  .controls-dark .control-btn {
+    @apply bg-black/20 backdrop-blur-sm hover:bg-black/30 text-black;
+  }
+}
