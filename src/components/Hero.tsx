@@ -17,6 +17,8 @@ export default function Hero() {
     "dark", // Slide 4
   ];
 
+  
+
   const next = () => setCurrent((c) => (c + 1) % length);
   const prev = () => setCurrent((c) => (c - 1 + length) % length);
   const goTo = (i: number) => setCurrent(i);
@@ -30,7 +32,13 @@ export default function Hero() {
   const togglePause = () => setIsPaused((p) => !p);
 
   // Determine button styles based on current slide theme
-  const btnClasses = controlThemes[current] === "light"
+  // const btnClasses = controlThemes[current] === "light"
+  //   ? "bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white"
+  //   : "bg-black/20 backdrop-blur-sm hover:bg-black/30 text-black";
+
+     // Determine button styles based on current slide theme
+  const isLight = controlThemes[current] === "light";
+  const btnClasses = isLight
     ? "bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white"
     : "bg-black/20 backdrop-blur-sm hover:bg-black/30 text-black";
 
@@ -163,30 +171,25 @@ export default function Hero() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full lg:flex">
             <div className="text-[#000000]">
               <h2 className="text-3xl md:text-4xl font-bold mb-2">
-                Entrenamiento Intensivo en DBT-C
+                Entrenamiento intensivo en DBT-C (Terapia Dialéctica Conductual para población infantil)
               </h2>
-              <p className="text-lg md:text-xl mb-6 opacity-90">
-                Terapia Dialéctica Conductual para población infantil
-              </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <p className="text-sm uppercase opacity-80">Fechas</p>
-                  <p className="text-base mt-1">Dic 2025 – Jul 2026</p>
+                  <p className="text-base mt-1">1era parte: 5,6, y 7 de Diciembre 2025</p>
+                  <p className="text-base mt-1">2da parte: 24, 25 y 26 de Julio 2026</p>
+                  <p className="text-base mt-1 text-right"><strong>CDMX, México</strong></p>
                 </div>
                 <div>
-                  <p className="text-sm uppercase opacity-80">Lugar</p>
-                  <p className="text-base mt-1">CDMX, México</p>
+                  <p className="text-sm uppercase opacity-80">Ponentes:</p>
+                  <p className="text-base mt-1">Francheska Perepletchikova, PhD. y María Ignacia Montt, Psic.</p>
                 </div>
               </div>
-              <p className="mt-6 text-sm opacity-90">
-                Modalidad: Programa extendido
-              </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+   {/* Navigation Arrows (hidden on mobile) */}
       <button
         onClick={prev}
         className={`hidden md:block absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full transition hover:scale-110 ${btnClasses} z-10`}
@@ -210,8 +213,8 @@ export default function Hero() {
             onClick={() => goTo(idx)}
             className={`transition-all duration-300 ${
               idx === current
-                ? "w-12 h-3 bg-white rounded-full"
-                : `w-3 h-3 bg-white/50 hover:bg-white/75 rounded-full ${controlThemes[current] === 'light'? 'bg-white/75':'bg-black/75'}`
+                ? `${isLight ? 'bg-white' : 'bg-black'} w-12 h-3 rounded-full`
+                : `${isLight ? 'bg-white/50 hover:bg-white/75' : 'bg-black/50 hover:bg-black/75'} w-3 h-3 rounded-full`
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
@@ -225,10 +228,10 @@ export default function Hero() {
         </button>
       </div>
 
-      {/* Progress bar */}
+      {/* Progress bar (adjust color per theme) */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-black/20 z-10">
         <div
-          className={`h-full transition-all duration-300 ease-linear ${btnClasses.includes('white')? 'bg-white':'bg-black'}`}
+          className={`h-full transition-all duration-300 ease-linear ${isLight ? 'bg-white' : 'bg-black'}`}
           style={{ width: `${((current + 1) / length) * 100}%` }}
         />
       </div>

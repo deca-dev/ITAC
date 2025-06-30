@@ -37,9 +37,9 @@ const Services = () => {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Somos una institución especializada en Terapia Contextual que forma, investiga y brinda atención psicológica desde 2010. Ofrecemos capacitación en Análisis del Comportamiento Clínico y métodos como ACT, FAP y BA. Además, asesoramos a instituciones en investigación y capacitación sobre estos enfoques. Colaboramos con programas de formación en México, América Latina y España, y participamos en congresos e investigaciones internacionales.
           </p>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Conoce más sobre terapias contextuales <a href="" className="services__header__anchor">aquí</a>.</p>
+          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Conoce más sobre terapias contextuales <a href="https://dbt-mexico.com/" className="services__header__anchor">aquí</a>.</p>
          
-         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md pt-4">
+         <div className="flex flex-col sm:flex-row gap-4 max-w-md pt-4">
         {/* Conoce DBT México Button */}
         <button className="group relative bg-slate-700 hover:bg-slate-800 text-white font-medium h-12 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out flex-1">
           <span className="relative z-10">Conoce DBT México</span>

@@ -50,7 +50,7 @@ const About = () => {
               especializadas.
             </p>
 
-            <div className="bg-[#0f2c57] py-10">
+            <div className="bg-[#0f2c57] md:py-10">
               <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 text-white divide-y md:divide-y-0 md:divide-x divide-white/30 text-center">
                 {stats.map((stat, index) => (
                   <div
@@ -61,7 +61,7 @@ const About = () => {
                       <img
                         src={stat.icon}
                         alt={`Icono ${stat.label}`}
-                        className="w-17 object-contain filter-invert"
+                        className="w-16 md:w-17 object-contain filter-invert"
                       />
                     </div>
                     <div>
