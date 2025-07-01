@@ -10,3 +10,31 @@
     @apply bg-black/20 backdrop-blur-sm hover:bg-black/30 text-black;
   }
 }
+
+.justify-content-space-around {
+  justify-content: space-around;
+}
+
+.bg-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/bg/body-pattern-bg 1.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.5; /* Adjust between 0 (transparent) and 1 (opaque) */
+  pointer-events: none; /* Ensure clicks pass through */
+  z-index: 0;
+}
+
+/* Ensure content sits above the pattern */
+.bg-pattern > * {
+  position: relative;
+  z-index: 1;
+}

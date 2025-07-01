@@ -57,7 +57,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover object-left z-0"
         />
         <div className="relative h-full flex items-center z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="text-[#1A2F3F]">
               <h2 className="text-3xl md:text-4xl mb-2">
                 Diplomado en <strong>Fundamentos de Terapia Dialéctica Conductual</strong> (7ma Generación)
@@ -98,8 +98,8 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover object-left md:object-right z-0"
         />
         <div className="relative h-full flex items-center z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full lg:flex">
-            <div className="text-white">
+          <div className="sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 w-full lg:flex">
+            <div className="text-white w-full md:w-[60%]">
               <h2 className="text-3xl md:text-4xl mb-2">
                Curso-Taller: <br></br> <strong>DBT TEAMS - Logrando los más altos estándares de calidad en DBT</strong>
               </h2>
@@ -129,7 +129,7 @@ export default function Hero() {
           alt="background"
           className= "mx-auto absolute inset-0 w-full h-full object-cover object-left z-0"
         />
-        <div className="max-w-7xl mx-auto relative h-full flex items-center z-10">
+        <div className="sm:max-w-[90%] mx-auto relative h-full flex items-center z-10">
           <div className="w-full md:w-[68%] px-4 sm:px-6 lg:px-8">
             <div className="text-white">
               <h2 className="text-3xl md:text-4xl font-bold mb-2">
@@ -168,7 +168,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover object-left lg:object-right z-0"
         />
         <div className="relative h-full flex items-center z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full lg:flex">
+          <div className="sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 w-full lg:flex">
             <div className="text-[#000000]">
               <h2 className="text-3xl md:text-4xl font-bold mb-2">
                 Entrenamiento intensivo en DBT-C (Terapia Dialéctica Conductual para población infantil)
@@ -192,21 +192,21 @@ export default function Hero() {
    {/* Navigation Arrows (hidden on mobile) */}
       <button
         onClick={prev}
-        className={`hidden md:block absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full transition hover:scale-110 ${btnClasses} z-10`}
+        className={`hidden sm:block absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full transition hover:scale-110 ${btnClasses} z-10`}
         aria-label="Prev"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={next}
-        className={`hidden md:block absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full transition hover:scale-110 ${btnClasses} z-10`}
+        className={`hidden sm:block absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full transition hover:scale-110 ${btnClasses} z-10`}
         aria-label="Next"
       >
         <ChevronRight className="w-5 h-5" />
       </button>
 
       {/* Dots and Pause/Play */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-4 z-10">
+      <div className=" absolute bottom-1 sm:bottom-6 left-1/2 -translate-x-1/2 sm:flex items-center space-x-4 z-10">
         {[0, 1, 2, 3].map((idx) => (
           <button
             key={idx}
@@ -221,7 +221,7 @@ export default function Hero() {
         ))}
         <button
           onClick={togglePause}
-          className={`p-3 rounded-full transition hover:scale-110 ${btnClasses}`}
+          className={`hidden sm:block p-3 rounded-full transition hover:scale-110 ${btnClasses}`}
           aria-label="Play/Pause"
         >
           {isPaused ? <Play className="w-5 h-5" /> : <Pause className="w-5 h-5" />}

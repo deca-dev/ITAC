@@ -29,7 +29,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section className="pt-16">
       <div className="mx-auto">
         <div className="max-w-7xl mx-auto text-center mb-12 flex flex-col items-center">
           <img className="w-16" src="/assets/logo/logo-main.png" alt="Logo" />
@@ -57,7 +57,7 @@ const Services = () => {
        
         </div>
 
-        <div className="services__explore__services__container mb-12">
+        <div className="services__explore__services__container">
           <div className="p-6 rounded-lg mb-8 max-w-7xl mx-auto">
             <h3 className="text-2xl font-semibold mb-2">
               Explora nuestros servicios especializados
