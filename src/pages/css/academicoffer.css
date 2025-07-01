@@ -1,0 +1,17 @@
+  .academic-offer-banner {
+    display: block;
+  }
+
+@media screen and (max-width: 780px) {
+  .academic-offer-banner {
+   top: 126px !important;
+  }
+    
+}
+
+@media screen and (max-width: 472px) {
+  .academic-offer-banner {
+       top: 160px !important;
+  }
+    
+}
