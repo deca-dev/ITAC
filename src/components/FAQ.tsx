@@ -9,32 +9,36 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "¿Qué significa el enfoque de Terapia Conductual Contextual (TCC)?",
-    answer: `Terapias denominadas como CONTEXTUALISTAS de 3ra. generación, dentro de las cuales se encuentran la Terapia de Aceptación y Compromiso (ACT), la Terapia Dialéctica Conductual (DBT), Mindfulness Conductual y la Psicoterapia Analítica Funcional (FAP), entre otras. Todas estas terapias comparten el enfoque contextualista de la Terapia de Conducta.`,
+    question: "¿Qué terapias ofrece el Instituto de Terapia y Análisis de la Consulta CDMX?",
+    answer: `Terapias denominadas como Contextuales o de 3ra. generación, dentro de las cuales se encuentran: la Terapia de Aceptación y Compromiso (ACT), Psicoterapia Analítica Funcional (FAP), Activación Conductual (BA), Terapia Dialéctica Conductual y otras metodologías de Terapia de Conducta (como Exposición y Prevención de Respuesta).`,
   },
   {
-    question: "¿Qué entendemos o a qué nos referimos con terapias con base empírica?",
-    answer: `Se refiere a tratamientos psicológicos que han sido validados científicamente a través de investigación rigurosa y estudios controlados.`,
+    question: "¿Qué padecimientos o trastornos se tratan con estas terapias?",
+    answer: `Activación Conductual – Es el tratamiento con fuerte apoyo empírico para la depresión.\nTerapia de Aceptación y Compromiso – Trastorno de ansiedad generalizada, trastorno de angustia, trastorno depresivo, trastorno obsesivo-compulsivo que desde esta terapia se denominan trastorno de evitación experiencial.\nPsicoterapia Analítica Funcional – Dificultades en las relaciones interpersonales para desarrollar y fortalecer clases de comportamientos alternativos que sirvan como facilitadores de una mejor interacción con uno mismo, las demás personas y los desafíos que la vida plantea.\nTerapia Dialéctica Conductual – Es un tratamiento ampliamente divulgado para trabajar con personas diagnosticadas con Trastorno Límite de la Personalidad (TLP) y otros problemas relacionados a la regulación emocional y la impulsividad.`,
   },
   {
-    question: "¿Puede usted la duración de las terapias que ofrecen?",
-    answer: `La duración varía según el caso individual, pero generalmente oscila entre 12 a 24 sesiones para tratamientos estándar.`,
+    question: "¿Puedo saber la duración de las terapias que ofrecen?",
+    answer: `La duración del proceso terapéutico varía, ya que cada persona requiere una valoración y plan de tratamiento personalizado. Y al finalizar la valoración, el consultor (terapeuta) del caso informa el panorama del camino psicoterapéutico que iniciarán.`,
   },
   {
-    question: "¿Cuáles son las terapias que se ofrecen online?",
-    answer: `Ofrecemos todas nuestras modalidades terapéuticas en formato online, adaptadas a las necesidades actuales.`,
+    question: "¿Todas las terapias tienen el mismo costo?",
+    answer: `El costo de la sesión varía de acuerdo a la especialidad del consultor (terapeuta) y también al enfoque terapéutico a trabajar.`,
   },
   {
-    question: "¿A quién va dirigido cada uno de nuestros programas?",
-    answer: `Nuestros programas están dirigidos a profesionales de la salud mental, estudiantes de psicología y terapeutas en formación.`,
+    question: "¿Es forzoso que la sesión sea en modalidad presencial?",
+    answer: `Ante las medidas por Pandemia que iniciaron en Marzo 2021, así como por la demanda de apoyo psicoterapéutico dentro y fuera de la república, el equipo del Instituto realiza sesiones de terapia en línea por medio de la plataforma Zoom o Skype; y en nuestras instalaciones continuamos con sesiones presenciales, bajo un protocolo de sanitización.`,
   },
   {
-    question: "¿Con qué preparación académica cuentan los consultores terapeutas del instituto?",
-    answer: `Todos nuestros terapeutas cuentan con formación especializada en terapias contextuales y certificaciones internacionales.`,
+    question: "¿Cuentan con otras instalaciones o profesionales que den atención fuera de la CDMX?",
+    answer: `El Instituto de Terapia Contextual CdMx únicamente cuenta con las instalaciones ubicadas en: Canadá 177, San Lucas, Coyoacán, 04030 Ciudad de México, CDMX; los consultores (terapeutas) se encuentran en estas instalaciones únicamente.`,
   },
   {
-    question: "¿Cuál es la tarifa promedio?",
-    answer: `Las tarifas varían según el tipo de servicio. Contáctanos para información específica sobre costos.`,
+    question: "¿Con qué preparación académica cuentan los consultores (terapeutas) del Instituto?",
+    answer: `El mínimo grado de estudios con el que cuentan los profesionales del Instituto son estudios de maestría y el máximo con Doctorado. Además, todos los consultores han realizado estudios especializados, certificaciones, entrenamientos dentro y fuera de México con representantes de las Terapias Contextuales a nivel internacional y por instituciones acreditadas. Y cada año realizan un mínimo de 48 horas de capacitación, además de supervisión.`,
+  },
+  {
+    question: "¿Cuál es su oferta académica?",
+    answer: `El Instituto de Terapia Contextual enseña y divulga la Ciencia y Terapia Contextual desde el año 2010; nuestros objetivos son la formación teórico-práctica en Análisis del Comportamiento Clínico y sus encarnaciones más conocidas como Terapia de Aceptación y Compromiso (ACT), Psicoterapia Analítica Funcional (FAP), Activación Conductual (BA), Terapia Dialéctica Conductual y otras metodologías de Terapia de Conducta (como Exposición y Prevención de Respuesta, Entrevista Motivacional, etc.). Durante el año se llevan a cabo diferentes entrenamientos en diferentes formatos como talleres, diplomados o cursos, tanto presenciales como en línea.`,
   },
 ];
 
@@ -57,7 +61,7 @@ export default function FAQ() {
               <div key={index}>
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 flex justify-between items-center text-gray-900 hover:bg-gray-50 transition-colors"
+                  className="w-full px-6 py-4 flex justify-between items-center text-gray-900 hover:bg-gray-50 transition-colors font-bold"
                 >
                   <span className="text-left font-medium">{faq.question}</span>
                   {isOpen ? (
