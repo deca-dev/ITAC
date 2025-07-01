@@ -11,6 +11,10 @@
   }
 }
 
+.font-serif {
+    font-family: serif;
+}
+
 .justify-content-space-around {
   justify-content: space-around;
 }

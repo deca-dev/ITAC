@@ -239,10 +239,10 @@ const Team = () => {
           </div>
         </div>
 
-        <div className="relative lg:top-[70px] bg-white p-6">
-          <div className=" bg-[#a7c9d5] px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="relative lg:top-[70px] bg-white p-6 shadow-lg">
+          <div className=" bg-[#a7c9d5] px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 ">
             {/* Text */}
-            <div className="text-white text-lg md:text-2xl font-serif leading-snug text-center md:text-left">
+            <div className="text-white text-lg md:text-2xl font-serif leading-snug text-center md:text-left z-10">
               <p className="font-semibold italic">¿Tienes dudas?</p>
               <p className="font-semibold">
                 Déjanos aclaráralas y darte mayor información.
