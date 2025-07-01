@@ -8,10 +8,13 @@ const Team = () => {
   const [sliderRef, slider] = useKeenSlider({
     loop: true,
     slides: {
-      perView: 2,
+      perView: 1,
       spacing: 16,
     },
     breakpoints: {
+      "(min-width: 540px)": {
+        slides: { perView: 2, spacing: 20 },
+      },
       "(min-width: 768px)": {
         slides: { perView: 3, spacing: 24 },
       },
