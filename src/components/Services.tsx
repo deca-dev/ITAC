@@ -41,18 +41,18 @@ const Services = () => {
          
          <div className="flex flex-col sm:flex-row gap-4 max-w-md pt-4 items-center">
         {/* Conoce DBT México Button */}
-        <button className="group w-[50%] relative bg-slate-700 hover:bg-slate-800 text-white font-medium h-12 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out">
-          <span className="relative z-10">Conoce DBT México</span>
+        <a href="https://dbt-mexico.com/" target='_blank' className="group w-[50%] relative bg-slate-700 hover:bg-slate-800 text-white font-medium h-12 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out">
+            <span className="relative z-10">Conoce DBT México</span>
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-slate-600 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-        </button>
+        </a>
 
         {/* WhatsApp Contact Button */}
-        <button className="group relative bg-green-500 hover:bg-green-600 text-white font-medium h-12 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out flex items-center justify-center gap-3">
+        <a href="" target='_blank' className="group relative bg-green-500 hover:bg-green-600 text-white font-medium h-12 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out flex items-center justify-center gap-3">
           {/* <MessageCircle size={20} className="flex-shrink-0" /> */}
           <img src="/assets/logo/whatsapp_logo.png" alt="Whatsapp Logo" className='w-10 z-10' />
           <span className="relative z-10">Contacto por Whatsapp</span>
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-        </button>
+        </a>
       </div>
        
         </div>
