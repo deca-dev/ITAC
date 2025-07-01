@@ -1,240 +1,131 @@
-import React from 'react';
+// src/pages/TeamGeneral.tsx
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { User } from 'lucide-react';
+import { teamMembers, type TeamMember } from '../assets/team';
 
-const Team = () => {
-  const teamMembers = [
-    {
-      id: 'alejandra-castellanos',
-      name: "Alejandra Castellanos",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual e instructora de Mindfulness.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'michel-reyes',
-      name: "Michel Reyes",
-      title: "Psicólogo",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificado",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'sara-sanchez',
-      name: "Sara Sánchez",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual e instructora de Mindfulness.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'claudia-ramirez',
-      name: "Claudia Ramírez",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'claudia-ramirez-2',
-      name: "Claudia Ramírez",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'karla-lopez',
-      name: "Karla López",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'amalia-castillo',
-      name: "Amalia Castillo",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'karla-garza',
-      name: "Karla Garza",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'liliana-hernandez',
-      name: "Liliana Hernández",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'ana-mira',
-      name: "Ana Mira",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'nancy-leal',
-      name: "Nancy Leal",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'patricia-mendoza',
-      name: "Patricia Mendoza",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'susana-morales',
-      name: "Susana Morales",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'liliana-fernandez',
-      name: "Liliana Fernández",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'fabiola-mira',
-      name: "Fabiola Mira",
-      title: "Psicóloga",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificada",
-      order: "Orden alfabético - TBC"
-    },
-    {
-      id: 'uriel-xicol',
-      name: "Uriel Xicol Carreño",
-      title: "Psicólogo",
-      specialty: "Especialista en Terapia Cognitivo Conductual",
-      description: "Maestría en Terapia Cognitivo Conductual, con especialidad en Terapia de Aceptación y Compromiso y en la Terapia Dialéctica Conductual.",
-      years: "7+ años de Práctica Cognitiva",
-      certification: "Certificado",
-      order: "Orden alfabético - TBC"
-    }
-  ];
+export default function TeamGeneral() {
+  const [searchName, setSearchName] = useState<string>('');
+  const [filterSpecialty, setFilterSpecialty] = useState<string>('');
+  const [filterMode, setFilterMode] = useState<string>('');
+  const [filterPopulation, setFilterPopulation] = useState<string>('');
+
+  // derive unique filter options
+  const specialties = Array.from(new Set(teamMembers.map(m => m.specialty))).sort();
+  const modes = Array.from(new Set(teamMembers.map(m => m.mode))).sort();
+  const populations = Array.from(new Set(teamMembers.map(m => m.population))).sort();
+
+  // apply filters
+  const visibleMembers = teamMembers.filter((m: TeamMember) => {
+    const matchesName = m.name.toLowerCase().includes(searchName.toLowerCase());
+    const matchesSpecialty = filterSpecialty ? m.specialty === filterSpecialty : true;
+    const matchesMode = filterMode ? m.mode === filterMode : true;
+    const matchesPopulation = filterPopulation ? m.population === filterPopulation : true;
+    return matchesName && matchesSpecialty && matchesMode && matchesPopulation;
+  });
+
+  // reset all filters
+  const resetFilters = () => {
+    setSearchName('');
+    setFilterSpecialty('');
+    setFilterMode('');
+    setFilterPopulation('');
+  };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 bg-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-teal-600 text-white py-12 px-8 rounded-lg mb-12 relative overflow-hidden">
           <div className="absolute right-8 top-1/2 transform -translate-y-1/2">
-            <div className="w-32 h-32 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-              <span className="text-red-500 font-bold text-lg">Equipo infancia</span>
-            </div>
+            <div className="w-32 h-32 bg-white bg-opacity-20 rounded-full" />
           </div>
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold mb-4">Nuestro equipo</h2>
-            <p className="text-lg">
-              Contamos con un equipo de profesionales altamente capacitados y 
-              apasionados por el bienestar psicológico y emocional.
-            </p>
-          </div>
+          <h2 className="text-3xl font-bold mb-2">Nuestro equipo</h2>
+          <p className="text-lg">
+            Contamos con un equipo de profesionales altamente capacitados y apasionados por el bienestar psicológico y emocional.
+          </p>
         </div>
 
-        <div className="mb-8">
-          <div className="bg-blue-100 p-4 rounded-lg mb-4">
-            <h3 className="font-semibold text-blue-900">Confirmar especialidad - TBC</h3>
-            <p className="text-blue-800">Especialistas</p>
-          </div>
-          <div className="flex flex-wrap gap-2 text-sm">
-            <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded">Actividad física</span>
-            <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded">Mindfulness (En línea o presencial)</span>
-            <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded">Evaluación (Niños, adulto, adulto mayor, etc.)</span>
-            <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded">TBC</span>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
+          <input
+            type="text"
+            placeholder="Buscar por nombre"
+            value={searchName}
+            onChange={e => setSearchName(e.target.value)}
+            className="border border-gray-300 rounded p-2"
+          />
+          <select
+            value={filterSpecialty}
+            onChange={e => setFilterSpecialty(e.target.value)}
+            className="border border-gray-300 rounded p-2"
+          >
+            <option value="">Especialidad</option>
+            {specialties.map(spec => <option key={spec} value={spec}>{spec}</option>)}
+          </select>
+          <select
+            value={filterMode}
+            onChange={e => setFilterMode(e.target.value)}
+            className="border border-gray-300 rounded p-2"
+          >
+            <option value="">Modalidad</option>
+            {modes.map(mode => <option key={mode} value={mode}>{mode}</option>)}
+          </select>
+          <select
+            value={filterPopulation}
+            onChange={e => setFilterPopulation(e.target.value)}
+            className="border border-gray-300 rounded p-2"
+          >
+            <option value="">Población</option>
+            {populations.map(pop => <option key={pop} value={pop}>{pop}</option>)}
+          </select>
+          <button
+            onClick={resetFilters}
+            className="border border-gray-300 rounded p-2 bg-white hover:bg-gray-100 transition-colors">
+            Reset
+          </button>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 shadow-lg">
-              <div className="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <User className="w-10 h-10 text-gray-600" />
-              </div>
-              
-              <h3 className="font-bold text-lg text-center mb-1">{member.name}</h3>
-              <p className="text-sm text-gray-600 text-center mb-3">{member.title}</p>
-              
-              <div className="space-y-2 text-xs">
-                <div className="flex items-start space-x-2">
-                  <div className="w-4 h-4 bg-blue-100 rounded flex-shrink-0 mt-0.5"></div>
-                  <p>{member.specialty}</p>
+          {visibleMembers.map((member: TeamMember) => (
+            <div key={member.id} className="flex flex-col bg-white text-gray-900 rounded-lg p-6 px-4 shadow-lg">
+              <div className="flex justify-center gap-2 items-center">
+                <div className="w-[80px] h-[80px] rounded-full mb-4 flex items-center justify-center">
+                  <img src={`/assets/photos/headshots/${member.photo}.png`} alt={member.name} />
                 </div>
-                <div className="flex items-start space-x-2">
-                  <div className="w-4 h-4 bg-blue-100 rounded flex-shrink-0 mt-0.5"></div>
-                  <p>{member.description}</p>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <div className="w-4 h-4 bg-blue-100 rounded flex-shrink-0 mt-0.5"></div>
-                  <p>{member.years}</p>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <div className="w-4 h-4 bg-blue-100 rounded flex-shrink-0 mt-0.5"></div>
-                  <p>{member.certification}</p>
+                <div className="flex flex-col items-start">
+                  <p className="text-sm text-gray-600">{member.title}</p>
+                  <h3 className="font-bold text-sm mb-1">{member.name}</h3>
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-gray-200 text-center space-y-2">
-                <Link 
-                  to={`/team/${member.id}`}
-                  className="block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors"
-                >
+              <div className="space-y-2 text-xs pt-4 border-t border-gray-200">
+                <div className="flex items-center gap-2">
+                  <img src="/assets/icons/education-vector.png" alt="" className="w-4 h-4" />
+                  <p>{member.specialty}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <img src="/assets/icons/briefcase-vector.png" alt="" className="w-4 h-4" />
+                  <p>{member.years}</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <img src="/assets/icons/checklist.png" alt="" className="w-4 h-4" />
+                  <p >{member.description}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold">Modalidad:</span>
+                  <p>{member.mode}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold">Población:</span>
+                  <p>{member.population}</p>
+                </div>
+              </div>
+
+              <div className="flex gap-2 justify-center pt-8 mt-auto">
+                <button className="bg-white text-[#5a7e7b] border border-transparent border-[#5a7e7b] hover:bg-[#5a7e7b] hover:color-[#fff] px-4 py-2 rounded text-sm font-medium transition-colors">
                   Ver Perfil
-                </Link>
-                <button className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded text-sm font-medium transition-colors">
-                  Agendar
+                </button>
+                <button className="bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-2 rounded text-sm font-medium transition-colors">
+                  Contacto
                 </button>
               </div>
             </div>
@@ -243,6 +134,4 @@ const Team = () => {
       </div>
     </section>
   );
-};
-
-export default Team;
+}
