@@ -29,7 +29,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="pt-16">
+    <section className="pt-16 bg-pattern ">
       <div className="mx-auto">
         <div className="max-w-7xl mx-auto text-center mb-12 flex flex-col items-center">
           <img className="w-16" src="/assets/logo/logo-main.png" alt="Logo" />

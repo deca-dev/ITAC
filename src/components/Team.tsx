@@ -182,7 +182,7 @@ const Team = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="keen-slider__slide bg-white text-gray-900 rounded-lg p-6 px-4 shadow-lg"
+                className="flex flex-col keen-slider__slide bg-white text-gray-900 rounded-lg p-6 px-4 shadow-lg"
               >
                 <div className="flex justify-center gap-2 items-center">
                   {/* Avatar */}
@@ -223,8 +223,8 @@ const Team = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex gap-2 justify-center mt-4 pt-4 text-center">
-                  <button className="bg-[#ffff] hover:bg-[#5a7e7b] text-[#5a7e7b] px-4 py-2 rounded text-sm font-medium transition-colors">
+                <div className="flex gap-2 justify-center pt-8 text-center mt-auto">
+                  <button className="bg-white text-[#5a7e7b] border border-transparent hover:border-[#5a7e7b] px-4 py-2 rounded text-sm font-medium transition-colors">
                     Ver Perfil
                   </button>
                   <button className="bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-2 rounded text-sm font-medium transition-colors">
