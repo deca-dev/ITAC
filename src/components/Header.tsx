@@ -67,14 +67,14 @@ const Header = () => {
                 Inicio
               </Link>
               <Link 
-                to="/" 
+                to="/oferta-academica" 
                 className={`transition-colors ${isActive('/oferta-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Oferta Académica
               </Link>
               <Link 
-                to="/" 
+                to="/equipo" 
                 className={`transition-colors ${isActive('/equipo') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
