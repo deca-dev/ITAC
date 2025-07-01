@@ -162,7 +162,7 @@ const Team = () => {
     <section className="pt-16 bg-[#1A3459] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <h2 className="text-3xl mb-4 font-serif">Nuestro Equipo</h2>
+          <h2 className="text-4xl mb-4 font-serif">Nuestro Equipo</h2>
         </div>
 
         <div className="relative">
@@ -239,7 +239,7 @@ const Team = () => {
           </div>
         </div>
 
-        <div className="relative lg:top-[70px] bg-white p-6 shadow-lg">
+        <div className="relative top-[58px] lg:top-[70px] bg-white p-6 shadow-lg">
           <div className=" bg-[#a7c9d5] px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 ">
             {/* Text */}
             <div className="text-white text-lg md:text-2xl font-serif leading-snug text-center md:text-left z-10">

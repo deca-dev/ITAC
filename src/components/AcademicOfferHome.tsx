@@ -6,7 +6,7 @@ export default function AcademicFormation() {
     <section className="pb-16 bg-white pt-[100px] bg-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <h2 className="text-2xl  text-gray-900 mb-8 font-serif">
+        <h2 className="text-4xl text-gray-900 mb-8 font-serif">
           Formación Académica
         </h2>
 
