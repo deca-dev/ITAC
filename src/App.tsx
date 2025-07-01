@@ -15,12 +15,11 @@ function App() {
       <div className="min-h-screen">
         <Header />
         <Routes>
-          <Route path="/" element={<WorkInProgress />} />
-          <Route path="/home1" element={<Home />} />
-          <Route path="/academic-offer" element={<AcademicOffer />} />
-          <Route path="/academic-offer/:courseId" element={<AcademicOfferDetail />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/team/:memberId" element={<TeamMemberDetail />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/oferta-academica" element={<AcademicOffer />} />
+          <Route path="/oferta-academica/:courseId" element={<WorkInProgress />} />
+          <Route path="/equipo" element={<Team />} />
+          <Route path="/equipo/:memberId" element={<WorkInProgress />} />
         </Routes>
         <Footer />
       </div>

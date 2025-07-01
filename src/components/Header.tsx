@@ -32,16 +32,14 @@ const Header = () => {
               Inicio
             </Link>
             <Link 
-              // to="/academic-offer" 
-              to="/" 
-              className={`transition-colors ${isActive('/academic-offer') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+              to="/oferta-academica" 
+              className={`transition-colors ${isActive('/oferta-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
             >
               Oferta Académica
             </Link>
             <Link 
-              // to="/team" 
-               to="/" 
-              className={`transition-colors ${isActive('/team') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+               to="/equipo" 
+              className={`transition-colors ${isActive('/equipo') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
             >
               Equipo
             </Link>
@@ -70,14 +68,14 @@ const Header = () => {
               </Link>
               <Link 
                 to="/" 
-                className={`transition-colors ${isActive('/academic-offer') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+                className={`transition-colors ${isActive('/oferta-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Oferta Académica
               </Link>
               <Link 
                 to="/" 
-                className={`transition-colors ${isActive('/team') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+                className={`transition-colors ${isActive('/equipo') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Equipo
