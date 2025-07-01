@@ -53,15 +53,15 @@ export default function AcademicFormation() {
   }, [slideWidth]);
 
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg[#D9D9D9]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div
           ref={containerRef}
           className="overflow-x-auto flex space-x-8 snap-x snap-mandatory -mx-4 px-4 scroll-smooth"
         >
           {testimonials.map((t, idx) => (
-            <div key={idx} className="snap-start flex-shrink-0 w-full px-4">
-              <blockquote className="text-lg md:text-xl font-light text-gray-700 italic mb-4">
+            <div key={idx} className="snap-start flex-shrink-0 w-full px-4 font-serif font-bold">
+              <blockquote className="text-lg md:text-xl font-light text-gray-700 mb-4">
                 “{t.quote}”
               </blockquote>
               <cite className="block text-sm text-gray-600">- {t.author}</cite>
