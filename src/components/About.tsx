@@ -77,7 +77,7 @@ const About = () => {
               </div>
             </div>
 
-            <p className="pt-6 text-gray-600">
+            <p className="text-lg pt-6 text-gray-600">
               Gracias a nuestro equipo multidisciplinario, acercamos los avances
               más recientes en salud mental a la comunidad hispanohablante
               mediante la publicación, traducción y colaboración en libros,

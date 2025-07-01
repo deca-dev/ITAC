@@ -30,8 +30,8 @@ const Services = () => {
 
   return (
     <section className="pt-16 bg-pattern ">
-      <div className="mx-auto">
-        <div className="max-w-7xl mx-auto text-center mb-12 flex flex-col items-center">
+      <div className="mx-auto px-4">
+        <div className="max-w-7xl mx-auto text-center mb-12 flex flex-col items-center px-4">
           <img className="w-16" src="/assets/logo/logo-main.png" alt="Logo" />
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Quienes somos</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -41,7 +41,7 @@ const Services = () => {
          
          <div className="flex flex-col sm:flex-row gap-4 max-w-md pt-4 items-center">
         {/* Conoce DBT México Button */}
-        <a href="https://dbt-mexico.com/" target='_blank' className="group w-[50%] relative bg-slate-700 hover:bg-slate-800 text-white font-medium h-12 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out">
+        <a href="https://dbt-mexico.com/" target='_blank' className="group  flex items-center relative bg-slate-700 hover:bg-slate-800 text-white font-medium h-12 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out">
             <span className="relative z-10">Conoce DBT México</span>
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-slate-600 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
         </a>
@@ -64,7 +64,7 @@ const Services = () => {
             </h3>
           </div>
 
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}

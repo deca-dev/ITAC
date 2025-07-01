@@ -46,8 +46,9 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 bg-[#A2C6D2]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 bg-[#A2C6D2]">
+      <img src="/assets/bg/vector-faq.png" className='absolute top-0 left-[-76px] z-[1]' alt="" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-4xl text-gray-900 mb-6 font-serif">Preguntas frecuentes</h2>
         <div className="bg-white rounded-xl shadow-lg divide-y divide-gray-300 overflow-hidden px-4">
           {faqs.map((faq, index) => {
