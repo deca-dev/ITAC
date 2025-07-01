@@ -1,7 +1,4 @@
-// src/pages/TeamGeneral.tsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { User } from "lucide-react";
 import { teamMembers, type TeamMember } from "../assets/team";
 
 export default function TeamGeneral() {
