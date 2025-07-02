@@ -41,22 +41,6 @@ export default function TeamGeneral() {
     <section className="pb-16 bg-gray-50 bg-pattern">
       <div>
         <div className="bg-[url('/assets/bg/bg-team-banner-green-texture.jpg')] bg-cover bg-center text-white h-[400px] px-8 mb-12 relative overflow-hidden">
-          {/* <div className="flex items-center h-full relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="w-80 overflow-hidden absolute right-0 top-1/2 transform -translate-y-1/2">
-              <img
-                src="/assets/photos/img-all-team-round.png"
-                alt="Academic lecture"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-            <h2 className="mt-8 text-3xl font-bold mb-2">Nuestro equipo</h2>
-            <p className="text-lg">
-              Contamos con un equipo de profesionales altamente capacitados{" "}
-              <br /> y apasionados por el bienestar psicológico y emocional.
-            </p>
-            </div>
-          </div> */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-3 lg:h-full flex-col-reverse lg:flex-row lg:flex-nowrap flex-wrap items-center …">
             {/* on small: stays in flow; on lg: absolute */}
             <div className="w-80 overflow-hidden relative lg:absolute right-0 lg:right-[100px] ">

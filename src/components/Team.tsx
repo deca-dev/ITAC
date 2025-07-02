@@ -26,140 +26,6 @@ const Team = () => {
     },
   });
 
-
-  // const teamMembers = [
-  //   {
-  //     name: "Aldo Rico",
-  //     title: "Psicólogo",
-  //     specialty: "Terapia Racional Emotiva Conductual",
-  //     description:
-  //       "Psicólogo Clínico licenciado, especializado en TREC y co-entrenador de grupos DBT para adultos y familias.",
-  //     years: "5+ años de experiencia",
-  //     certification: "Licenciado",
-  //     photo: "aldo-rico",
-  //   },
-  //   {
-  //     name: "Alejandra Castellanos",
-  //     title: "Mtra.",
-  //     specialty: "Terapia Cognitivo Conductual",
-  //     description:
-  //       "Psicóloga Clínica especializada en Terapias Contextuales, con estudios de maestría en Terapia Cognitivo Conductual y terapeuta DBT certificada.",
-  //     years: "15+ años de experiencia",
-  //     certification: "Maestra",
-  //     photo: "alejandra-castellanos",
-  //   },
-  //   {
-  //     name: "Amalia Castillo",
-  //     title: "Mtra.",
-  //     specialty: "Terapia de Aceptación y Compromiso",
-  //     description:
-  //       "Psicoterapeuta Conductual Contextual, máster en Terapia de Aceptación y Compromiso y experta en Psicoterapia Analítica Funcional y Mindfulness.",
-  //     years: "8+ años de experiencia",
-  //     certification: "Maestra",
-  //     photo: "amalia-castillo",
-  //   },
-  //   {
-  //     name: "Claudia Ramírez",
-  //     title: "Mtra.",
-  //     specialty: "Terapia Cognitivo Conductual",
-  //     description:
-  //       "Psicóloga Clínica Institucional, maestra en Psicoterapia Cognitivo Conductual, coordinadora académica y supervisora clínica con formación en DBT, ACT y BA.",
-  //     years: "25+ años de experiencia",
-  //     certification: "Maestra",
-  //     photo: "claudia-ramirez",
-  //   },
-  //   {
-  //     name: "Fabiola Mora",
-  //     title: "Psicóloga",
-  //     specialty: "Psicología Clínica",
-  //     description:
-  //       "Psicóloga Clínica, licenciada en Psicología y especialista en Psicooncología, con formación en ACT, DBT, BA y Mindfulness aplicado.",
-  //     years: "5+ años de experiencia",
-  //     certification: "Licenciada",
-  //     photo: "fabiola-mora",
-  //   },
-  //   {
-  //     name: "Karla Garza",
-  //     title: "Psicóloga",
-  //     specialty: "Terapia Dialéctica Conductual",
-  //     description:
-  //       "Psicóloga Clínica, licenciada en Psicología con diplomado en intervenciones psicoterapéuticas, especializada en DBT grupal.",
-  //     years: "7+ años de experiencia",
-  //     certification: "Licenciada",
-  //     photo: "karla-garza",
-  //   },
-  //   {
-  //     name: "Karla López",
-  //     title: "Psicóloga",
-  //     specialty: "Psicología Clínica",
-  //     description:
-  //       "Psicóloga Clínica licenciada, maestra en Psicología Clínica, entrenadora líder en habilidades multifamiliares DBT.",
-  //     years: "10+ años de experiencia",
-  //     certification: "Maestra",
-  //     photo: "karla-lopez",
-  //   },
-  //   {
-  //     name: "Liliana Fernández",
-  //     title: "Psicóloga",
-  //     specialty: "Neuropsicología Clínica",
-  //     description:
-  //       "Psicóloga Clínica licenciada, con formación en evaluación neuropsicológica y supervisora de programas DBT-A y FAP.",
-  //     years: "6+ años de experiencia",
-  //     certification: "Licenciada",
-  //     photo: "liliana-fernandez",
-  //   },
-  //   {
-  //     name: "Michel Reyes",
-  //     title: "Dr.",
-  //     specialty: "Investigación Psicológica",
-  //     description:
-  //       "Doctor en Investigación Psicológica, experto en DBT y ACT, autor de libros científicos y docente en programas de posgrado internacionales.",
-  //     years: "20+ años de experiencia",
-  //     certification: "Doctor",
-  //     photo: "michel-reyes",
-  //   },
-  //   {
-  //     name: "Nancy Leal",
-  //     title: "Mtra.",
-  //     specialty: "Psicología Clínica",
-  //     description:
-  //       "Psicóloga Clínica, maestra en Psicología Clínica, terapeuta de adolescentes y entrenadora en habilidades DBT.",
-  //     years: "7+ años de experiencia",
-  //     certification: "Maestra",
-  //     photo: "nancy-leal",
-  //   },
-  //   {
-  //     name: "Patricia Mendoza",
-  //     title: "Mtra.",
-  //     specialty: "Psicología Clínica",
-  //     description:
-  //       "Psicóloga Clínica maestra, especializada en DBT y ACT, docente y supervisora en entornos hospitalarios.",
-  //     years: "6+ años de experiencia",
-  //     certification: "Maestra",
-  //     photo: "patricia-mendoza",
-  //   },
-  //   {
-  //     name: "Sarai Sánchez",
-  //     title: "Mtra.",
-  //     specialty: "Terapia Cognitivo Conductual",
-  //     description:
-  //       "Maestra en Terapia Cognitivo Conductual, especializada en Terapias Contextuales para población infantil y adolescente, con amplia experiencia en Mindfulness e instructora escolar.",
-  //     years: "5+ años de experiencia",
-  //     certification: "Maestra",
-  //     photo: "sarai-sanchez",
-  //   },
-  //   {
-  //     name: "Uriel Xchel",
-  //     title: "Psicólogo",
-  //     specialty: "Terapia de Aceptación y Compromiso",
-  //     description:
-  //       "Psicólogo Clínico licenciado con formación en ACT, DBT, BA y FAP, y facilitador de talleres socioemocionales.",
-  //     years: "5+ años de experiencia",
-  //     certification: "Licenciado",
-  //     photo: "uriel-xchel",
-  //   },
-  // ];
-
   return (
     <section className="pt-16 bg-[#1A3459] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -190,24 +56,18 @@ const Team = () => {
                 className="flex flex-col keen-slider__slide bg-white text-gray-900 rounded-lg p-6 px-4 shadow-lg"
               >
                 <div className="flex justify-center gap-2 items-center">
-                  {/* Avatar */}
                   <div className="w-[80px] h-[80px] rounded-full mb-4 flex items-center justify-center">
                     <img
-                       src={`/assets/photos/headshots/${member.photo}.png`}
+                      src={`/assets/photos/headshots/${member.photo}.png`}
                       alt={member.name}
                     />
                   </div>
-                  <div className="flex flex-col items-start ">
-                    {/* Name & Title */}
-                    <p className="text-sm text-gray-600 text-start ">
-                      {member.title}
-                    </p>
-                    <h3 className="font-bold text-sm text-start mb-1">
-                      {member.name}
-                    </h3>
+                  <div className="flex flex-col items-start">
+                    <p className="text-sm text-gray-600">{member.title}</p>
+                    <h3 className="font-bold text-sm mb-1">{member.name}</h3>
                   </div>
                 </div>
-                {/* Specialty */}
+
                 <div className="space-y-2 text-xs pt-4 border-t border-gray-200">
                   <div className="flex items-center gap-2">
                     <img
@@ -225,6 +85,22 @@ const Team = () => {
                     />
                     <p>{member.years}</p>
                   </div>
+                  <div className="flex items-start gap-2">
+                    <img
+                      src="/assets/icons/checklist.png"
+                      alt=""
+                      className="w-4 h-4"
+                    />
+                    <p>{member.description}</p>
+                  </div>
+                  {/* <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold">Modalidad:</span>
+                    <p>{member.mode}</p>
+                  </div> */}
+                  {/* <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold">Población:</span>
+                    <p>{member.population}</p>
+                  </div> */}
                 </div>
 
                 {/* Buttons */}
