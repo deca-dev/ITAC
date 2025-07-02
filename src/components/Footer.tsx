@@ -30,8 +30,8 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Acerca de</h4>
             <ul className="space-y-3 text-gray-400">
               <li><a href="#" className="hover:text-white transition-colors">Quiénes somos</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Oferta académica</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Nuestro equipo</a></li>
+              <li><a href="/oferta-academica" className="hover:text-white transition-colors">Formación académica</a></li>
+              <li><a href="/equipo" className="hover:text-white transition-colors">Nuestro equipo</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Aviso de privacidad</a></li>
             </ul>
           </div>
