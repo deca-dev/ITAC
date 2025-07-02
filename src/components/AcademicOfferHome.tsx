@@ -15,7 +15,7 @@ export default function AcademicFormation() {
           {courses.map((course: Course) => (
             <div
               key={course.id}
-              className="bg-white border border-teal-300 rounded-xl overflow-hidden shadow-sm flex flex-col h-full"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col"
             >
               {/* Image */}
               <div className="h-48 overflow-hidden">

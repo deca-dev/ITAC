@@ -1,5 +1,5 @@
 import React from 'react';
-import {Twitter, Facebook, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import {Facebook, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -20,7 +20,6 @@ const Footer = () => {
               Desde 2016. Somos una institución especializada en Terapia Conductual que brinda servicios y cursos de formación.
             </p>
             <div className="flex space-x-4">
-              <Twitter className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
               <Facebook className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
               <Linkedin className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
               <Instagram className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
