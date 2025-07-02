@@ -17,8 +17,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/oferta-academica" element={<AcademicOffer />} />
-           <Route path="/oferta-academica/:slug" element={<AcademicOfferDetail />} />
+          <Route path="/formacion-academica" element={<AcademicOffer />} />
+           <Route path="/formacion-academica/:slug" element={<AcademicOfferDetail />} />
           <Route path="/equipo" element={<Team />} />
           <Route path="/equipo/:memberId" element={<WorkInProgress />} />
         </Routes>

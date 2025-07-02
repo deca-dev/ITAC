@@ -6,7 +6,7 @@ export default function AcademicOfferDetail() {
   const { slug } = useParams<{ slug: string }>();
   const course = courses.find((c) => c.slug === slug);
 
-  if (!course) return <Navigate to="/oferta-academica" replace />;
+  if (!course) return <Navigate to="/formacion-academica" replace />;
 
   return (
     <section className="py-16 bg-gray-50 bg-pattern">

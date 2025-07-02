@@ -45,7 +45,7 @@ const Services = () => {
           </p>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
             Conoce más sobre terapias contextuales{" "}
-            <a href="https://dbt-mexico.com/" className="services__header__anchor">
+            <a href="#" className="services__header__anchor">
               aquí
             </a>.
           </p>

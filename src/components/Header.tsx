@@ -32,8 +32,8 @@ const Header = () => {
               Inicio
             </Link>
             <Link 
-              to="/oferta-academica" 
-              className={`transition-colors ${isActive('/oferta-academica') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'}`}
+              to="/formacion-academica" 
+              className={`transition-colors ${isActive('/formacion-academica') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'}`}
             >
               Formación Académica
             </Link>
@@ -67,8 +67,8 @@ const Header = () => {
                 Inicio
               </Link>
               <Link 
-                to="/oferta-academica" 
-                className={`transition-colors ${isActive('/oferta-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+                to="/formacion-academica" 
+                className={`transition-colors ${isActive('/formacion-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Formación Académica

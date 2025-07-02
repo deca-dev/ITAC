@@ -62,7 +62,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/oferta-academica"
+                  href="/formacion-academica"
                   className="hover:text-white transition-colors"
                 >
                   Formación académica
@@ -87,30 +87,30 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Contáctanos</h4>
             <div className="space-y-4 text-gray-400">
-              <div className="flex items-start space-x-3 min-w-0">
+              <div className="flex items-start space-x-3 min-w-0 hover:text-white">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Calzada+Belisario+Dom%C3%ADnguez+%23161+Col.+del+Carmen,+Coyoac%C3%A1n,+CDMX"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm break-words hover:underline"
+                  className="text-sm break-words hover:underline hover:text-white"
                 >
                   Calzada Belisario Domínguez #161 Col. del Carmen, Coyoacán,
                   CDMX
                 </a>
               </div>
-              <div className="flex items-center space-x-3 min-w-0">
+              <div className="flex items-center space-x-3 min-w-0 hover:text-white">
                 <Mail className="w-5 h-5 flex-shrink-0" />
                 <a
                   href="mailto:informes@institutoterapiaconductual.com"
-                  className="text-sm break-all hover:underline"
+                  className="text-sm break-all hover:underline hover:text-white"
                 >
                   informes@institutoterapiaconductual.com
                 </a>
               </div>
-              <div className="flex items-center space-x-3 min-w-0">
-                <Phone className="w-5 h-5 flex-shrink-0" />
-                <a href="tel:+5255554220" className="text-sm hover:underline">
+              <div className="flex items-center space-x-3 min-w-0 hover:text-white">
+                <Phone className="w-5 h-5 flex-shrink-0 " />
+                <a href="tel:+5255554220" className="text-sm hover:underline ">
                   55 5554 220
                 </a>
               </div>

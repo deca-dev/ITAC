@@ -39,7 +39,7 @@ export default function AcademicFormation() {
                   {course.dates}
                 </p>
                 <Link
-                  to={`/oferta-academica/${course.slug}`}
+                  to={`/formacion-academica/${course.slug}`}
                   className="mt-6 inline-flex items-center font-medium text-sm onhover:underline"
                 >
                   Ver más{" "}
