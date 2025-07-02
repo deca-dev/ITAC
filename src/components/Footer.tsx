@@ -17,7 +17,7 @@ const Footer = () => {
               </div> */}
             </div>
             <p className="text-gray-400 text-sm mb-6">
-              Desde 2016. Somos una institución especializada en Terapia Conductual que brinda servicios y cursos de formación.
+              Desde 2010, formamos profesionales con ciencia, ética y pasión por la Terapia Contextual.
             </p>
             <div className="flex space-x-4">
               <Facebook className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />

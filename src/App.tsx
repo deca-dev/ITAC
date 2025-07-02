@@ -18,10 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/oferta-academica" element={<AcademicOffer />} />
-          <Route
-            path="/oferta-academica/:courseId"
-            element={<WorkInProgress />}
-          />
+           <Route path="/oferta-academica/:slug" element={<AcademicOfferDetail />} />
           <Route path="/equipo" element={<Team />} />
           <Route path="/equipo/:memberId" element={<WorkInProgress />} />
         </Routes>

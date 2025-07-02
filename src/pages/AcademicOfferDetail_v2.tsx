@@ -21,7 +21,6 @@ export default function AcademicOfferDetail() {
           <div
             className={`
               min-w-0
-              w-full break-words
               flex-1 text-[#4F4C4C]
               [&_p]:mb-4
               [&_p:has(+ul)]:mb-0
@@ -46,7 +45,7 @@ export default function AcademicOfferDetail() {
           </div>
 
           {/* image */}
-          <div className="flex-shrink-0  sm:w-60 h-60 w-60 lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden mx-auto lg:mx-0 lg:absolute lg:right-[-10%] lg:top-[9%]">
+          <div className="flex-shrink-0  sm:w-60 h-60 w-60 lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden mx-auto lg:mx-0 lg:absolute lg:right-[-10%] lg:top-[20%]">
             <img
               src={course.image}
               alt={course.title}

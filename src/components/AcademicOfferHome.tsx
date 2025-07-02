@@ -1,5 +1,6 @@
 // src/components/AcademicFormation.tsx
-import { courses, type Course } from '../assets/courses';
+import { courses, type Course } from "../assets/courses";
+import { Link } from "react-router-dom";
 
 export default function AcademicFormation() {
   return (
@@ -37,12 +38,19 @@ export default function AcademicFormation() {
                 <p className="mt-4 text-sm text-[#719A9E] font-bold whitespace-pre-wrap">
                   {course.dates}
                 </p>
-                <a
-                  href={`/cursos/${course.slug}`}
-                  className="mt-6 inline-flex items-center font-medium text-sm hover:scale-105"
+                <Link
+                  to={`/oferta-academica/${course.slug}`}
+                  className="mt-6 inline-flex items-center font-medium text-sm onhover:underline"
                 >
-                  Ver más <span className="relative ml-1 border-solid px-4 py-2 transition-colors hover:text-white"><img className="w-3 absolute top-1/2 left-0 transform -translate-y-1/2" src="/assets/icons/right-chevron.png" alt="" /></span>
-                </a>
+                  Ver más{" "}
+                  <span className="relative ml-1 border-solid px-4 py-2 transition-colors hover:text-white">
+                    <img
+                      className="w-3 absolute top-1/2 left-0 transform -translate-y-1/2"
+                      src="/assets/icons/right-chevron.png"
+                      alt=""
+                    />
+                  </span>
+                </Link>
               </div>
             </div>
           ))}
