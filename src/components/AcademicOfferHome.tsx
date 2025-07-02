@@ -39,9 +39,9 @@ export default function AcademicFormation() {
                 </p>
                 <a
                   href={`/cursos/${course.slug}`}
-                  className="mt-6 inline-flex items-center font-medium text-sm "
+                  className="mt-6 inline-flex items-center font-medium text-sm hover:scale-105"
                 >
-                  Ver más <span className="relative ml-1 border-solid px-4 py-2 transition-colors hover:bg-teal-600 hover:text-white"><img className="w-3 absolute top-1/2 left-0 transform -translate-y-1/2" src="/assets/icons/right-chevron.png" alt="" /></span>
+                  Ver más <span className="relative ml-1 border-solid px-4 py-2 transition-colors hover:text-white"><img className="w-3 absolute top-1/2 left-0 transform -translate-y-1/2" src="/assets/icons/right-chevron.png" alt="" /></span>
                 </a>
               </div>
             </div>
