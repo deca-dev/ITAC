@@ -262,7 +262,7 @@ export default function TeamGeneral() {
                 </div>
 
                 <div className="flex gap-2 justify-center pt-8 mt-auto">
-                  <button className="bg-white text-[#5a7e7b] border border-transparent border-[#5a7e7b] hover:bg-[#5a7e7b] hover:color-[#fff] px-4 py-2 rounded text-sm font-medium transition-colors">
+                  <button className="bg-white text-[#5a7e7b] border border-transparent  hover:border-[#5a7e7b]  px-4 py-2 rounded text-sm font-medium transition-colors">
                     Ver Perfil
                   </button>
                   <button className="bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-2 rounded text-sm font-medium transition-colors">
