@@ -11,8 +11,9 @@ export interface TeamMember {
   years: string;
   certification: string;
   photo: string;
-  mode: string;
-  population: string;
+  mode: Array<string> | string; // Can be a single mode or an array of modes
+  idiom: Array<string> | string; // Can be a single mode or an array of modes
+  population: Array<string> | string; // Can be a single population or an array of populations
 }
 
 /**
@@ -29,8 +30,9 @@ export const teamMembers: TeamMember[] = [
     years: '5+ años de experiencia',
     certification: 'Licenciado',
     photo: 'aldo-rico',
-    mode: 'Presencial',
-    population: 'Adultos',
+    mode: ['En línea'],
+    idiom: ['Español'],
+    population: ['Adultos'],
   },
   {
     id: 'alejandra-castellanos',
@@ -42,8 +44,9 @@ export const teamMembers: TeamMember[] = [
     years: '15+ años de experiencia',
     certification: 'Maestra',
     photo: 'alejandra-castellanos',
-    mode: 'En línea',
-    population: 'Adultos',
+    mode: ['En línea', 'Presencial'],
+    idiom: ['Español', 'Inglés'],
+    population: ['Adultos'],
   },
   {
     id: 'amalia-castillo',
@@ -55,8 +58,9 @@ export const teamMembers: TeamMember[] = [
     years: '8+ años de experiencia',
     certification: 'Maestra',
     photo: 'amalia-castillo',
-    mode: 'Presencial',
-    population: 'Adultos',
+    mode: ['En línea', 'Presencial'],
+    idiom: ['Español'],
+    population: ['Adultos'],
   },
   {
     id: 'claudia-ramirez',
@@ -68,8 +72,9 @@ export const teamMembers: TeamMember[] = [
     years: '25+ años de experiencia',
     certification: 'Maestra',
     photo: 'claudia-ramirez',
-    mode: 'En línea',
-    population: 'Adultos',
+    mode: ['En línea', 'Presencial'],
+    idiom: ['Español'],
+    population: ['Adultos'],
   },
   {
     id: 'fabiola-mora',
@@ -81,8 +86,9 @@ export const teamMembers: TeamMember[] = [
     years: '5+ años de experiencia',
     certification: 'Licenciada',
     photo: 'fabiola-mora',
-    mode: 'En línea',
-    population: 'Adultos',
+    mode: ['En línea', 'Presencial'],
+    idiom: ['Español'],
+    population: ['Infancia', 'Adolescencia', 'Adultos'],
   },
   {
     id: 'karla-garza',
@@ -94,8 +100,9 @@ export const teamMembers: TeamMember[] = [
     years: '7+ años de experiencia',
     certification: 'Licenciada',
     photo: 'karla-garza',
-    mode: 'Presencial',
-    population: 'Adultos',
+    mode: ['En línea', 'Presencial'],
+    idiom: ['Español'],
+    population: ['Adultos'],
   },
   {
     id: 'karla-lopez',
@@ -107,8 +114,9 @@ export const teamMembers: TeamMember[] = [
     years: '10+ años de experiencia',
     certification: 'Maestra',
     photo: 'karla-lopez',
-    mode: 'En línea',
-    population: 'Adultos',
+    mode: ['En línea', 'Presencial'],
+    idiom: ['Español', 'Inglés'],
+    population: ['Infancia', 'Adolescencia', 'Adultos'],
   },
   {
     id: 'liliana-fernandez',
@@ -120,8 +128,9 @@ export const teamMembers: TeamMember[] = [
     years: '6+ años de experiencia',
     certification: 'Licenciada',
     photo: 'liliana-fernandez',
-    mode: 'Presencial',
-    population: 'Adultos',
+    mode: ['Presencial', 'En línea'],
+    idiom: ['Español'],
+    population: ['Adolescencia','Adultos'],
   },
   {
     id: 'michel-reyes',
@@ -133,8 +142,9 @@ export const teamMembers: TeamMember[] = [
     years: '20+ años de experiencia',
     certification: 'Doctor',
     photo: 'michel-reyes',
-    mode: 'En línea',
-    population: 'Adultos',
+    idiom: ['Español', 'Inglés'],
+    mode: ['En línea'],
+    population: ['Adultos'],
   },
   {
     id: 'nancy-leal',
@@ -146,8 +156,9 @@ export const teamMembers: TeamMember[] = [
     years: '7+ años de experiencia',
     certification: 'Maestra',
     photo: 'nancy-leal',
-    mode: 'Presencial',
-    population: 'Adultos',
+    mode: ['En línea', 'Presencial'],
+    idiom: ['Español', 'Inglés'],
+    population: ['Adolescencia','Adultos'],
   },
   {
     id: 'patricia-mendoza',
@@ -160,7 +171,8 @@ export const teamMembers: TeamMember[] = [
     certification: 'Maestra',
     photo: 'patricia-mendoza',
     mode: 'En línea',
-    population: 'Adultos',
+    idiom: ['Español', 'Inglés'],
+    population: ['Infancia', 'Adolescencia'],
   },
   {
     id: 'sarai-sanchez',
@@ -172,8 +184,9 @@ export const teamMembers: TeamMember[] = [
     years: '5+ años de experiencia',
     certification: 'Maestra',
     photo: 'sarai-sanchez',
-    mode: 'Presencial',
-    population: 'Niños',
+    mode: ['Presencial', 'En línea'],
+    idiom: ['Español', 'Inglés'],
+    population: ['Infancia', 'Adolescencia', 'Adultos'],
   },
   {
     id: 'uriel-xchel',
@@ -185,7 +198,8 @@ export const teamMembers: TeamMember[] = [
     years: '5+ años de experiencia',
     certification: 'Licenciado',
     photo: 'uriel-xchel',
-    mode: 'En línea',
-    population: 'Adultos',
+    mode: ['En línea', 'Presencial'],
+    idiom: ['Español', 'Inglés'],
+    population: ['Adolescencia','Adultos'],
   },
 ];

@@ -27,7 +27,7 @@ export default function Hero() {
     if (intervalRef.current != null) clearInterval(intervalRef.current);
     if (!isPaused) intervalRef.current = window.setInterval(next, 6000);
     return () => { if (intervalRef.current != null) clearInterval(intervalRef.current); };
-  }, [isPaused]);
+  }, [isPaused, current]);
 
   const togglePause = () => setIsPaused((p) => !p);
 
