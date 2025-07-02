@@ -27,25 +27,25 @@ const Header = () => {
           <nav className="hidden lg:flex space-x-8">
             <Link 
               to="/" 
-              className={`transition-colors ${isActive('/') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+              className={`transition-colors ${isActive('/') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'}`}
             >
               Inicio
             </Link>
             <Link 
               to="/oferta-academica" 
-              className={`transition-colors ${isActive('/oferta-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+              className={`transition-colors ${isActive('/oferta-academica') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'}`}
             >
               Formación Académica
             </Link>
             <Link 
                to="/equipo" 
-              className={`transition-colors ${isActive('/equipo') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
+              className={`transition-colors ${isActive('/equipo') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'}`}
             >
               Equipo
             </Link>
-            <a href="#servicios" className="text-gray-700 hover:text-teal-600 transition-colors">Servicios</a>
-            <a href="#blog" className="text-gray-700 hover:text-teal-600 transition-colors">Blog</a>
-            <a href="#contacto" className="text-gray-700 hover:text-teal-600 transition-colors">Contacto</a>
+            <a href="#servicios" className="text-gray-700 hover:text-[#5fbcc2] transition-colors">Servicios</a>
+            <a href="#blog" className="text-gray-700 hover:text-[#5fbcc2] transition-colors">Blog</a>
+            <a href="#contacto" className="text-gray-700 hover:text-[#5fbcc2] transition-colors">Contacto</a>
           </nav>
 
           <button 

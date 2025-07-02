@@ -50,7 +50,7 @@ export default function AcademicOfferDetail() {
             <img
               src={course.image}
               alt={course.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover shadow-lg"
             />
           </div>
         </div>
