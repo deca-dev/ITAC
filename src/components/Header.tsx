@@ -14,9 +14,9 @@ const Header = () => {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3 z-20">
             <div className="w-48 rounded-full flex items-center justify-center">
-              <img src="/assets/logo/logo-horizontal-black.png" alt="" />
+              <img src="/assets/logo/logo-horizontal-black.png" alt="ITAC Logo" />
             </div>
             {/* <div>
               <h1 className="text-lg font-semibold text-gray-900">INSTITUTO DE TERAPIA Y</h1>
@@ -35,7 +35,7 @@ const Header = () => {
               to="/oferta-academica" 
               className={`transition-colors ${isActive('/oferta-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
             >
-              Oferta Académica
+              Formación Académica
             </Link>
             <Link 
                to="/equipo" 
@@ -71,7 +71,7 @@ const Header = () => {
                 className={`transition-colors ${isActive('/oferta-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Oferta Académica
+                Formación Académica
               </Link>
               <Link 
                 to="/equipo" 

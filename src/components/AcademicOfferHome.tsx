@@ -28,20 +28,20 @@ export default function AcademicFormation() {
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-lg font-medium text-gray-800 mb-3">
+                <h3 className="text-lg text-[#6C6767] font-bold mb-3">
                   {course.title}
                 </h3>
-                <p className="text-sm text-gray-600 flex-grow whitespace-pre-wrap">
+                <p className="text-sm  flex-grow whitespace-pre-wrap">
                   {course.subtitle}
                 </p>
-                <p className="mt-4 text-sm text-teal-600 whitespace-pre-wrap">
+                <p className="mt-4 text-sm text-[#719A9E] font-bold whitespace-pre-wrap">
                   {course.dates}
                 </p>
                 <a
                   href={`/cursos/${course.slug}`}
-                  className="mt-6 inline-flex items-center text-teal-600 hover:text-teal-800 font-medium text-sm"
+                  className="mt-6 inline-flex items-center font-medium text-sm "
                 >
-                  Ver más <span className="ml-1">➤</span>
+                  Ver más <span className="relative ml-1 border-solid px-4 py-2 transition-colors hover:bg-teal-600 hover:text-white"><img className="w-3 absolute top-1/2 left-0 transform -translate-y-1/2" src="/assets/icons/right-chevron.png" alt="" /></span>
                 </a>
               </div>
             </div>
