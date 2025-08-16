@@ -56,7 +56,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Acerca de</h4>
             <ul className="space-y-3 text-gray-400">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/nosotros" className="hover:text-white transition-colors">
                   Quiénes somos
                 </a>
               </li>
