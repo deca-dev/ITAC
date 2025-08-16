@@ -47,7 +47,7 @@ const Header = () => {
             <Link
               to="/"
               className={`transition-colors ${
-                isActive('/') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'
+                isActive('/') ? 'text-[#1E5864] font-semibold' : 'text-gray-700 hover:text-[#1E5864]'
               }`}
             >
               Inicio
@@ -57,7 +57,7 @@ const Header = () => {
             <Link
               to="/nosotros"
               className={`transition-colors ${
-                isActive('/nosotros') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'
+                isActive('/nosotros') ? 'text-[#1E5864] font-semibold' : 'text-gray-700 hover:text-[#1E5864]'
               }`}
             >
               Nosotros
@@ -74,7 +74,7 @@ const Header = () => {
               <button
                 type="button"
                 className={`flex items-center gap-1 transition-colors ${
-                  isAboutActive ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'
+                  isAboutActive ? 'text-[#1E5864] font-semibold' : 'text-gray-700 hover:text-[#1E5864]'
                 }`}
                 aria-haspopup="true"
                 aria-expanded={aboutDesktopOpen}
@@ -99,8 +99,8 @@ const Header = () => {
                       to="/nosotros"
                       className={`block px-3 py-2 transition-colors ${
                         isActive('/nosotros')
-                          ? 'text-[#5fbcc2] font-semibold'
-                          : 'text-gray-700 hover:text-[#5fbcc2] hover:bg-slate-50'
+                          ? 'text-[#1E5864] font-semibold'
+                          : 'text-gray-700 hover:text-[#1E5864] hover:bg-slate-50'
                       }`}
                     >
                       Nosotros
@@ -111,8 +111,8 @@ const Header = () => {
                       to="/publicaciones"
                       className={`block px-3 py-2 transition-colors ${
                         isActive('/publicaciones')
-                          ? 'text-[#5fbcc2] font-semibold'
-                          : 'text-gray-700 hover:text-[#5fbcc2] hover:bg-slate-50'
+                          ? 'text-[#1E5864] font-semibold'
+                          : 'text-gray-700 hover:text-[#1E5864] hover:bg-slate-50'
                       }`}
                     >
                       Publicaciones
@@ -123,8 +123,8 @@ const Header = () => {
                       to="/libros-terapias-contextuales"
                       className={`block px-3 py-2 transition-colors ${
                         isActive('/libros-terapias-contextuales')
-                          ? 'text-[#5fbcc2] font-semibold'
-                          : 'text-gray-700 hover:text-[#5fbcc2] hover:bg-slate-50'
+                          ? 'text-[#1E5864] font-semibold'
+                          : 'text-gray-700 hover:text-[#1E5864] hover:bg-slate-50'
                       }`}
                     >
                       Libros Terapias Contextuales
@@ -138,7 +138,7 @@ const Header = () => {
             <Link
               to="/formacion-academica"
               className={`transition-colors ${
-                isActive('/formacion-academica') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'
+                isActive('/formacion-academica') ? 'text-[#1E5864] font-semibold' : 'text-gray-700 hover:text-[#1E5864]'
               }`}
             >
               Formación Académica
@@ -146,15 +146,15 @@ const Header = () => {
             <Link
               to="/equipo"
               className={`transition-colors ${
-                isActive('/equipo') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'
+                isActive('/equipo') ? 'text-[#1E5864] font-semibold' : 'text-gray-700 hover:text-[#1E5864]'
               }`}
             >
               Equipo
             </Link>
-            <a href="#blog" className="text-gray-700 hover:text-[#5fbcc2] transition-colors">
+            <a href="#blog" className="text-gray-700 hover:text-[#1E5864] transition-colors">
               Blog
             </a>
-            <a href="#contacto" className="text-gray-700 hover:text-[#5fbcc2] transition-colors">
+            <a href="#contacto" className="text-gray-700 hover:text-[#1E5864] transition-colors">
               Contacto
             </a>
           </nav>
