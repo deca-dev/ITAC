@@ -1,21 +1,21 @@
 import React, { useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, ChevronLeft } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [aboutDesktopOpen, setAboutDesktopOpen] = useState(false); // desktop hover/focus
-  const [mobilePanel, setMobilePanel] = useState<'root' | 'about'>('root'); // mobile column panel
+  const [mobilePanel, setMobilePanel] = useState<'root' | 'about'>('root'); // mobile slide panel
   const aboutTimer = useRef<number | null>(null);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
 
-  // highlight any Acerca de sub-route
+  // resaltar sección "Acerca de" si estás en cualquiera de sus subrutas
   const aboutPaths = ['/nosotros', '/publicaciones', '/libros-terapias-contextuales'];
   const isAboutActive = aboutPaths.includes(location.pathname);
 
-  // Desktop hover intent (prevents flicker)
+  // Desktop hover intent (reduce flicker)
   const openAbout = () => {
     if (aboutTimer.current) window.clearTimeout(aboutTimer.current);
     setAboutDesktopOpen(true);
@@ -25,7 +25,7 @@ const Header = () => {
     aboutTimer.current = window.setTimeout(() => setAboutDesktopOpen(false), 140);
   };
 
-  // Close mobile menu after navigation
+  // Cerrar menú móvil tras navegar
   const closeAllMobile = () => {
     setIsMenuOpen(false);
     setMobilePanel('root');
@@ -53,8 +53,8 @@ const Header = () => {
               Inicio
             </Link>
 
-            {/* New top-level page: Nosotros */}
-            {/* <Link
+            {/* (Si quieres volver a mostrar “Nosotros” como top-level, descomenta)
+            <Link
               to="/nosotros"
               className={`transition-colors ${
                 isActive('/nosotros') ? 'text-[#5fbcc2] font-semibold' : 'text-gray-700 hover:text-[#5fbcc2]'
@@ -63,7 +63,7 @@ const Header = () => {
               Nosotros
             </Link> */}
 
-            {/* Acerca de (NOT clickable): acts as a menu button with dropdown */}
+            {/* Acerca de (no clickeable; abre dropdown) */}
             <div
               className="relative"
               onMouseEnter={openAbout}
@@ -86,10 +86,10 @@ const Header = () => {
                 />
               </button>
 
-              {/* Dropdown: use top-full + pt-2 (buffer) to avoid hover gaps */}
+              {/* Dropdown con pequeño buffer para evitar perder hover */}
               <div
                 id="about-menu-desktop"
-                className={`absolute left-0 top-full pt-2 transition opacity-100 ${
+                className={`absolute left-0 top-full pt-2 transition ${
                   aboutDesktopOpen ? 'visible opacity-100' : 'invisible opacity-0'
                 }`}
               >
@@ -134,7 +134,7 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Other links */}
+            {/* Resto de links */}
             <Link
               to="/formacion-academica"
               className={`transition-colors ${
@@ -143,7 +143,6 @@ const Header = () => {
             >
               Formación Académica
             </Link>
-
             <Link
               to="/equipo"
               className={`transition-colors ${
@@ -152,7 +151,6 @@ const Header = () => {
             >
               Equipo
             </Link>
-
             <a href="#blog" className="text-gray-700 hover:text-[#5fbcc2] transition-colors">
               Blog
             </a>
@@ -177,118 +175,113 @@ const Header = () => {
 
         {/* ======================== Mobile Nav ======================== */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t">
-            {/* Panels: root or about */}
-            {mobilePanel === 'root' ? (
-              <nav className="flex flex-col py-4 space-y-2">
-                <Link
-                  to="/"
-                  className={`transition-colors ${
-                    isActive('/') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
-                  }`}
-                  onClick={closeAllMobile}
-                >
-                  Inicio
-                </Link>
+          <div className="lg:hidden border-t py-4">
+            {/* Contenedor deslizante (2 paneles) */}
+            <div className="overflow-hidden">
+              <div
+                className={`flex w-[200%] transition-transform duration-700 ease-in-out ${
+                  mobilePanel === 'about' ? '-translate-x-1/2' : 'translate-x-0'
+                }`}
+              >
+                {/* === Panel ROOT (col 1) === */}
+                <nav className="w-1/2 pr-4 flex flex-col space-y-2">
+                  <Link
+                    to="/"
+                    className={`transition-colors ${
+                      isActive('/') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
+                    }`}
+                    onClick={closeAllMobile}
+                  >
+                    Inicio
+                  </Link>
 
-                <Link
-                  to="/nosotros"
-                  className={`transition-colors ${
-                    isActive('/nosotros') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
-                  }`}
-                  onClick={closeAllMobile}
-                >
-                  Nosotros
-                </Link>
-
-                {/* Acerca de -> opens second column panel */}
-                <button
-                  className={`w-full flex items-center justify-between px-0 py-2 ${
-                    isAboutActive ? 'text-teal-600 font-semibold' : 'text-gray-700'
-                  }`}
-                  onClick={() => setMobilePanel('about')}
-                  aria-haspopup="true"
-                  aria-controls="about-mobile-panel"
-                  aria-expanded={mobilePanel === 'about'}
-                >
-                  <span>Acerca de</span>
-                  <ChevronDown className="w-5 h-5" />
-                </button>
-
-                <Link
-                  to="/formacion-academica"
-                  className={`transition-colors ${
-                    isActive('/formacion-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
-                  }`}
-                  onClick={closeAllMobile}
-                >
-                  Formación Académica
-                </Link>
-
-                <Link
-                  to="/equipo"
-                  className={`transition-colors ${
-                    isActive('/equipo') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
-                  }`}
-                  onClick={closeAllMobile}
-                >
-                  Equipo
-                </Link>
-
-                <a href="#blog" className="text-gray-700 hover:text-teal-600 transition-colors" onClick={closeAllMobile}>
-                  Blog
-                </a>
-                <a href="#contacto" className="text-gray-700 hover:text-teal-600 transition-colors" onClick={closeAllMobile}>
-                  Contacto
-                </a>
-              </nav>
-            ) : (
-              // ======= ABOUT SUBMENU PANEL (Second column) =======
-              <div id="about-mobile-panel" className="py-4">
-                <div className="flex items-center mb-3">
+                  {/* Botón que abre el submenú (ChevronRight en mobile) */}
                   <button
-                    onClick={() => setMobilePanel('root')}
-                    className="flex items-center gap-2 text-gray-700 hover:text-teal-600"
-                    aria-label="Volver"
+                    className={`w-full flex items-center justify-between py-2 ${
+                      isAboutActive ? 'text-teal-600 font-semibold' : 'text-gray-700'
+                    }`}
+                    onClick={() => setMobilePanel('about')}
+                    aria-haspopup="true"
+                    aria-controls="about-mobile-panel"
+                    aria-expanded={mobilePanel === 'about'}
                   >
-                    <ChevronLeft className="w-5 h-5" />
-                    <span>Menú</span>
+                    <span>Acerca de</span>
+                    <ChevronRight className="w-5 h-5" />
                   </button>
-                </div>
 
-                <div className="grid grid-cols-1 gap-2">
                   <Link
-                    to="/nosotros"
+                    to="/formacion-academica"
                     className={`transition-colors ${
-                      isActive('/nosotros') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
+                      isActive('/formacion-academica') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
                     }`}
                     onClick={closeAllMobile}
                   >
-                    Nosotros
+                    Formación Académica
                   </Link>
 
                   <Link
-                    to="/publicaciones"
+                    to="/equipo"
                     className={`transition-colors ${
-                      isActive('/publicaciones') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
+                      isActive('/equipo') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
                     }`}
                     onClick={closeAllMobile}
                   >
-                    Publicaciones
+                    Equipo
                   </Link>
 
-                  <Link
-                    to="/libros-terapias-contextuales"
-                    className={`transition-colors ${
-                      isActive('/libros-terapias-contextuales') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
-                    }`}
-                    onClick={closeAllMobile}
-                  >
-                    Libros Terapias Contextuales
-                  </Link>
+                  <a href="#blog" className="text-gray-700 hover:text-teal-600 transition-colors" onClick={closeAllMobile}>
+                    Blog
+                  </a>
+                  <a href="#contacto" className="text-gray-700 hover:text-teal-600 transition-colors" onClick={closeAllMobile}>
+                    Contacto
+                  </a>
+                </nav>
+
+                {/* === Panel ABOUT (col 2) === */}
+                <div id="about-mobile-panel" className="w-1/2 pl-4">
+                  <div className="flex items-center mb-3">
+                    <button
+                      onClick={() => setMobilePanel('root')}
+                      className="flex items-center gap-2 text-gray-700 hover:text-teal-600"
+                      aria-label="Volver"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                      <span>Menú</span>
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-2">
+                    <Link
+                      to="/nosotros"
+                      className={`transition-colors ${
+                        isActive('/nosotros') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
+                      }`}
+                      onClick={closeAllMobile}
+                    >
+                      Nosotros
+                    </Link>
+                    <Link
+                      to="/publicaciones"
+                      className={`transition-colors ${
+                        isActive('/publicaciones') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
+                      }`}
+                      onClick={closeAllMobile}
+                    >
+                      Publicaciones
+                    </Link>
+                    <Link
+                      to="/libros-terapias-contextuales"
+                      className={`transition-colors ${
+                        isActive('/libros-terapias-contextuales') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
+                      }`}
+                      onClick={closeAllMobile}
+                    >
+                      Libros Terapias Contextuales
+                    </Link>
+                  </div>
                 </div>
               </div>
-            )}
+            </div>
           </div>
         )}
       </div>
