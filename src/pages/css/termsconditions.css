@@ -1,9 +1,9 @@
-h2 {
+.h2-revert {
     font-size: revert !important;
     margin-top: 15px !important;
 }
 
-h3 {
+.h3-revert {
     font-size: revert !important;
     margin-top: 15px !important;
 }

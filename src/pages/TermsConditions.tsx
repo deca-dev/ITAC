@@ -128,7 +128,7 @@ const PrivacyNotice: React.FC = () => {
               aria-label="Tabla de contenidos"
               className="sticky top-24 rounded-xl border bg-white p-4 shadow-sm text-sm"
             >
-              <h2 className="text-slate-700 font-semibold mb-3">Tabla de contenidos</h2>
+              <h2 className="text-slate-700 font-semibold mb-3 h2-revert">Tabla de contenidos</h2>
               <ol className="space-y-1">
                 <li>
                   <a href="#top-aviso" onClick={(e)=>handleTocClick(e,"top-aviso")} className={linkCls("top-aviso")}>
@@ -160,7 +160,7 @@ const PrivacyNotice: React.FC = () => {
           {/* Artículo (copy intacto) */}
           <article className="prose prose-slate sm:prose-lg max-w-none leading-relaxed lg:col-span-9">
             {/* ----- Sección corta ----- */}
-            <h2 id="top-aviso" className="mb-2 scroll-mt-24">Aviso de Privacidad</h2>
+            <h2 id="top-aviso" className="mb-2 scroll-mt-24 h2-revert">Aviso de Privacidad</h2>
 
             <p><strong>Instituto de Terapia Contextual, CDMX.</strong></p>
             <p className="mb-3">
@@ -189,7 +189,7 @@ const PrivacyNotice: React.FC = () => {
             <hr />
 
             {/* ----- Aviso Integral ----- */}
-            <h2 id="integral" className="mb-2 scroll-mt-24">Aviso de Privacidad Integral. </h2>
+            <h2 id="integral" className="mb-2 scroll-mt-24 h2-revert">Aviso de Privacidad Integral. </h2>
             <p className="mb-3"><strong>Instituto de Terapia Contextual, CDMX.</strong></p>
 
             <p className="mb-3">
@@ -228,7 +228,7 @@ const PrivacyNotice: React.FC = () => {
 
             {/* ANCLA: h-px para observer/scroll top confiable */}
             <span id="datos-personales" className="block h-px scroll-mt-24" aria-hidden="true"></span>
-            <h3 className="mt-6 font-semibold">Datos personales: </h3>
+            <h3 className="mt-6 font-semibold h3-revert">Datos personales: </h3>
             <ul className="list-decimal pl-6 space-y-1">
               <li>Nombre(s) y apellidos. </li>
               <li>Fecha de nacimiento. </li>
@@ -240,13 +240,13 @@ const PrivacyNotice: React.FC = () => {
               <li>Fotografía. </li>
             </ul>
 
-            <h3 id="datos-familiares" className="mt-6 scroll-mt-24 font-semibold">Datos familiares: </h3>
+            <h3 id="datos-familiares" className="mt-6 scroll-mt-24 font-semibold h3-revert">Datos familiares: </h3>
             <ul className="list-none pl-6 space-y-1">
               <li>1.1 Nombre(s) y apellidos de sus padres. </li>
               <li>1.2. Nombre y apellidos de su esposo (a) o concubina(o). </li>
             </ul>
 
-            <h3 id="laborales" className="mt-6 scroll-mt-24 font-semibold">Laborales: </h3>
+            <h3 id="laborales" className="mt-6 scroll-mt-24 font-semibold h3-revert">Laborales: </h3>
             <ul className="list-none pl-6 space-y-1">
               <li>2.1. Nombre(s) y apellidos. </li>
               <li>2.2. Nombre y sector de la empresa o institución donde trabaja. </li>
@@ -259,7 +259,7 @@ const PrivacyNotice: React.FC = () => {
               <li>2.9. Si es autoempleado o si está desempleado, motivos por lo que no trabaja, tiempo que ha permanecido sin laborar:  </li>
             </ul>
 
-            <h3 id="academicos" className="mt-6 scroll-mt-24 font-semibold">Académicos: </h3>
+            <h3 id="academicos" className="mt-6 scroll-mt-24 font-semibold h3-revert">Académicos: </h3>
             <ul className="list-none pl-6 space-y-1">
               <li>Nombre(s) y apellidos. </li>
               <li>3.1. Grados de estudios. </li>
@@ -286,14 +286,14 @@ const PrivacyNotice: React.FC = () => {
               <li>3.13. Nombre de la institución donde cursó bachillerato, plantel, clave y domicilio y elección de ingreso (área, carrera, sistema y plantel escolar). </li>
             </ul>
 
-            <h3 id="sociales" className="mt-6 scroll-mt-24 font-semibold">Sociales: </h3>
+            <h3 id="sociales" className="mt-6 scroll-mt-24 font-semibold h3-revert">Sociales: </h3>
             <ul className="list-none pl-6 space-y-1">
               <li>4.1. Si es miembro de una organización o asociación.</li>
               <li>4.2. Denominación o razón social de ésta. </li>
               <li>4.3. Si hay interés por participar en programas de beneficio social.</li>
             </ul>
 
-            <h3 id="sensibles" className="mt-6 scroll-mt-24 font-semibold">Datos personales sensibles: (voluntarios y opcionales): </h3>
+            <h3 id="sensibles" className="mt-6 scroll-mt-24 font-semibold h3-revert">Datos personales sensibles: (voluntarios y opcionales): </h3>
             <ul className="list-none pl-6 space-y-1">
               <li>Modo de vida. </li>
               <li>5.1. Práctica de deporte o ejercicio. </li>
@@ -303,7 +303,7 @@ const PrivacyNotice: React.FC = () => {
               <li>5.5. Estado de salud física, psico-emocional, adicciones (existencia y tipo), problemas y situación familiar, manifestación de estado de vulnerabilidad o discapacidad.</li>
             </ul>
 
-            <h3 id="emergencia" className="mt-6 scroll-mt-24 font-semibold">Datos de Contacto de emergencia: </h3>
+            <h3 id="emergencia" className="mt-6 scroll-mt-24 font-semibold h3-revert">Datos de Contacto de emergencia: </h3>
             <ul className="list-none pl-6 space-y-1 mb-4">
               <li>6.1. Nombre(s) y apellido de contacto de emergencia. </li>
               <li>6.2 Teléfono (fijo y móvil), dirección y relación con el titular de lainformación. </li>
@@ -387,7 +387,7 @@ const PrivacyNotice: React.FC = () => {
               El titular<sup>2</sup> de los datos personales tiene derecho a conocer qué información tiene Instituto de Terapia Contextual, CDMX, para qué es utilizada y las condiciones del uso que se le dan (ACCESO). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (RECTIFICACIÓN). De igual manera, tiene derecho a solicitar que su información se elimine de los registros o bases de datos cuando se determine, con base en la ley, que la misma se ha utilizado en forma inadecuada (CANCELACIÓN), así como también oponerse al uso de sus datos personales para fines específicos distintos a los señalados (OPOSICIÓN). También podrá enviar su solicitud al correo electrónico: recepcion.itc1@gmail.com
             </p>
 
-            <h3 id="modificaciones" className="mt-6 scroll-mt-24">Modificaciones al Aviso de Privacidad: </h3>
+            <h3 id="modificaciones" className="mt-6 scroll-mt-24 h3-revert">Modificaciones al Aviso de Privacidad: </h3>
             <p className="mb-3">
               El presente aviso de privacidad puede sufrir modificaciones o actualizaciones. Dichas actualizaciones o modificaciones estarán disponibles al público, por lo que podrá consultarlas en el sitio web: <a href="http://terapiascontextuales.mx/" target="_blank" rel="noopener" className="blue-color">http://terapiascontextuales.mx/</a> en la sección Aviso de Privacidad. Se recomienda y requiere consultar el Aviso de Privacidad, por lo menos semestralmente para estar actualizado de las condiciones y términos de éste. 
             </p>
