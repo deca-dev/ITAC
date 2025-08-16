@@ -8,6 +8,7 @@ import WorkInProgress from "./pages/WorkInProgress";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollTop";
+import TermsConditions from "./pages/TermsConditions";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
            <Route path="/formacion-academica/:slug" element={<AcademicOfferDetail />} />
           <Route path="/equipo" element={<Team />} />
           <Route path="/equipo/:memberId" element={<WorkInProgress />} />
+          <Route path="/aviso-de-privacidad" element={<TermsConditions/>} />
         </Routes>
         <Footer />
       </div>

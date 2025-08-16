@@ -1,0 +1,18 @@
+h2 {
+    font-size: revert !important;
+    margin-top: 15px !important;
+}
+
+h3 {
+    font-size: revert !important;
+    margin-top: 15px !important;
+}
+
+.blue-color {
+    color: rgba(3, 105, 161, 1) !important;
+    font-weight: 600;;
+}
+
+.roman {
+  list-style-type: upper-roman; /* or lower-roman */
+}
