@@ -40,7 +40,7 @@ const SectionCard: React.FC<SectionProps> = ({
             className="absolute inset-0 w-full h-full object-contain"
           />
           {/* Marco de reserva visible si la imagen falta */}
-          <div className="absolute inset-0 border-2 border-dashed border-slate-300 rounded-xl" />
+          {/* <div className="absolute inset-0 border-2 border-dashed border-slate-300 rounded-xl" /> */}
         </div>
       </div>
 
@@ -59,37 +59,29 @@ export default function AcercaDe() {
   return (
     <main className="bg-gray-50">
       {/* ============== HERO (igual a tu layout) ============== */}
-      <header className="relative isolate overflow-hidden">
+      <header className="relative isolate overflow-hidden h-[400px]">
         {/* Banner base */}
-        <div className="bg-[#1A3459]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 relative">
-            {/* Waves decor */}
-            <div className="absolute right-0 top-0 h-full w-1/2 opacity-30 pointer-events-none">
+        <div className="bg-[#1A3459] bg-cover bg-center text-white h-[400px] px-8 mb-12 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-3 lg:h-full flex-col-reverse lg:flex-row lg:flex-nowrap flex-wrap items-center …">
+            <div className="w-80 overflow-hidden relative lg:absolute right-0 lg:right-[15%] ">
               <img
-                src="/assets/bg/waves-overlay.png" // coloca tus ondas aquí
-                alt=""
+                src="/assets/images/img-nosotros-main-banner-photo.png"
+                alt="Academic lecture"
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Foto circular derecha */}
-            <div className="hidden md:block absolute right-6 lg:right-16 top-6">
-              <div className="w-40 h-40 lg:w-56 lg:h-56 rounded-full overflow-hidden ring-4 ring-white/20">
-                <img
-                  src="/assets/photos/img-all-team-round.png" // reemplaza por tu imagen final
-                  alt="Equipo"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="overflow-hidden relative lg:absolute right-0 ">
+              <img
+                src="/assets/images/bg-nosotros-main-banner-waves.png"
+                alt="Academic lecture"
+                className="w-full h-full object-cover"
+              />
             </div>
-
-            {/* Texto izquierda */}
-            <div className="max-w-2xl text-white">
-              <h1 className="text-3xl sm:text-4xl font-bold">Acerca de</h1>
-              <p className="mt-3 text-base sm:text-lg">
-                {/* COPY EXACTO */}
-                Formamos profesionales expertos en ciencia y práctica de Terapia
-                Contextual.
+            <div className="flex-1 lg:pr-80">
+              <h2 className="mt-8 text-3xl font-bold mb-2">Acerca de</h2>
+              <p className="text-lg">
+                Formamos profesionales expertos en ciencia y práctica {" "}
+                <br />de Terapia Contextual.
               </p>
             </div>
           </div>
@@ -98,17 +90,14 @@ export default function AcercaDe() {
 
       {/* ============== STATEMENT BAND (ilustración izq + texto der) ============== */}
       <section className="relative">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="rounded-2xl border bg-white shadow-sm px-6 sm:px-10 py-8 grid grid-cols-1 md:grid-cols-[220px,1fr] gap-6 items-center">
-            <div className="w-44 mx-auto md:mx-0">
+       
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+          <div className="rounded-2xl x-6 sm:px-10 py-8 grid grid-cols-1 md:grid-cols-[320px,1fr] gap-6 items-center">
+            <div className="mx-auto md:mx-0">
               <img
-                src="/assets/illustrations/statement-illustration.png" // reemplaza por tu ilustración
+                src="/assets/images/img-nosotros-middle-banner.png" // reemplaza por tu ilustración
                 alt="Ilustración"
                 className="w-full h-full object-contain"
-              />
-              <div
-                className="border-2 border-dashed border-slate-300 rounded-xl mt-2"
-                aria-hidden
               />
             </div>
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
@@ -120,6 +109,19 @@ export default function AcercaDe() {
             </p>
           </div>
         </div>
+          <div className="absolute left-0 top-0 h-full pointer-events-none">
+              <img
+                src="/assets/images/bg-nosotros-left-vector.png" 
+                alt=""
+              />
+            </div>
+          <div className="absolute right-0 top-0 h-full pointer-events-none">
+              <img
+                src="/assets/images/bg-nosotros-right-vector.png" 
+                alt=""
+                className="w-72"
+              />
+            </div>
       </section>
 
       {/* ============== PANEL AZUL CON TARJETAS ============== */}
@@ -130,10 +132,9 @@ export default function AcercaDe() {
             id="biografia"
             title="Biografía del instituto"
             side="right"
-            imgSrc="/assets/acerca/itac-illustration.png" // PON TU IMAGEN
+            imgSrc="/assets/images/itac-image.jpg"
             imgAlt="Ilustración ITAC"
           >
-            {/* COPIA EXACTA AQUÍ: NO MODIFICAR */}
             <p>
               Con un equipo que enseña y divulga la Ciencia y Terapia Contextual
               desde el año 2010, somos una institución de formación,
@@ -174,7 +175,7 @@ export default function AcercaDe() {
             id="ac"
             title="Activación conductual"
             side="left"
-            imgSrc="/assets/acerca/ac-illustration.png" // PON TU IMAGEN
+            imgSrc="/assets/images/ac-image.jpg"
             imgAlt="Activación conductual"
           >
             {/* COPIA EXACTA AQUÍ: NO MODIFICAR */}
@@ -192,12 +193,12 @@ export default function AcercaDe() {
               metodológico de los ensayos clínicos aleatorizados presentados
               como evidencia, la AC se corona como la opción terapéutica que
               aúna más ventajas para el clínico y el consultante (Barraca,
-              2009). La AC no parte de un modelo psicopatológico, aboga, en
+              2009). La AC no parte de un modelo psicopatológico, aboga, en
               cambio, por el uso de conceptos filosóficos o históricos que
               despatologizan (o desmedicalizan) los estados de ánimo bajos. La
               depresión, se vería como una respuesta normal o esperable ante un
               determinado contexto vital, se explicaría a partir de las
-              circunstancias presentes en ese momento y se afianzaría
+              circunstancias presentes en ese momento y se afianzaría
               fundamentalmente como consecuencia de las mismas respuestas o
               reacciones del individuo a ese entorno. La BA sostiene que es el
               contexto y no factores internos (como determinadas cogniciones o
@@ -251,7 +252,7 @@ export default function AcercaDe() {
             id="act"
             title="Terapia de aceptación y compromiso"
             side="right"
-            imgSrc="/assets/acerca/act-illustration.png" // PON TU IMAGEN
+            imgSrc="/assets/images/act-image.jpg"
             imgAlt="ACT"
           >
             {/* COPIA EXACTA AQUÍ: NO MODIFICAR */}
@@ -304,7 +305,7 @@ export default function AcercaDe() {
             id="fap"
             title="Psicoterapia analítica funcional"
             side="left"
-            imgSrc="/assets/acerca/fap-illustration.png" // PON TU IMAGEN
+            imgSrc="/assets/images/fap-image.jpg"
             imgAlt="FAP"
           >
             {/* COPIA EXACTA AQUÍ: NO MODIFICAR */}
@@ -330,7 +331,7 @@ export default function AcercaDe() {
               en la relación de parejas, o aspectos psicológicos del dolor
               crónico (Kanter et al. 2017). Otra de sus aportaciones es su
               teoría de la personalidad, donde se explica cómo surge el concepto
-              de “uno  mismo” como un fenómeno de conducta verbal
+              de “uno  mismo” como un fenómeno de conducta verbal
               (Fernández-Parra & Ferro García, 2006). En México, miembros de
               nuestro equipo han participado en investigaciones sobre los
               impactos de FAP en la fatiga de profesionales de la salud mental
@@ -339,7 +340,6 @@ export default function AcercaDe() {
               eficacia (Kanter et al. 2017), y han publicado manuales sobre su
               aplicación (Reyes-Ortega & Kanter, 2017).
             </p>
-            {/* pega aquí el resto de tu copy con citas y enlaces tal cual */}
           </SectionCard>
         </div>
       </section>

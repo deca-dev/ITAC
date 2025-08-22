@@ -75,7 +75,7 @@ export default function TeamGeneral() {
       <div>
         <div className="bg-[url('/assets/bg/bg-team-banner-green-texture.jpg')] bg-cover bg-center text-white h-[400px] px-8 mb-12 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-3 lg:h-full flex-col-reverse lg:flex-row lg:flex-nowrap flex-wrap items-center …">
-            <div className="w-80 overflow-hidden relative lg:absolute right-0 lg:right-[100px] ">
+            <div className="w-80 overflow-hidden relative lg:absolute right-0 lg:right-[15%] ">
               <img
                 src="/assets/photos/img-all-team-round.png"
                 alt="Academic lecture"
