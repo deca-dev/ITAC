@@ -90,12 +90,12 @@ const Footer = () => {
               <div className="flex items-start space-x-3 min-w-0 hover:text-white">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Calzada+Belisario+Dom%C3%ADnguez+%23161+Col.+del+Carmen,+Coyoac%C3%A1n,+CDMX"
+                  href="https://maps.app.goo.gl/f4Ydm9ghxEWWonr88"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm break-words hover:underline hover:text-white"
                 >
-                  Calzada Belisario Domínguez #161 Col. del Carmen, Coyoacán,
+                  Callejón Belisario Domínguez #141 Col. del Carmen, Coyoacán,
                   CDMX
                 </a>
               </div>
@@ -110,8 +110,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 min-w-0 hover:text-white">
                 <Phone className="w-5 h-5 flex-shrink-0 " />
-                <a href="tel:+5255554220" className="text-sm hover:underline ">
-                  55 5554 220
+                <a href="tel:+5255547420" className="text-sm hover:underline ">
+                  55 547 420
                 </a>
               </div>
             </div>

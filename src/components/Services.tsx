@@ -21,16 +21,17 @@ const Services = () => {
         "ACT, con más de 35 años de investigación, cambia el enfoque de eliminar conductas problema a aceptar sensaciones, pensamientos y emociones aversivas. Al dejar de luchar contra el malestar, se avanza hacia objetivos valiosos. Considera muchos trastornos como evitación experiencial y ha demostrado eficacia, incluso en estudios realizados en México."
     },
     {
-      title: "Terapia Cognitivo Conductual",
+      title: "Terapia Dialéctica Conductual ",
       image: "/assets/photos/couple.jpg",
       description:
-        "La FAP, surgida hace 30 años, se basa en reforzar de manera natural conductas alternativas en la relación terapeuta-cliente. Ofrece soluciones para problemas cotidianos y múltiples trastornos, aportando también una teoría de la personalidad. En México, se ha investigado su eficacia y publicado manuales sobre su aplicación."
+        "DBT combina análisis conductual, budismo Zen y dialéctica, y consta de terapia individual, entrenamiento grupal, soporte telefónico y consulta al terapeuta. Tiene fuerte evidencia en TLP y se adapta a otras patologías. Nuestro equipo investiga versiones abreviadas y adaptaciones para población estudiantil en México."
+      
     },
     {
       title: "Psicoterapia analitica funcional",
       image: "/assets/photos/guy-therapy.jpg",
       description:
-        "DBT combina análisis conductual, budismo Zen y dialéctica, y consta de terapia individual, entrenamiento grupal, soporte telefónico y consulta al terapeuta. Tiene fuerte evidencia en TLP y se adapta a otras patologías. Nuestro equipo investiga versiones abreviadas y adaptaciones para población estudiantil en México."
+      "La FAP, surgida hace 30 años, se basa en reforzar de manera natural conductas alternativas en la relación terapeuta-cliente. Ofrece soluciones para problemas cotidianos y múltiples trastornos, aportando también una teoría de la personalidad. En México, se ha investigado su eficacia y publicado manuales sobre su aplicación."
     }
   ];
 
