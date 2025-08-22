@@ -44,7 +44,6 @@ const SectionCard: React.FC<SectionProps> = ({
         </div>
       </div>
 
-      {/* Contenido (deja margen si hay imagen) */}
       <div className={`${hasLeft ? "md:pl-56" : "md:pr-56"}`}>
         <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3">
           {title}
@@ -58,7 +57,7 @@ const SectionCard: React.FC<SectionProps> = ({
 export default function AcercaDe() {
   return (
     <main className="bg-gray-50">
-      {/* ============== HERO (igual a tu layout) ============== */}
+      {/* ============== HERO ============== */}
       <header className="relative isolate overflow-hidden h-[400px]">
         {/* Banner base */}
         <div className="bg-[#1A3459] bg-cover bg-center text-white h-[400px] px-8 mb-12 relative overflow-hidden">
@@ -70,7 +69,7 @@ export default function AcercaDe() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="overflow-hidden relative lg:absolute right-0 ">
+            <div className="overflow-hidden relative lg:absolute right-0 hidden lg:block">
               <img
                 src="/assets/images/bg-nosotros-main-banner-waves.png"
                 alt="Academic lecture"
