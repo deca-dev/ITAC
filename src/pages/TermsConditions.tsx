@@ -110,10 +110,10 @@ const PrivacyNotice: React.FC = () => {
 
       {/* ─────────────── Hero ─────────────── */}
       <header className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 -z-20 bg-[url('/assets/bg/bg-blue-pattern-aviso-privacidad.png')] bg-center bg-cover" />
-        <div className="absolute inset-0 -z-10 bg-black/40" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center">
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-serif font-semibold drop-shadow">
+        <div className="absolute inset-0  bg-[url('/assets/bg/bg-aviso-privacidad.jpg')] bg-center bg-cover" />
+        {/* <div className="absolute inset-0 -z-10 bg-black/40" /> */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center flex justify-center items-center h-full">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold drop-shadow">
             Aviso de Privacidad
           </h1>
         </div>
