@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollTop";
 import TermsConditions from "./pages/TermsConditions";
 import Nosotros from './pages/Nosotros'
+import Publicaciones from "./pages/Publicaciones";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/equipo/:memberId" element={<WorkInProgress />} />
           <Route path="/aviso-de-privacidad" element={<TermsConditions/>} />
           <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/publicaciones" element={<Publicaciones />} />
         </Routes>
         <Footer />
       </div>
