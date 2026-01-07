@@ -13,6 +13,8 @@ import Nosotros from './pages/Nosotros'
 import Publicaciones from "./pages/Publicaciones";
 import Libros from "./pages/Libros";
 import Contacto from "./pages/Contacto";
+import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/publicaciones" element={<Publicaciones />} />
           <Route path="/libros" element={<Libros />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
         </Routes>
         <Footer />
       </div>

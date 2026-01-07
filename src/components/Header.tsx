@@ -151,9 +151,14 @@ const Header = () => {
             >
               Equipo
             </Link>
-            <a href="#blog" className="text-gray-700 hover:text-[#1E5864] transition-colors">
+            <Link
+              to="/blog"
+              className={`transition-colors ${
+                isActive('/blog') ? 'text-[#1E5864] font-semibold' : 'text-gray-700 hover:text-[#1E5864]'
+              }`}
+            >
               Blog
-            </a>
+            </Link>
              <Link
               to="/contacto"
               className={`transition-colors ${
@@ -234,12 +239,24 @@ const Header = () => {
                     Equipo
                   </Link>
 
-                  <a href="#blog" className="text-gray-700 hover:text-teal-600 transition-colors" onClick={closeAllMobile}>
+                   <Link
+                    to="/blog"
+                    className={`transition-colors ${
+                      isActive('/blog') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
+                    }`}
+                    onClick={closeAllMobile}
+                  >
                     Blog
-                  </a>
-                  <a href="#contacto" className="text-gray-700 hover:text-teal-600 transition-colors" onClick={closeAllMobile}>
+                  </Link>
+                  <Link
+                    to="/contacto"
+                    className={`transition-colors ${
+                      isActive('/contacto') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
+                    }`}
+                    onClick={closeAllMobile}
+                  >
                     Contacto
-                  </a>
+                  </Link>
                 </nav>
 
                 {/* === Panel ABOUT (col 2) === */}
