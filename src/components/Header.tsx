@@ -12,7 +12,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   // resaltar sección "Acerca de" si estás en cualquiera de sus subrutas
-  const aboutPaths = ['/nosotros', '/publicaciones', '/libros-terapias-contextuales'];
+  const aboutPaths = ['/nosotros', '/publicaciones', '/libros'];
   const isAboutActive = aboutPaths.includes(location.pathname);
 
   // Desktop hover intent (reduce flicker)
@@ -120,9 +120,9 @@ const Header = () => {
                   </li>
                   <li>
                     <Link
-                      to="/libros-terapias-contextuales"
+                      to="/libros"
                       className={`block px-3 py-2 transition-colors ${
-                        isActive('/libros-terapias-contextuales')
+                        isActive('/libros')
                           ? 'text-[#1E5864] font-semibold'
                           : 'text-gray-700 hover:text-[#1E5864] hover:bg-slate-50'
                       }`}
@@ -270,9 +270,9 @@ const Header = () => {
                       Publicaciones
                     </Link>
                     <Link
-                      to="/libros-terapias-contextuales"
+                      to="/libros"
                       className={`transition-colors ${
-                        isActive('/libros-terapias-contextuales') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
+                        isActive('/libros') ? 'text-teal-600 font-semibold' : 'text-gray-700 hover:text-teal-600'
                       }`}
                       onClick={closeAllMobile}
                     >

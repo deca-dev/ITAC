@@ -1,8 +1,16 @@
-/** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        barlow: ['"Barlow"', "system-ui", "Arial", "sans-serif"],
+        barlowCond: ['"Barlow Condensed"', '"Barlow"', "system-ui", "Arial", "sans-serif"],
+      },
+      letterSpacing: {
+        wide2: ".02em",
+        wide3: ".03em",
+      },
+    },
   },
   plugins: [],
 };

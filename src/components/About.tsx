@@ -41,7 +41,7 @@ const About = () => {
               </span>
               <span className="text-sm">Nuestras publicaciones</span>
             </div>
-            <h2 className="text-3xl  text-gray-900 mb-6 font-serif">
+            <h2 className="text-3xl  text-gray-900 mb-6 !font-barlowCond">
               Creando una Sociedad Mentalmente Saludable
             </h2>
             <p className="text-lg text-gray-600 mb-8">
@@ -65,10 +65,10 @@ const About = () => {
                       />
                     </div>
                     <div>
-                      <div className="text-2xl text-yellow-400 font-serif">
+                      <div className="text-2xl text-yellow-400 !font-barlowCond">
                         {stat.number}
                       </div>
-                      <div className="text-sm font-serif leading-snug">
+                      <div className="text-sm !font-barlowCond leading-snug">
                         {stat.label}
                       </div>
                     </div>

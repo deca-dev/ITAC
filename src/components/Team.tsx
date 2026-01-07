@@ -30,7 +30,7 @@ const Team = () => {
     <section className="pt-16 bg-[#1A3459] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <h2 className="text-4xl mb-4 font-serif">Nuestro Equipo</h2>
+          <h2 className="text-4xl mb-4 !font-barlowCond">Nuestro Equipo</h2>
         </div>
 
         <div className="relative">

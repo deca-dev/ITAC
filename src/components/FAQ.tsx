@@ -30,7 +30,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "¿Cuentan con otras instalaciones o profesionales que den atención fuera de la CDMX?",
-    answer: `El Instituto de Terapia Contextual CdMx únicamente cuenta con las instalaciones ubicadas en: Canadá 177, San Lucas, Coyoacán, 04030 Ciudad de México, CDMX; los consultores (terapeutas) se encuentran en estas instalaciones únicamente.`,
+    answer: `El Instituto de Terapia Contextual CDMX únicamente cuenta con las instalaciones ubicadas en: Callejón Belisario Domínguez #141 Col. del Carmen, Coyoacán, CDMX; los consultores (terapeutas) se encuentran en estas instalaciones únicamente.`,
   },
   {
     question: "¿Con qué preparación académica cuentan los consultores (terapeutas) del Instituto?",
@@ -53,7 +53,7 @@ export default function FAQ() {
     <section className="relative py-16 bg-[#A2C6D2]">
       <img src="/assets/bg/vector-faq.png" className='absolute top-0 left-[-76px] z-[1]' alt="" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl text-gray-900 mb-6 font-serif">Preguntas frecuentes</h2>
+        <h2 className="text-4xl text-gray-900 mb-6 !font-barlowCond">Preguntas frecuentes</h2>
         <div className="bg-white rounded-xl shadow-lg divide-y divide-gray-300 overflow-hidden px-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;

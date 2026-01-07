@@ -40,7 +40,7 @@ const Services = () => {
       <div className="mx-auto px-4">
         <div className="max-w-7xl mx-auto text-center mb-12 flex flex-col items-center px-4">
           <img className="w-16" src="/assets/logo/logo-main.png" alt="Logo" />
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Quienes somos</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 ">Quienes somos</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Somos una institución especializada en Terapia Contextual que forma, investiga y brinda atención psicológica desde 2010. Ofrecemos capacitación en Análisis del Comportamiento Clínico y métodos como ACT, FAP y BA. Además, asesoramos a instituciones en investigación y capacitación sobre estos enfoques. Colaboramos con programas de formación en México, América Latina y España, y participamos en congresos e investigaciones internacionales.
           </p>
@@ -81,7 +81,7 @@ const Services = () => {
 
         <div className="services__explore__services__container">
           <div className="p-6 rounded-lg mb-8 max-w-7xl mx-auto">
-            <h3 className="text-4xl font-semibold mb-2">
+            <h3 className="text-4xl font-semibold mb-2 !font-barlowCond">
               Explora nuestros servicios especializados
             </h3>
           </div>

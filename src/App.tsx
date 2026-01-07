@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollTop";
 import TermsConditions from "./pages/TermsConditions";
 import Nosotros from './pages/Nosotros'
 import Publicaciones from "./pages/Publicaciones";
+import Libros from "./pages/Libros";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/aviso-de-privacidad" element={<TermsConditions/>} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/publicaciones" element={<Publicaciones />} />
+          <Route path="/libros" element={<Libros />} />
         </Routes>
         <Footer />
       </div>
