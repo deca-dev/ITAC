@@ -6,12 +6,51 @@ import "./css/academicoffer.css";
 
 export default function AcademicOffer() {
   return (
-    <section className="pb-16 bg-white pt-[100px] bg-pattern">
+    <section className="pb-16 bg-white bg-pattern">
+      <header className="relative isolate overflow-hidden mb-12">
+        {/* background color + waves */}
+        <div className="bg-[#1A3459]">
+           {/* waves overlay */}
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <img
+                src="/assets/bg/bg-pattern-academic-formation.png"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           
+
+            {/* grid avoids overlap; stacks on <md */}
+            <div className="relative grid grid-cols-1 md:grid-cols-[1fr,320px] lg:grid-cols-[1fr,380px] gap-8 items-center py-10 md:py-14 lg:py-16 min-h-[240px]">
+              {/* left: text */}
+              <div className="text-white">
+                <h1 className="font-bold tracking-tight text-3xl sm:text-4xl lg:text-5xl">
+                  Formación Académica
+                </h1>
+                <p className="mt-3 max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed">
+                  Sesiones impartidas por expertos para todos los niveles de experiencia.
+                </p>
+              </div>
+
+              {/* right: image (own column, no absolute) */}
+              <div className="hidden md:block justify-self-end">
+                <div className="relative w-[240px] h-[240px] lg:w-[300px] lg:h-[300px] rounded-full">
+                  <img
+                    src="/assets/images/academic-formation-woman.png"
+                    alt="Portada libros"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <h2 className="text-4xl text-gray-900 mb-8 font-serif">
-          Formación Académica
-        </h2>
+        <p className="pb-16">Nuestra oferta académica está diseñada para brindar formación de vanguardia a profesionales de la salud, la psicología y otras áreas. Con programas de diplomados, cursos y talleres prácticos, ofrecemos herramientas basadas en evidencia para el manejo de diversas problemáticas emocionales y conductuales. Todos nuestros programas están impartidos por expertos con enfoque teórico y práctico, preparados para potenciar el desarrollo de habilidades clínicas y el impacto positivo en la vida de los pacientes.</p>
+
 
         {/* Grid of course cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

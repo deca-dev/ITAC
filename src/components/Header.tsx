@@ -154,9 +154,14 @@ const Header = () => {
             <a href="#blog" className="text-gray-700 hover:text-[#1E5864] transition-colors">
               Blog
             </a>
-            <a href="#contacto" className="text-gray-700 hover:text-[#1E5864] transition-colors">
+             <Link
+              to="/contacto"
+              className={`transition-colors ${
+                isActive('/contacto') ? 'text-[#1E5864] font-semibold' : 'text-gray-700 hover:text-[#1E5864]'
+              }`}
+            >
               Contacto
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}

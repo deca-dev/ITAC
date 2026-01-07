@@ -1,5 +1,6 @@
 // src/pages/Publicaciones.tsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 type PublicationCardProps = {
   icon: React.ReactNode;
@@ -8,6 +9,8 @@ type PublicationCardProps = {
   items?: string[];
   hasButton?: boolean;
   tileColor?: string;
+  buttonTo?: string;
+  buttonLabel?: string;
 };
 
 const ThinHr = () => <hr className="my-6 sm:my-8 border-slate-200" />;
@@ -19,6 +22,8 @@ const PublicationCard: React.FC<PublicationCardProps> = ({
   items,
   hasButton = false,
   tileColor = "bg-[#6a8890]",
+  buttonTo,
+  buttonLabel = "Saber más",
 }) => (
   <div>
     <div className="flex gap-4 sm:gap-5 items-start">
@@ -50,9 +55,22 @@ const PublicationCard: React.FC<PublicationCardProps> = ({
         )}
 
         {hasButton && (
-          <button className="mt-4 inline-flex items-center px-4 py-2 rounded-md text-xs sm:text-sm font-semibold bg-[#1A3459] text-white hover:bg-[#2a4469] transition-colors shadow-sm">
-            Saber más
-          </button>
+          buttonTo ? (
+            <Link
+              to={buttonTo}
+              className="mt-4 inline-flex items-center px-4 py-2 rounded-md text-xs sm:text-sm font-semibold bg-[#1A3459] text-white hover:bg-[#2a4469] transition-colors shadow-sm"
+            >
+              {buttonLabel}
+            </Link>
+          ) : (
+            <button
+              className="mt-4 inline-flex items-center px-4 py-2 rounded-md text-xs sm:text-sm font-semibold bg-[#1A3459] text-white/80 transition-colors shadow-sm cursor-not-allowed"
+              disabled
+              title="Agrega 'buttonTo' para activar el botón"
+            >
+              {buttonLabel}
+            </button>
+          )
         )}
       </div>
     </div>
@@ -141,6 +159,8 @@ export default function Publicaciones() {
                   title="Libros"
                   description="Nuestro equipo de psicólogos combina la práctica diaria con la pasión por compartir conocimiento. Cada uno ha contribuido con capítulos en obras que tocan temas que realmente importan, nutriendo su enfoque terapéutico con investigación y reflexión continua."
                   hasButton
+                  buttonTo="/libros" 
+                  buttonLabel="Saber más"
                 />
 
                 <PublicationCard

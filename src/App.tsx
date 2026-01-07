@@ -12,6 +12,7 @@ import TermsConditions from "./pages/TermsConditions";
 import Nosotros from './pages/Nosotros'
 import Publicaciones from "./pages/Publicaciones";
 import Libros from "./pages/Libros";
+import Contacto from "./pages/Contacto";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/publicaciones" element={<Publicaciones />} />
           <Route path="/libros" element={<Libros />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes>
         <Footer />
       </div>

@@ -73,24 +73,41 @@ export default function TeamGeneral() {
   return (
     <section className="pb-16 bg-gray-50 bg-pattern">
       <div>
-        <div className="bg-[url('/assets/bg/bg-team-banner-green-texture.jpg')] bg-cover bg-center text-white h-[400px] px-8 mb-12 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-3 lg:h-full flex-col-reverse lg:flex-row lg:flex-nowrap flex-wrap items-center …">
-            <div className="w-80 overflow-hidden relative lg:absolute right-0 lg:right-[15%] ">
-              <img
-                src="/assets/photos/img-all-team-round.png"
-                alt="Academic lecture"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="flex-1 lg:pr-80">
-              <h2 className="mt-8 text-3xl font-bold mb-2">Nuestro equipo</h2>
-              <p className="text-lg">
-                Contamos con un equipo de profesionales altamente capacitados{" "}
-                <br /> y apasionados por el bienestar psicológico y emocional.
-              </p>
+        <header className="relative isolate overflow-hidden mb-12">
+          {/* background color + waves */}
+          <div className="bg-[url('/assets/bg/bg-team-banner-green-texture.jpg')]">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* waves overlay */}
+              <div className="absolute inset-0 opacity-30 pointer-events-none">
+              </div>
+
+              {/* grid avoids overlap; stacks on <md */}
+              <div className="relative grid grid-cols-1 md:grid-cols-[1fr,320px] lg:grid-cols-[1fr,380px] gap-8 items-center py-10 md:py-14 lg:py-16 min-h-[240px]">
+                {/* left: text */}
+                <div className="text-white">
+                  <h1 className="font-bold tracking-tight text-3xl sm:text-4xl lg:text-5xl">
+                    Nuestro equipo
+                  </h1>
+                  <p className="mt-3 max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed">
+                    Contamos con un equipo de profesionales altamente capacitados{" "}
+                    <br /> y apasionados por el bienestar psicológico y emocional.
+                  </p>
+                </div>
+
+                {/* right: image (own column, no absolute) */}
+                <div className="hidden md:block justify-self-end">
+                  <div className="relative w-[240px] h-[240px] lg:w-[300px] lg:h-[300px] rounded-full overflow-hidden ring-4 ring-white/20 bg-white/5">
+                    <img
+                      src="/assets/photos/img-all-team-round.png"
+                      alt="Portada libros"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </header>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* filter row with labels */}
