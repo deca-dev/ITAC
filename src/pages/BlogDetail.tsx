@@ -47,8 +47,8 @@ export default function BlogDetail() {
   // Genera TOC (h2) cuando ya tenemos HTML en el DOM
   useEffect(() => {
     if (!articleRef.current) return;
-    const h2s = Array.from(articleRef.current.querySelectorAll("h2"));
-    const items: TocItem[] = h2s.map((h, i) => {
+    const headings = Array.from(articleRef.current.querySelectorAll("h2"));
+    const items: TocItem[] = headings.map((h, i) => {
       if (!h.id) {
         const safe =
           h.textContent?.toLowerCase().trim().replace(/[^\w]+/g, "-") ||
@@ -111,133 +111,148 @@ export default function BlogDetail() {
         </div>
       </header>
 
+
       {/* ====== CUERPO ====== */}
       <section className="px-4 sm:px-6 lg:px-8 py-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,1fr),340px] gap-8">
-          {/* ====== MAIN ====== */}
-          <article className="min-w-0">
-            {post.thumbnail && (
-              <img
-                src={post.thumbnail}
-                alt={post.title}
-                className="w-full h-auto rounded-lg shadow mb-6"
-              />
-            )}
-
-            {post.summary && (
-              <div className="mb-6 rounded-lg bg-[#f5fafb] border border-slate-200 p-4">
-                <h3 className="font-semibold text-slate-800 mb-1">Resumen</h3>
-                <p className="text-slate-700 text-sm leading-relaxed">
-                  {post.summary}
-                </p>
+        <div className="max-w-6xl mx-auto">
+          {/* Banner 1180x315, centrado */}
+          {(post.banner || post.thumbnail) && (
+            <figure className="mb-6">
+              <div className="mx-auto w-full max-w-[1180px] h-[315px] bg-slate-100 overflow-hidden">
+                <img
+                  src={post.banner || post.thumbnail}
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                />
               </div>
-            )}
+            </figure>
+          )}
 
-            {loading && <p className="text-slate-600">Cargando contenido…</p>}
 
-            {!loading && loadError && (
-              <div className="rounded-md border border-amber-200 bg-amber-50 p-4 text-amber-800">
-                {loadError}
-              </div>
-            )}
-
-            {!loading && !loadError && html && (
-              <div
-                ref={articleRef}
-                className="
-                  prose prose-slate max-w-none
-                  prose-headings:font-semibold
-                  prose-h2:text-slate-900 prose-h2:scroll-mt-28
-                  prose-a:text-[#0d5cab] hover:prose-a:underline
-                  prose-li:my-1
-                "
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
-            )}
-
-            <div className="mt-8">
-              <Link
-                to="/blog"
-                className="inline-flex items-center gap-1 text-[#0d5cab] hover:underline"
-              >
-                ← Volver al blog
-              </Link>
-            </div>
-          </article>
-
-          {/* ====== SIDEBAR ====== */}
-          <aside className="lg:pt-2">
-            <div className="lg:sticky lg:top-24 space-y-6">
-              {/* Índice */}
-              <div className="rounded-lg border border-slate-200 bg-white shadow-sm">
-                <div className="px-4 py-3 border-b border-slate-200">
-                  <p className="text-sm font-semibold text-slate-800">
-                    En este artículo
+          {/* Contenido + Sidebar (debajo del banner) */}
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr),340px] gap-8">
+            {/* ====== MAIN ====== */}
+            <article className="min-w-0">
+              {post.summary && (
+                <div className="mb-6 rounded-lg bg-[#f5fafb] border border-slate-200 p-4">
+                  <h3 className="font-semibold text-slate-800 mb-1">Resumen</h3>
+                  <p className="text-slate-700 text-sm leading-relaxed">
+                    {post.summary}
                   </p>
                 </div>
-                <nav className="px-4 py-3">
-                  {toc.length === 0 ? (
-                    <p className="text-sm text-slate-500">
-                      No hay secciones detectadas.
-                    </p>
-                  ) : (
-                    <ul className="space-y-2 text-sm">
-                      {toc.map((t) => (
-                        <li key={t.id}>
-                          <a
-                            href={`#${t.id}`}
-                            className="block hover:text-[#0d5cab] text-slate-700"
-                          >
-                            {t.text}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </nav>
-              </div>
+              )}
 
-              {/* CTA lateral */}
-              <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
-                <p className="text-sm font-semibold text-slate-800 mb-2">
-                  ¿Te gustó este artículo?
-                </p>
-                <p className="text-sm text-slate-600 mb-3">
-                  Explora nuestra oferta académica y cursos especializados.
-                </p>
+              {loading && <p className="text-slate-600">Cargando contenido…</p>}
+
+              {!loading && loadError && (
+                <div className="rounded-md border border-amber-200 bg-amber-50 p-4 text-amber-800">
+                  {loadError}
+                </div>
+              )}
+
+              {!loading && !loadError && html && (
+                <div
+                  ref={articleRef}
+                className="
+    prose prose-slate max-w-none
+    prose-headings:font-semibold
+    prose-h2:text-slate-900 prose-h2:scroll-mt-28
+    prose-a:text-[#0d5cab] hover:prose-a:underline
+    prose-li:my-1
+
+    [&_h2:has(+p)]:mb-0
+  "
+                  dangerouslySetInnerHTML={{ __html: html }}
+                />
+              )}
+
+              <div className="mt-8">
                 <Link
-                  to="/formacion-academica"
-                  className="inline-flex items-center justify-center rounded-md bg-[#1A3459] px-4 py-2 text-white text-sm font-semibold hover:bg-[#2a4469] transition-colors"
+                  to="/blog"
+                  className="inline-flex items-center gap-1 text-[#0d5cab] hover:underline"
                 >
-                  Ver cursos
+                  ← Volver al blog
                 </Link>
               </div>
+            </article>
 
-              {/* Recomendados */}
-              <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
-                <p className="text-sm font-semibold text-slate-800 mb-3">
-                  Artículos recomendados
-                </p>
-                <ul className="space-y-3">
-                  {blogPosts.slice(0, 3).map((p) => (
-                    <li key={p.slug} className="text-sm">
-                      <Link
-                        to={`/blog/${p.slug}`}
-                        className="text-[#0d5cab] hover:underline"
-                      >
-                        {p.title}
-                      </Link>
-                      <div className="text-xs text-slate-500">
-                        {new Date(p.date).toLocaleDateString("es-MX")}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+            {/* ====== SIDEBAR ====== */}
+            <aside className="lg:pt-2">
+              <div className="lg:sticky lg:top-24 space-y-6">
+                {/* Índice */}
+                <div className="rounded-lg border border-slate-200 bg-white shadow-sm">
+                  <div className="px-4 py-3 border-b border-slate-200">
+                    <p className="text-sm font-semibold text-slate-800">
+                      En este artículo
+                    </p>
+                  </div>
+                  <nav className="px-4 py-3">
+                    {toc.length === 0 ? (
+                      <p className="text-sm text-slate-500">
+                        No hay secciones detectadas.
+                      </p>
+                    ) : (
+                      <ul className="space-y-2 text-sm">
+                        {toc.map((t) => (
+                          <li key={t.id}>
+                            <a
+                              href={`#${t.id}`}
+                              className="block hover:text-[#0d5cab] text-slate-700"
+                            >
+                              {t.text}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </nav>
+                </div>
+
+                {/* CTA lateral */}
+                <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+                  <p className="text-sm font-semibold text-slate-800 mb-2">
+                    ¿Te gustó este artículo?
+                  </p>
+                  <p className="text-sm text-slate-600 mb-3">
+                    Explora nuestra oferta académica y cursos especializados.
+                  </p>
+                  <Link
+                    to="/formacion-academica"
+                    className="inline-flex items-center justify-center rounded-md bg-[#1A3459] px-4 py-2 text-white text-sm font-semibold hover:bg-[#2a4469] transition-colors"
+                  >
+                    Ver cursos
+                  </Link>
+                </div>
+
+                {/* Recomendados */}
+                <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+                  <p className="text-sm font-semibold text-slate-800 mb-3">
+                    Artículos recomendados
+                  </p>
+                  <ul className="space-y-3">
+                    {blogPosts.slice(0, 3).map((p) => (
+                      <li key={p.slug} className="text-sm">
+                        <Link
+                          to={`/blog/${p.slug}`}
+                          className="text-[#0d5cab] hover:underline"
+                        >
+                          {p.title}
+                        </Link>
+                        <div className="text-xs text-slate-500">
+                          {new Date(p.date).toLocaleDateString("es-MX")}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
+
     </main>
   );
 }

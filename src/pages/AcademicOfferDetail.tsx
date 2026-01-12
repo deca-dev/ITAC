@@ -134,7 +134,7 @@ export default function AcademicOfferDetail() {
       <section className="py-16 bg-gray-50 bg-pattern">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* title + subtitle */}
-          <h1 className="text-4xl font-bold mb-4 font-serif">{course.title}</h1>
+          <h1 className="text-4xl font-bold mb-4 font-barlowCond">{course.title}</h1>
           <p className="text-[gray-600] mb-8">{course.subtitle}</p>
 
           {/* course details as responsive flex */}

@@ -4,9 +4,10 @@ export type BlogPost = {
   slug: string;
   title: string;
   date: string;           // ISO (YYYY-MM-DD)
-  category: string;       // p.ej. "Terapia", "Investigación", "Formación"
+  category: string;
   excerpt: string;
-  thumbnail: string;      // ruta a imagen
+  thumbnail: string;      // imagen ligera para cards del grid
+  banner?: string;        // imagen grande para el detalle (opcional)
   readMinutes?: number;
   tags?: string[];
   authors?: string[];
@@ -15,15 +16,16 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     id: "1",
-   slug: "psicoterapia-analitica-funcional-guia",
-  title: "Psicoterapia Analítica Funcional (FAP): guía práctica",
-  date: "2025-12-05",
-  category: "Terapias Contextuales",
-  excerpt:
-    "Principios básicos de FAP, cómo identificar conductas clínicamente relevantes (CCR) y pautas para reforzar cambios en sesión.",
-  thumbnail: "/assets/blog/fap-guia-practica.jpg",
-  readMinutes: 7,
-  tags: ["FAP", "conducta verbal", "terapia"]
+    slug: "psicoterapia-analitica-funcional-guia",
+    title: "Psicoterapia Analítica Funcional (FAP): guía práctica",
+    date: "2025-12-05",
+    category: "Terapias Contextuales",
+    excerpt:
+      "Principios básicos de FAP, cómo identificar conductas clínicamente relevantes (CCR) y pautas para reforzar cambios en sesión.",
+    thumbnail: "/assets/blog/thmb-psicoterapia-analitica-funcional-guia.jpg",
+    banner: "/assets/blog/bnr-psicoterapia-analitica-funcional-guia.jpg",
+    readMinutes: 7,
+    tags: ["FAP", "conducta verbal", "terapia"]
   },
   {
     id: "2",
@@ -32,7 +34,8 @@ export const blogPosts: BlogPost[] = [
     date: "2025-10-05",
     category: "Terapia",
     excerpt: "Un vistazo práctico a la FAP: racional, aplicaciones y recursos para clínicos.",
-    thumbnail: "/assets/blog/fap-intro.jpg",
+    thumbnail: "/assets/blog/thmb-que-es-la-terapia-analitico-funcional.jpg",
+    banner: "/assets/blog/bnr-que-es-la-terapia-analitico-funcional.jpg",
     readMinutes: 5,
     tags: ["FAP", "clínica"]
   },
@@ -43,7 +46,8 @@ export const blogPosts: BlogPost[] = [
     date: "2025-08-14",
     category: "Investigación",
     excerpt: "Resumen de estudios publicados y por qué importan para la práctica.",
-    thumbnail: "/assets/blog/research-contextual.jpg",
+    thumbnail: "/assets/blog/thmb-investigacion-contextual-recientes.jpg",
+    banner: "/assets/blog/bnr-investigacion-contextual-recientes.jpg",
     readMinutes: 7,
     tags: ["papers", "resumen"]
   },
@@ -54,11 +58,12 @@ export const blogPosts: BlogPost[] = [
     date: "2025-07-29",
     category: "Formación",
     excerpt: "Criterios prácticos para evaluar diplomados, cursos y certificaciones.",
-    thumbnail: "/assets/blog/formacion-contextual.jpg",
+    thumbnail: "/assets/blog/thmb-como-elegir-formacion-contextual.jpg",
+    banner: "/assets/blog/bnr-como-elegir-formacion-contextual.jpg",
     readMinutes: 4,
     tags: ["cursos", "docencia"]
   },
-   {
+  {
     id: "5",
     slug: "analisis-del-comportamiento-clinico",
     title: "Análisis del comportamiento clínico",
@@ -67,7 +72,8 @@ export const blogPosts: BlogPost[] = [
     authors: ["William C. Follette", "Sabrina M. Darrow"],
     excerpt:
       "El análisis del comportamiento clínico se apega a los principios conductuales y centra sus intervenciones en consultantes verbalmente competentes en entornos ambulatorios.",
-    thumbnail: "/assets/blog/analisis-comportamiento.jpg",
+    thumbnail: "/assets/blog/thmb-analisis-comportamiento-clinico.jpg",
+    banner: "/assets/blog/bnr-analisis-comportamiento-clinico.jpg",
     readMinutes: 8
   }
 ];
