@@ -194,7 +194,7 @@ const Header = () => {
     />
 
     {/* Mobile menu overlay */}
-    <div className="lg:hidden absolute left-0 right-0 top-full z-50 border-t bg-white shadow-lg py-4">
+   <div className="lg:hidden absolute left-0 right-0 top-full z-50 border-t bg-white shadow-lg py-4 px-4 sm:px-6">
       {/* Contenedor deslizante (2 paneles) */}
       <div className="overflow-hidden">
         <div
