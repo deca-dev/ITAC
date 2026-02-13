@@ -1,0 +1,36 @@
+name: Build & Deploy (Vite -> GoDaddy FTP)
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: FTP Deploy dist/ (no delete of other folders)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          password: ${{ secrets.DEPLOY_PASS }}
+          port: 21
+          local-dir: dist/
+          server-dir: ./
+          # MUY IMPORTANTE: NO uses dangerous-clean-slate
+          # dangerous-clean-slate: false   # (no hace falta; por defecto es false)
