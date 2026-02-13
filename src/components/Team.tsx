@@ -128,9 +128,11 @@ const Team = () => {
             </div>
 
             {/* Button */}
-            <button className="bg-[#1a4c59] hover:bg-[#153e48] text-white px-6 py-2 rounded-md font-medium transition-colors">
-              Más información
-            </button>
+            <a href="https://wa.link/nkyfl2">
+              <button className="bg-[#1a4c59] hover:bg-[#153e48] text-white px-6 py-2 rounded-md font-medium transition-colors">
+                Más información
+              </button>
+            </a>
           </div>
         </div>
       </div>

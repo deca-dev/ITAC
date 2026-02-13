@@ -272,7 +272,7 @@ export default function AcademicOfferDetail() {
                   disabled={loading}
                   className="inline-flex items-center justify-center rounded-md bg-[#1A3459] px-5 py-2 text-white text-sm font-semibold shadow-sm hover:bg-[#2a4469] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {loading ? "Enviando…" : "Enviar interés"}
+                  {loading ? "Enviando…" : "Enviar solicitud"}
                 </button>
                 <button
                   type="button"

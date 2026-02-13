@@ -42,7 +42,7 @@ const books: Book[] = [
             "Reyes, M. A. & Strosahl, K. D. Comps (2020). Guía de evaluación y tratamiento del comportamiento Suicida. Ciudad de México, El Manual Moderno",
         blurb:
             "Modelos de formulación funcional y estrategias de intervención basadas en evidencia para la prevención del suicidio.",
-        buyUrl: "#",
+        buyUrl: "https://tienda.manualmoderno.com/guia-clinica-de-evaluacion-y-tratamiento-del-comportamiento-suicida-9786074488364-9786074488319.html?___store=manual_moderno_mexico_mxn",
     },
     {
         id: "itac-04",
@@ -53,7 +53,7 @@ const books: Book[] = [
             "Cruz J. I., Reyes, M.A. & Corona I. Z. (2017). Duelo: Tratamiento basado en la Terapia de Aceptación y Compromiso. México D.F., El Manual Moderno.",
         blurb:
             "Conjunto de procedimientos y ejercicios para desarrollar repertorios clínicos desde FAP.",
-        buyUrl: "#",
+        buyUrl: "https://tienda.manualmoderno.com/gpd-duelo-9786074486308-9786074486353.html",
     },
     {
         id: "itac-05",
@@ -64,7 +64,7 @@ const books: Book[] = [
             "Reyes, M. A. & Kanter, J. W. (2017). Psicoterapia Analítica Funcional: Maximizando el efecto de la relación terapéutica. Córdoba, Brujas.",
         blurb:
             "Lecturas comentadas y rúbricas de competencias clínicas asociadas a procesos de ACT.",
-        buyUrl: "#",
+        buyUrl: "https://www.editorialbrujas.com.ar/libros/detalle/408",
     },
     {
         id: "itac-06",
@@ -75,7 +75,7 @@ const books: Book[] = [
             "Reyes, M. A. & Tena Suck, A. (2016). Regulación emocional en la práctica clínica, una guía para terapeutas. México D.F., El Manual Moderno.",
         blurb:
             "Programa estructurado para grupos psicoeducativos en contextos escolares, con planes de sesión.",
-        buyUrl: "#",
+        buyUrl: "https://tienda.manualmoderno.com/gpd-regulacia-n-emocional-en-la-pra-ctica-cla-nica-9786074485707-9786074485721.html?___store=manual_moderno_mexico_mxn",
     },
 ];
 
@@ -161,6 +161,7 @@ export default function Libros() {
                                         <div className="mt-4">
                                             <a
                                                 href={b.buyUrl || "#"}
+                                                target="_blank"
                                                 onClick={(e) => {
                                                     if (!b.buyUrl) e.preventDefault();
                                                 }}
