@@ -19,7 +19,7 @@ const books: Book[] = [
         citation:
             "Reyes, M. A. (2024).​ Activación Conductual Adaptada para el Tratamiento del Estrés Postraumático (AC-TEPT). Córdoba, Brujas.",
         blurb:
-            "Aborda la integración de procesos contextuales en la atención a pacientes oncológicos, con guías de intervención y casos clínicos.",
+             "",
         buyUrl: "https://wa.link/animxn",
     },
     {
@@ -30,19 +30,19 @@ const books: Book[] = [
         citation:
             "Reyes, M. A. & Téllez, J. (2024).​ Activación conductual para depresión resistente al tratamiento. Córdoba, Brujas.",
         blurb:
-            "Protocolo paso a paso con herramientas prácticas y registros conductuales para su aplicación clínica.",
+             "",
         buyUrl: "https://wa.link/b68hvc",
     },
     {
         id: "itac-03",
         cover: "/assets/books/guia-clinica-suicida.jpg",
         title:
-            "Guía de evaluación y tratamiento del comportamiento Suicida",
+            "Guía Clínica De Evaluación Y Tratamiento Del Comportamiento Suicida",
         citation:
-            "Reyes, M. A. & Strosahl, K. D. Comps (2020). Guía de evaluación y tratamiento del comportamiento Suicida. Ciudad de México, El Manual Moderno",
+            "Reyes, M. A. & Strosahl, K. D. Comps (2020). Guía de evaluación y tratamiento del comportamiento Suicida. Ciudad de México, El Manual Moderno.",
         blurb:
-            "Modelos de formulación funcional y estrategias de intervención basadas en evidencia para la prevención del suicidio.",
-        buyUrl: "https://tienda.manualmoderno.com/guia-clinica-de-evaluacion-y-tratamiento-del-comportamiento-suicida-9786074488364-9786074488319.html?___store=manual_moderno_mexico_mxn",
+            "",
+        buyUrl: "https://www.amazon.com.mx/Cl%C3%ADnica-Evaluaci%C3%B3n-Tratamiento-Comportamiento-Suicida/dp/6074488363/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1614026904&sr=8-1",
     },
     {
         id: "itac-04",
@@ -52,8 +52,8 @@ const books: Book[] = [
         citation:
             "Cruz J. I., Reyes, M.A. & Corona I. Z. (2017). Duelo: Tratamiento basado en la Terapia de Aceptación y Compromiso. México D.F., El Manual Moderno.",
         blurb:
-            "Conjunto de procedimientos y ejercicios para desarrollar repertorios clínicos desde FAP.",
-        buyUrl: "https://tienda.manualmoderno.com/gpd-duelo-9786074486308-9786074486353.html",
+            "",
+        buyUrl: "https://www.amazon.com.mx/Duelo-Zenyazenn-Ivonne-Cruz-Gait%C3%A1n/dp/6074486301/ref=sr_1_2?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Duelo%3A+Tratamiento+basado+en+la+Terapia+de+Aceptaci%C3%B3n+y+Compromiso&qid=1614026560&sr=8-2",
     },
     {
         id: "itac-05",
@@ -63,7 +63,7 @@ const books: Book[] = [
         citation:
             "Reyes, M. A. & Kanter, J. W. (2017). Psicoterapia Analítica Funcional: Maximizando el efecto de la relación terapéutica. Córdoba, Brujas.",
         blurb:
-            "Lecturas comentadas y rúbricas de competencias clínicas asociadas a procesos de ACT.",
+            "",
         buyUrl: "https://www.editorialbrujas.com.ar/libros/detalle/408",
     },
     {
@@ -74,8 +74,19 @@ const books: Book[] = [
         citation:
             "Reyes, M. A. & Tena Suck, A. (2016). Regulación emocional en la práctica clínica, una guía para terapeutas. México D.F., El Manual Moderno.",
         blurb:
-            "Programa estructurado para grupos psicoeducativos en contextos escolares, con planes de sesión.",
-        buyUrl: "https://tienda.manualmoderno.com/gpd-regulacia-n-emocional-en-la-pra-ctica-cla-nica-9786074485707-9786074485721.html?___store=manual_moderno_mexico_mxn",
+            "",
+        buyUrl: "https://www.amazon.com.mx/Regulaci%C3%B3n-emocional-pr%C3%A1ctica-cl%C3%ADnica-terapeutas/dp/6074485704/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1614027408&sr=8-1",
+    },
+     {
+        id: "itac-07",
+        cover: "/assets/books/manual-programa-grupal-individual.jpg",
+        title:
+            "Manual del programa grupal-individual de desarrollo de habilidades de aceptación y control del malestar para pacientes con trastornos de regulación emocional. ",
+        citation:
+            "Reyes, M. A., (2011). Manual del programa grupal-individual de desarrollo de habilidades de aceptación y control del malestar para pacientes con trastornos de regulación emocional. Guadalajara Jalisco, Instituto Jalisciense de Salud Mental.",
+        blurb:
+            "",
+        buyUrl: "https://wa.link/4thnau",
     },
 ];
 

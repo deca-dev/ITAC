@@ -13,17 +13,11 @@ const PrivacyNotice: React.FC = () => {
     "integral",
     "finalidades",
     "datos-personales",
-    "datos-familiares",
-    "laborales",
-    "academicos",
-    "sociales",
     "sensibles",
-    "emergencia",
+    "transferencias",
     "cookies",
-    "enlaces",
+    "arco",
     "modificaciones",
-    "fn1",
-    "fn2",
   ];
 
   const [activeId, setActiveId] = React.useState<string>("top-aviso");
@@ -83,7 +77,10 @@ const PrivacyNotice: React.FC = () => {
   }, [computeActiveId]);
 
   // Forzar alineado al TOP al hacer click en el TOC
-  const handleTocClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleTocClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
     e.preventDefault();
     const el = document.getElementById(id);
     if (!el) return;
@@ -101,7 +98,10 @@ const PrivacyNotice: React.FC = () => {
   return (
     <main className="bg-gray-50 min-h-screen scroll-smooth">
       {/* ─────────────── Barra de progreso fija ─────────────── */}
-      <div className="fixed left-0 top-0 h-screen w-1 bg-slate-200/70 z-40 hidden sm:block" aria-hidden />
+      <div
+        className="fixed left-0 top-0 h-screen w-1 bg-slate-200/70 z-40 hidden sm:block"
+        aria-hidden
+      />
       <div
         className="fixed left-0 top-0 w-1 bg-sky-500 z-50 rounded-r hidden sm:block"
         style={{ height: `${progress * 100}%` }}
@@ -128,29 +128,91 @@ const PrivacyNotice: React.FC = () => {
               aria-label="Tabla de contenidos"
               className="sticky top-24 rounded-xl border bg-white p-4 shadow-sm text-sm"
             >
-              <h2 className="text-slate-700 font-semibold mb-3 h2-revert">Tabla de contenidos</h2>
+              <h2 className="text-slate-700 font-semibold mb-3 h2-revert">
+                Tabla de contenidos
+              </h2>
               <ol className="space-y-1">
                 <li>
-                  <a href="#top-aviso" onClick={(e)=>handleTocClick(e,"top-aviso")} className={linkCls("top-aviso")}>
+                  <a
+                    href="#top-aviso"
+                    onClick={(e) => handleTocClick(e, "top-aviso")}
+                    className={linkCls("top-aviso")}
+                  >
                     Aviso de Privacidad
                   </a>
                 </li>
                 <li>
-                  <a href="#integral" onClick={(e)=>handleTocClick(e,"integral")} className={linkCls("integral")}>
+                  <a
+                    href="#integral"
+                    onClick={(e) => handleTocClick(e, "integral")}
+                    className={linkCls("integral")}
+                  >
                     Aviso de Privacidad Integral
                   </a>
                   <ol className="ml-4 mt-1 space-y-1 list-none">
-                    <li><a href="#finalidades" onClick={(e)=>handleTocClick(e,"finalidades")} className={linkCls("finalidades")}>Finalidades</a></li>
-                    <li><a href="#datos-personales" onClick={(e)=>handleTocClick(e,"datos-personales")} className={linkCls("datos-personales")}>Datos personales</a></li>
-                    <li><a href="#datos-familiares" onClick={(e)=>handleTocClick(e,"datos-familiares")} className={linkCls("datos-familiares")}>Datos familiares</a></li>
-                    <li><a href="#laborales" onClick={(e)=>handleTocClick(e,"laborales")} className={linkCls("laborales")}>Laborales</a></li>
-                    <li><a href="#academicos" onClick={(e)=>handleTocClick(e,"academicos")} className={linkCls("academicos")}>Académicos</a></li>
-                    <li><a href="#sociales" onClick={(e)=>handleTocClick(e,"sociales")} className={linkCls("sociales")}>Sociales</a></li>
-                    <li><a href="#sensibles" onClick={(e)=>handleTocClick(e,"sensibles")} className={linkCls("sensibles")}>Datos personales sensibles</a></li>
-                    <li><a href="#emergencia" onClick={(e)=>handleTocClick(e,"emergencia")} className={linkCls("emergencia")}>Datos de contacto de emergencia</a></li>
-                    <li><a href="#cookies" onClick={(e)=>handleTocClick(e,"cookies")} className={linkCls("cookies")}>Cookies y web beacons</a></li>
-                    <li><a href="#enlaces" onClick={(e)=>handleTocClick(e,"enlaces")} className={linkCls("enlaces")}>Vínculos de ayuda</a></li>
-                    <li><a href="#modificaciones" onClick={(e)=>handleTocClick(e,"modificaciones")} className={linkCls("modificaciones")}>Modificaciones</a></li>
+                    <li>
+                      <a
+                        href="#finalidades"
+                        onClick={(e) => handleTocClick(e, "finalidades")}
+                        className={linkCls("finalidades")}
+                      >
+                        Finalidades
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#datos-personales"
+                        onClick={(e) => handleTocClick(e, "datos-personales")}
+                        className={linkCls("datos-personales")}
+                      >
+                        Datos personales que pueden ser recabados
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#sensibles"
+                        onClick={(e) => handleTocClick(e, "sensibles")}
+                        className={linkCls("sensibles")}
+                      >
+                        Consentimiento para datos sensibles
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#transferencias"
+                        onClick={(e) => handleTocClick(e, "transferencias")}
+                        className={linkCls("transferencias")}
+                      >
+                        Transferencias de datos
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#cookies"
+                        onClick={(e) => handleTocClick(e, "cookies")}
+                        className={linkCls("cookies")}
+                      >
+                        Cookies y tecnologías de rastreo
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#arco"
+                        onClick={(e) => handleTocClick(e, "arco")}
+                        className={linkCls("arco")}
+                      >
+                        Derechos ARCO
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#modificaciones"
+                        onClick={(e) => handleTocClick(e, "modificaciones")}
+                        className={linkCls("modificaciones")}
+                      >
+                        Modificaciones
+                      </a>
+                    </li>
                   </ol>
                 </li>
               </ol>
@@ -159,246 +221,218 @@ const PrivacyNotice: React.FC = () => {
 
           {/* Artículo (copy intacto) */}
           <article className="prose prose-slate sm:prose-lg max-w-none leading-relaxed lg:col-span-9">
-            {/* ----- Sección corta ----- */}
-            <h2 id="top-aviso" className="mb-2 scroll-mt-24 h2-revert">Aviso de Privacidad</h2>
+            {/* ====== AVISO DE PRIVACIDAD ====== */}
+            <h2
+              id="top-aviso"
+              className="mb-2 scroll-mt-24 h2-revert"
+            >
+              Instituto de Terapia y Análisis de la Conducta, S. C.
+            </h2>
 
-            <p><strong>Instituto de Terapia Contextual, CDMX.</strong></p>
             <p className="mb-3">
-              El Instituto de Terapia Contextual, CDMX, es el sujeto obligado y responsable del tratamiento de los datos
-              personales que se recaben por esta entidad para el registro de usted en calidad de alumno, docente,
-              conferencista o invitado externo, visitante o consultante (nacional o extranjero). Dichos datos serán
-              utilizados con fines académicos, clínicos, estadísticos y para control administrativo. 
+              El Instituto de Terapia y Análisis de la Conducta, S. C., es responsable del tratamiento de los datos personales que se recaben por esta entidad para el registro de usted en calidad de alumno, docente, conferencista o invitado externo, visitante o consultante (nacional o extranjero). Dichos datos serán utilizados con fines académicos, clínicos, estadísticos y para control administrativo.
             </p>
             <p className="mb-3">
-              En todo momento, el Instituto de Terapia Contextual, CDMX debe contar con la autorización de los titulares de la información, con la finalidad de utilizar estos datos única y exclusivamente para los fines institucionales justificados, y de conformidad con la legislación vigente, sin proporcionarla a terceros. Los datos personales no podrán ser transferidos o tratados por personas diversas ajenas a él Instituto. 
+              En todo momento, el Instituto de Terapia y Análisis de la Conducta, S. C., debe contar con la autorización de los titulares de la información, con la finalidad de utilizar estos datos única y exclusivamente para los fines institucionales justificados, y de conformidad con la legislación vigente. Los datos personales no serán comercializados ni utilizados para fines distintos a los establecidos en el presente Aviso de Privacidad.
             </p>
             <p className="mb-3">
-              La información deberá ser proporcionada de forma voluntaria por el titular de los datos personales, previa lectura y conocimiento del Aviso de Privacidad mediante escrito libre, presentado en las instalaciones del Instituto, y por cualquier medio electrónico. El titular podrá, manifestar su negativa para el tratamiento de sus datos personales conforme a las finalidades descritas en este Aviso y en relación a la transferencia de datos que requieran su consentimiento. 
+              La información deberá ser proporcionada de forma voluntaria por el titular de los datos personales, previa lectura y conocimiento del Aviso de Privacidad mediante escrito libre, presentado en las instalaciones del Instituto, y por cualquier medio electrónico. El titular podrá manifestar su negativa para el tratamiento de sus datos personales conforme a las finalidades descritas en este Aviso, así como respecto de aquellas transferencias que requieran su consentimiento.
             </p>
             <p className="mb-3">
-              Para cumplir las finalidades necesarias anteriormente descritas, u otras que sean exigidas legalmente por las autoridades competentes, podrá transferir sus datos personales. Podrá ejercer sus derechos ARCO a través de la Plataforma Nacional de Transparencia (
-              <a href="http://www.plataformadetransparencia.org.mx/" target="_blank" rel="noopener" className="blue-color">
-                http://www.plataformadetransparencia.org.mx/
+              Para cumplir las finalidades necesarias anteriormente descritas, u otras que sean exigidas legalmente por las autoridades competentes, el Instituto de Terapia y Análisis de la Conducta, S. C., podrá realizar transferencias de datos personales sin requerir el consentimiento adicional del titular, cuando dichas transferencias sean necesarias para la prestación de los servicios profesionales, el cumplimiento de obligaciones legales, fiscales o administrativas, o para el uso de plataformas tecnológicas necesarias para la atención, seguimiento clínico o académico, siempre garantizando la confidencialidad y seguridad de la información.
+            </p>
+            <p className="mb-3">
+              El titular podrá ejercer sus derechos ARCO (Acceso, Rectificación, Cancelación u Oposición) enviando su solicitud al correo electrónico: recepcion.itc1@gmail.com, misma que será atendida conforme a los plazos y procedimientos establecidos en la legislación aplicable.
+            </p>
+            <p className="mb-3">
+              El Aviso de Privacidad Integral puede ser consultado en la página electrónica del Instituto:
+              <br />
+              <a
+                href="https://institutodeterapiacontextual.com/"
+                target="_blank"
+                rel="noopener"
+                className="blue-color"
+              >
+                https://institutodeterapiacontextual.com/
               </a>
-              ). 
-            </p>
-            <p className="mb-3">
-              El Aviso de Privacidad Integral puede ser consultado en la página electrónica del Instituto: <a href="https://terapiascontextuales.mx" target="_blank" rel="noopener" className="blue-color">https://terapiascontextuales.mx</a>
             </p>
 
             <hr />
 
-            {/* ----- Aviso Integral ----- */}
-            <h2 id="integral" className="mb-2 scroll-mt-24 h2-revert">Aviso de Privacidad Integral. </h2>
-            <p className="mb-3"><strong>Instituto de Terapia Contextual, CDMX.</strong></p>
+            {/* ====== AVISO DE PRIVACIDAD INTEGRAL ====== */}
+            <h2
+              id="integral"
+              className="mb-2 scroll-mt-24 h2-revert"
+            >
+              AVISO DE PRIVACIDAD INTEGRAL
+            </h2>
 
             <p className="mb-3">
-              El Instituto de Terapia Contextual, CDMX, con domicilio en Calle Canadá 177, Colonia Barrio San Lucas, Alcaldía de Coyoacán, Ciudad de México, C.P. 04030, es el sujeto obligado y responsable del tratamiento de los datos personales que se recaben por esta entidad, de conformidad con lo establecido en los artículos 6°, fracción II y VII, y 16, segundo párrafo, de la Constitución Política de los Estados Unidos Mexicanos; 3°, fracción XXXIII, 4°, 16, 17 y 18 de la Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados.
+              <strong>Instituto de Terapia y Análisis de la Conducta, S. C.</strong>
             </p>
 
             <p className="mb-3">
-              El Instituto de Terapia Contextual, CDMX, recaba sus datos personales, y es responsable del tratamiento que se les dé. En todo momento, el Instituto de Terapia Contextual, CDMX, debe contar con la autorización de los titulares de la información, con la finalidad de utilizar los datos única y exclusivamente para los fines institucionales justificados, y de conformidad con la legislación vigente, sin proporcionarla a terceros. Los datos personales no podrán ser transferidos o tratados por personas diversas ajenas al Instituto. 
+              El Instituto de Terapia y Análisis de la Conducta, S. C. con domicilio en CALLEJÓN BELISARIO DOMÍNGUEZ 141, INTERIOR 2, COLONIA DEL CARMEN, ALCALDÍA COYOACÁN, 04100, CIUDAD DE MÉXICO, es responsable del tratamiento de los datos personales que se recaben por esta entidad, de conformidad con lo dispuesto en los artículos 1, 6, 8, 9, 14, 15, 16 y demás relativos de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y su Reglamento.
             </p>
 
-            {/* ANCLA: h-px para observer/scroll top confiable */}
-            <span id="finalidades" className="block h-px scroll-mt-24" aria-hidden="true"></span>
-            <p>
-              Si eres alumno, docente, conferencista o invitado externo, visitante o consultante (nacional o extranjero), los datos personales que recabamos de usted serán utilizados para las siguientes finalidades: 
+            <p className="mb-3">
+              El Instituto de Terapia y Análisis de la Conducta, S. C., recaba sus datos personales y es responsable del tratamiento que se les dé. En todo momento, el Instituto debe contar con la autorización de los titulares de la información, con la finalidad de utilizar los datos única y exclusivamente para los fines institucionales justificados y de conformidad con la legislación vigente. En ningún caso los datos personales serán comercializados.
             </p>
 
-            <ol className="list-disc pl-6 mb-3">
-              <li>La difusión de conocimientos científicos, culturales, tecnológicos y profesionales.</li>
+            {/* ANCLA */}
+            <span
+              id="finalidades"
+              className="block h-px scroll-mt-24"
+              aria-hidden="true"
+            ></span>
+
+            <p className="mb-3">
+              Si eres alumno, docente, conferencista o invitado externo, visitante o consultante (nacional o extranjero), los datos personales que recabamos de usted serán utilizados para las siguientes finalidades:
+            </p>
+
+            <ul className="list-disc pl-6 mb-4">
+              <li>La prestación de servicios terapéuticos, clínicos y académicos.</li>
+              <li>La integración y administración de expedientes clínicos y académicos.</li>
               <li>Informar de los asuntos escolares y administrativos.</li>
-              <li>Inscripción a eventos o cualquier servicio o actividad que contribuya a la formación integral. </li>
-              <li>Actualizar la base de datos de alumnos, estudiantes, docentes, consultantes, así como sus respectivos contactos en caso de emergencia.</li>
-              <li>Prestar los servicios y realizar actividades que resulten necesarias para el desarrollo o formación académica, profesional y extracurricular. </li>
-              <li>Realizar reportes semanales, mensuales y anuales académicos, escolares o estadísticos. </li>
-              <li>Evaluar el desempeño académico y extracurricular. </li>
-              <li>Otorgar becas o apoyos económicos en caso de cumplir los requisitos establecidos. </li>
-              <li>Contactar a familiares o terceros, en casos de una emergencia. </li>
-            </ol>
-
-            <p className="mb-3">
-              Recabamos sus datos personales al usar los mecanismos remotos de comunicación electrónica consistentes en la página web y correo electrónico institucional, así como la plataforma virtual de educación a distancia institucional; o bien, al aplicar a un curso, diplomado, seminario, simposio, taller, mesa redonda, conferencia o análogo; o la participación bajo cualquier formato en procedimientos de adjudicación directa de productos o servicios; medios a través de los cuales se recaban los siguientes datos personales: 
-            </p>
-
-            <p className="mb-3">
-              El titular<sup>1</sup> de los datos personales proporcionará de manera libre la siguiente información: 
-            </p>
-
-            {/* ANCLA: h-px para observer/scroll top confiable */}
-            <span id="datos-personales" className="block h-px scroll-mt-24" aria-hidden="true"></span>
-            <h3 className="mt-6 font-semibold h3-revert">Datos personales: </h3>
-            <ul className="list-decimal pl-6 space-y-1">
-              <li>Nombre(s) y apellidos. </li>
-              <li>Fecha de nacimiento. </li>
-              <li>Género.</li>
-              <li>Estado Civil. </li>
-              <li>Número de hijos. </li>
-              <li>Teléfono de casa, celular y de trabajo. </li>
-              <li>Correo electrónico.</li>
-              <li>Fotografía. </li>
-            </ul>
-
-            <h3 id="datos-familiares" className="mt-6 scroll-mt-24 font-semibold h3-revert">Datos familiares: </h3>
-            <ul className="list-none pl-6 space-y-1">
-              <li>1.1 Nombre(s) y apellidos de sus padres. </li>
-              <li>1.2. Nombre y apellidos de su esposo (a) o concubina(o). </li>
-            </ul>
-
-            <h3 id="laborales" className="mt-6 scroll-mt-24 font-semibold h3-revert">Laborales: </h3>
-            <ul className="list-none pl-6 space-y-1">
-              <li>2.1. Nombre(s) y apellidos. </li>
-              <li>2.2. Nombre y sector de la empresa o institución donde trabaja. </li>
-              <li>2.3. Estado de la República donde se ubica. </li>
-              <li>2.4. Puesto y condición laboral en esa empresa o institución. </li>
-              <li>2.5. Relación laboral con su actual profesión. </li>
-              <li>2.6. Grado de satisfacción laboral y salarial. </li>
-              <li>2.7. Monto de ingresos mensuales.  </li>
-              <li>2.8. Actualizaciones profesionales (cursos, diplomados, seminarios, idiomas) y  organización en la(s) que lo(s) ha tomado. </li>
-              <li>2.9. Si es autoempleado o si está desempleado, motivos por lo que no trabaja, tiempo que ha permanecido sin laborar:  </li>
-            </ul>
-
-            <h3 id="academicos" className="mt-6 scroll-mt-24 font-semibold h3-revert">Académicos: </h3>
-            <ul className="list-none pl-6 space-y-1">
-              <li>Nombre(s) y apellidos. </li>
-              <li>3.1. Grados de estudios. </li>
-              <li>3.2 Institución donde los cursó. </li>
-              <li>3.3. Motivos por los cuales los realizó. </li>
-              <li>3.4. Valoración de la experiencia adquirida relativa a su formación (plan de estudios y a la calidad de enseñanza y a la carga académica). </li>
-              <li>3.5 Tiempo que tardo en titularse. </li>
-              <li>3.6 Realizó servicio social y dónde. </li>
-            </ul>
-
-            <p id="fn1" className="my-5 text-sm text-slate-600 italic text-right scroll-mt-24">
-              1 Titular: La persona física a quien corresponden los datos personales. Artículo 3°, fracción XXXI, Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados. 
-            </p>
-
-            <hr className="my-5"/>
-
-            <ul className="list-none pl-6 space-y-1">
-              <li>3.7 ¿Si se tituló? </li>
-              <li>3.8. Dominio del idioma inglés u otro. </li>
-              <li>3.9. Tipo de habilidades desarrolladas durante su formación profesional. </li>
-              <li>3.10. ¿Son necearías para desempeñar su trabajo? </li>
-              <li>3.11. Años de inicio y término de sus estudios. </li>
-              <li>3.12. País de ubicación de la escuela.</li>
-              <li>3.13. Nombre de la institución donde cursó bachillerato, plantel, clave y domicilio y elección de ingreso (área, carrera, sistema y plantel escolar). </li>
-            </ul>
-
-            <h3 id="sociales" className="mt-6 scroll-mt-24 font-semibold h3-revert">Sociales: </h3>
-            <ul className="list-none pl-6 space-y-1">
-              <li>4.1. Si es miembro de una organización o asociación.</li>
-              <li>4.2. Denominación o razón social de ésta. </li>
-              <li>4.3. Si hay interés por participar en programas de beneficio social.</li>
-            </ul>
-
-            <h3 id="sensibles" className="mt-6 scroll-mt-24 font-semibold h3-revert">Datos personales sensibles: (voluntarios y opcionales): </h3>
-            <ul className="list-none pl-6 space-y-1">
-              <li>Modo de vida. </li>
-              <li>5.1. Práctica de deporte o ejercicio. </li>
-              <li>5.2. Temporalidad. </li>
-              <li>5.3 Cuidado de su salud. </li>
-              <li>5.4 Frecuencia con que practica o asiste a eventos de arte y/o deporte. </li>
-              <li>5.5. Estado de salud física, psico-emocional, adicciones (existencia y tipo), problemas y situación familiar, manifestación de estado de vulnerabilidad o discapacidad.</li>
-            </ul>
-
-            <h3 id="emergencia" className="mt-6 scroll-mt-24 font-semibold h3-revert">Datos de Contacto de emergencia: </h3>
-            <ul className="list-none pl-6 space-y-1 mb-4">
-              <li>6.1. Nombre(s) y apellido de contacto de emergencia. </li>
-              <li>6.2 Teléfono (fijo y móvil), dirección y relación con el titular de lainformación. </li>
-            </ul>
-
-            <p id="cookies" className="scroll-mt-24">
-              La página web utiliza cookies y web beacons a través de los cuales es posible generar información estadística. 
-            </p>
-            <p className="mb-3">
-              Las cookies son archivos de texto que son descargados automáticamente y almacenados en el disco duro del equipo de cómputo del usuario al navegar en una página de Internet específica, que permiten recordar al servidor de Internet algunos datos sobre este usuario, entre ellos, sus preferencias para la visualización de las páginas en ese servidor, nombre y contraseña. Asimismo, el sitio web contiene anuncios publicitarios que pueden enviar cookies de nuestros usuarios. 
-            </p>
-            <p className="mb-3">
-              Las web beacons son imágenes insertadas en una página de Internet o correo electrónico, que puede ser utilizado para monitorear el comportamiento de un visitante, como almacenar información sobre la dirección IP del usuario, duración del tiempo de interacción en dicha página y el tipo de navegador utilizado, entre otros. Dicha información se almacena en las bitácoras de nuestro servidor y es la siguiente: 
-            </p>
-
-            <ul className="list-none pl-6 space-y-1 mb-4">
-              <li>a) Tipo de navegador y sistema operativo.</li>
-              <li>b) Si cuenta o no con software como java script o flash. </li>
-              <li>c) Sitio que visitó antes de entrar al nuestro.</li>
-              <li>d) Vínculos web que sigue en Internet.</li>
-              <li>e) Su dirección IP (Internet Protocol). </li>
-            </ul>
-
-            <p id="enlaces" className="scroll-mt-24 mb-3">
-              Estas cookies y otras tecnologías pueden ser deshabilitadas. Para conocer cómo hacerlo, consulte los siguientes vínculos: 
-            </p>
-            <ul className="roman pl-6 space-y-1 mb-4">
-              <li>
-                Microsoft Edge:{" "}
-                <a
-                  href="https://support.microsoft.com/es-mx/help/4468242/microsoft-edge- browsing-data-and-privacy-microsoft-privacy"
-                  target="_blank"
-                  rel="noopener"
-                  className="blue-color"
-                >
-                  https://support.microsoft.com/es-mx/help/4468242/microsoft-edge- browsing-data-and-privacy-microsoft-privacy 
-                </a>
-              </li>
-              <li>
-                Mozilla Firefox:{" "}
-                <a
-                  href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios- web-rastrear-preferencias"
-                  target="_blank"
-                  rel="noopener"
-                  className="blue-color"
-                >
-                  https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios- web-rastrear-preferencias 
-                </a>
-              </li>
-              <li>
-                Google Chrome:{" "}
-                <a
-                  href="https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DDesktop& hl=es"
-                  target="_blank"
-                  rel="noopener"
-                  className="blue-color"
-                >
-                  https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DDesktop& hl=es 
-                </a>
-              </li>
-              <li>
-                Apple Safari:{" "}
-                <a
-                  href="https://support.apple.com/es-es/guide/safari/sfri11471/mac"
-                  target="_blank"
-                  rel="noopener"
-                  className="blue-color"
-                >
-                  https://support.apple.com/es-es/guide/safari/sfri11471/mac 
-                </a>
-              </li>
+              <li>Inscripción a eventos o cualquier servicio o actividad que contribuya a la formación integral.</li>
+              <li>Actualizar la base de datos de alumnos, estudiantes, docentes y consultantes.</li>
+              <li>Realizar reportes semanales, mensuales y anuales académicos, escolares o estadísticos.</li>
+              <li>Evaluar el desempeño académico y extracurricular.</li>
+              <li>Otorgar becas o apoyos económicos en caso de cumplir los requisitos establecidos.</li>
+              <li>Contactar a familiares o terceros, en casos de emergencia.</li>
+              <li>Cumplimiento de obligaciones legales, fiscales y administrativas.</li>
             </ul>
 
             <p className="mb-3">
-              En el caso de empleo de cookies, el botón de "ayuda" que se encuentra en la barra de herramientas de la mayoría de los navegadores, le dirá cómo evitar aceptar nuevas cookies, cómo hacer que el navegador le notifique cuando recibe una nueva cookie o cómo deshabilitar todas las cookies. 
+              Recabamos sus datos personales al usar los mecanismos remotos de comunicación electrónica consistentes en la página web, correo electrónico institucional, plataformas virtuales de educación o atención psicológica, o bien, al aplicar a un curso, diplomado, seminario, simposio, taller, conferencia o análogo.
             </p>
+
+            {/* ANCLA */}
+            <span
+              id="datos-personales"
+              className="block h-px scroll-mt-24"
+              aria-hidden="true"
+            ></span>
+
+            <p className="mb-2 font-semibold h3-revert">
+              Datos personales que pueden ser recabados:
+            </p>
+
             <p className="mb-3">
-              La información deberá ser proporcionada de forma voluntaria por el titular de los datos personales previa lectura y conocimiento del Aviso de Privacidad. A través de escrito libre presentado en el Instituto de Terapia Contextual, CDMX y por cualquier medio, el titular podrá manifestar su negativa para el tratamiento de sus datos personales para las finalidades descritas en este Aviso y la transferencia de datos que requieran su consentimiento. 
-            </p>
-            <p id="fn2" className="scroll-mt-24">
-              El titular<sup>2</sup> de los datos personales tiene derecho a conocer qué información tiene Instituto de Terapia Contextual, CDMX, para qué es utilizada y las condiciones del uso que se le dan (ACCESO). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (RECTIFICACIÓN). De igual manera, tiene derecho a solicitar que su información se elimine de los registros o bases de datos cuando se determine, con base en la ley, que la misma se ha utilizado en forma inadecuada (CANCELACIÓN), así como también oponerse al uso de sus datos personales para fines específicos distintos a los señalados (OPOSICIÓN). También podrá enviar su solicitud al correo electrónico: recepcion.itc1@gmail.com
+              Datos de identificación: Nombre(s) y apellidos, teléfono, correo electrónico, fotografía.
+              <br />
+              Datos académicos y profesionales: Grados de estudios, institución donde los cursó, ocupación, experiencia profesional.
+              <br />
+              Datos de contacto de emergencia: Nombre, teléfono y relación con el titular.
+              <br />
+              Datos personales sensibles (voluntarios): Estado de salud física, psicológica o emocional, antecedentes terapéuticos, adicciones, situación de vulnerabilidad o discapacidad, información necesaria para la adecuada prestación de servicios psicológicos.
             </p>
 
-            <h3 id="modificaciones" className="mt-6 scroll-mt-24 h3-revert">Modificaciones al Aviso de Privacidad: </h3>
+            {/* ANCLA */}
+            <span
+              id="sensibles"
+              className="block h-px scroll-mt-24"
+              aria-hidden="true"
+            ></span>
+
+            <p className="mb-2 font-semibold h3-revert">
+              Consentimiento para datos sensibles
+            </p>
+
+            <p className="mb-4">
+              El titular otorga su consentimiento expreso y por escrito para el tratamiento de sus datos personales sensibles, de conformidad con lo dispuesto en el artículo 9 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+            </p>
+
+            {/* ANCLA */}
+            <span
+              id="transferencias"
+              className="block h-px scroll-mt-24"
+              aria-hidden="true"
+            ></span>
+
+            <p className="mb-2 font-semibold h3-revert">
+              Transferencias de datos
+            </p>
+
             <p className="mb-3">
-              El presente aviso de privacidad puede sufrir modificaciones o actualizaciones. Dichas actualizaciones o modificaciones estarán disponibles al público, por lo que podrá consultarlas en el sitio web: <a href="http://terapiascontextuales.mx/" target="_blank" rel="noopener" className="blue-color">http://terapiascontextuales.mx/</a> en la sección Aviso de Privacidad. Se recomienda y requiere consultar el Aviso de Privacidad, por lo menos semestralmente para estar actualizado de las condiciones y términos de éste. 
+              El Instituto podrá transferir datos personales sin requerir consentimiento adicional del titular cuando dichas transferencias sean necesarias para:
             </p>
 
-            <p className="my-5 text-sm text-slate-600 italic text-right scroll-mt-24">
-              2 Titular: La persona física a quien corresponden los datos personales. Artículo 3°, fracción XXXI, Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados. 
+            <ul className="list-disc pl-6 mb-4">
+              <li>Prestación de servicios profesionales relacionados con la atención psicológica o académica.</li>
+              <li>Uso de plataformas tecnológicas de videollamadas, expedientes digitales o sistemas administrativos.</li>
+              <li>Cumplimiento de obligaciones legales ante autoridades competentes.</li>
+            </ul>
+
+            <p className="mb-4">
+              En ningún caso se transferirán datos personales con fines comerciales o publicitarios.
             </p>
 
-            <h3>
-              Fecha de última actualización: 13/abril/2021 
-            </h3>
+            {/* ANCLA */}
+            <span
+              id="cookies"
+              className="block h-px scroll-mt-24"
+              aria-hidden="true"
+            ></span>
+
+            <p className="mb-2 font-semibold h3-revert">
+              Uso de cookies y tecnologías de rastreo
+            </p>
+
+            <p className="mb-4">
+              La página web utiliza cookies y web beacons a través de los cuales es posible generar información estadística. Las cookies permiten recordar preferencias de navegación, así como datos técnicos relacionados con el uso del sitio. Estas tecnologías pueden ser deshabilitadas directamente desde el navegador del usuario.
+            </p>
+
+            {/* ANCLA */}
+            <span
+              id="arco"
+              className="block h-px scroll-mt-24"
+              aria-hidden="true"
+            ></span>
+
+            <p className="mb-2 font-semibold h3-revert">
+              Derechos ARCO
+            </p>
+
+            <p className="mb-3">
+              El titular de los datos personales tiene derecho a conocer qué información posee el Instituto, para qué se utiliza y las condiciones de uso (ACCESO); solicitar la corrección de su información (RECTIFICACIÓN); solicitar la eliminación de los datos cuando se determine que han sido utilizados de forma inadecuada (CANCELACIÓN); así como oponerse al tratamiento de sus datos para fines específicos (OPOSICIÓN).
+            </p>
+
+            <p className="mb-4">
+              Para ejercer estos derechos, el titular deberá enviar su solicitud al correo electrónico:
+              <br />
+              <strong>recepcion.itc1@gmail.com</strong>
+            </p>
+
+            {/* ANCLA */}
+            <span
+              id="modificaciones"
+              className="block h-px scroll-mt-24"
+              aria-hidden="true"
+            ></span>
+
+            <p className="mb-2 font-semibold h3-revert">
+              Modificaciones al Aviso de Privacidad
+            </p>
+
+            <p className="mb-3">
+              El presente aviso de privacidad podrá sufrir modificaciones o actualizaciones. Dichas modificaciones estarán disponibles al público en el sitio web:
+              <br />
+              <a
+                href="https://institutodeterapiacontextual.com/"
+                target="_blank"
+                rel="noopener"
+                className="blue-color"
+              >
+                https://institutodeterapiacontextual.com/
+              </a>
+              <br />
+              Se recomienda consultar este Aviso de Privacidad de manera periódica.
+            </p>
+
+            <p className="mt-8 text-sm text-slate-600 italic text-right">
+              Fecha de última actualización: 24 de enero de 2026
+            </p>
           </article>
         </div>
       </section>
