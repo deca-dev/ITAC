@@ -1,4 +1,10 @@
 ---
 deployment:
   tasks:
-    - echo "cPanel can see and run my tasks!"
+    - export DEPLOYPATH=/home/cusop751wkat/public_html/
+    - cd /home/cusop751wkat/repositories/ITAC-repo
+    - npm ci
+    - npm run build
+    - /bin/rm -rf ${DEPLOYPATH}assets
+    - /bin/cp -R dist/assets ${DEPLOYPATH}
+    - /bin/cp dist/index.html ${DEPLOYPATH}

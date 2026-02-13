@@ -60,7 +60,7 @@ export default function Hero() {
           <div className="sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="text-[#1A2F3F]">
               <h2 className="text-3xl md:text-4xl mb-2">
-                Diplomado en <strong>Fundamentos de Terapia Dialéctica Conductual</strong> (7ma Generación)
+                Diplomado en <strong>Fundamentos de Terapia Dialéctica Conductual</strong>
               </h2>
               <div className="flex justify-center my-6 max-w-4xl mx-auto">
                 <img className="h-[40px] sm:h-[90px]" src="/assets/bg/bnr-1-1.png" alt="" />

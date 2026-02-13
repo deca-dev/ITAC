@@ -20,7 +20,7 @@ const books: Book[] = [
             "Reyes, M. A. (2024).​ Activación Conductual Adaptada para el Tratamiento del Estrés Postraumático (AC-TEPT). Córdoba, Brujas.",
         blurb:
             "Aborda la integración de procesos contextuales en la atención a pacientes oncológicos, con guías de intervención y casos clínicos.",
-        buyUrl: "#",
+        buyUrl: "https://wa.link/animxn",
     },
     {
         id: "itac-02",
@@ -31,7 +31,7 @@ const books: Book[] = [
             "Reyes, M. A. & Téllez, J. (2024).​ Activación conductual para depresión resistente al tratamiento. Córdoba, Brujas.",
         blurb:
             "Protocolo paso a paso con herramientas prácticas y registros conductuales para su aplicación clínica.",
-        buyUrl: "#",
+        buyUrl: "https://wa.link/b68hvc",
     },
     {
         id: "itac-03",

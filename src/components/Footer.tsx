@@ -102,10 +102,10 @@ const Footer = () => {
               <div className="flex items-center space-x-3 min-w-0 hover:text-white">
                 <Mail className="w-5 h-5 flex-shrink-0" />
                 <a
-                  href="mailto:informes@institutoterapiaconductual.com"
+                  href="mailto:informes@institutodeterapiacontextual.com"
                   className="text-sm break-all hover:underline hover:text-white"
                 >
-                  informes@institutoterapiaconductual.com
+                  informes@institutodeterapiacontextual.com
                 </a>
               </div>
               <div className="flex items-center space-x-3 min-w-0 hover:text-white">

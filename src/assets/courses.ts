@@ -24,7 +24,7 @@ export const courses: Course[] = [
     id: 1,
     slug: "diplomado-fundamentos-dbt",
     image: "/assets/images/FormacionAcademica-card-1.jpg",
-    title: "Diplomado en Fundamentos de Terapia Dialéctica Conductual (7ma Generación)",
+    title: "Diplomado en Fundamentos de Terapia Dialéctica Conductual",
     subtitle:
       "Formación teórico-práctica para desarrollar habilidades clínicas basadas en ACT, con énfasis en valores, mindfulness y flexibilidad psicológica.",
     dates: "04 abril, 2025 - 24 octubre, 2025",
