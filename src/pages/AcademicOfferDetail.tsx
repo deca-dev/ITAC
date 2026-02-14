@@ -19,11 +19,19 @@ function Toast({
     <div
       aria-live="polite"
       aria-atomic="true"
-      className="pointer-events-none fixed inset-0 z-[9999] flex items-end justify-end p-4 sm:p-6"
+      // ✅ Centered
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none"
     >
+      {/* ✅ Backdrop (visual only, does NOT block clicks) */}
+      <div
+        className={`pointer-events-none absolute inset-0 bg-black/35 transition-opacity duration-300 ${
+          open ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
       <div
         className={`transform transition-all duration-300 ${
-          open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+          open ? "translate-y-0 scale-100 opacity-100" : "translate-y-2 scale-[0.98] opacity-0"
         }`}
       >
         <div className="pointer-events-auto max-w-sm rounded-lg shadow-lg ring-1 ring-black/10 bg-white">
@@ -55,7 +63,11 @@ function Toast({
               </svg>
             </button>
           </div>
-          <div className={`h-1 w-full rounded-b-lg ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"}`} />
+          <div
+            className={`h-1 w-full rounded-b-lg ${
+              kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+            }`}
+          />
         </div>
       </div>
     </div>
@@ -84,9 +96,7 @@ export default function AcademicOfferDetail() {
 
   if (!course) return <Navigate to="/formacion-academica" replace />;
 
-  const onChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setForm((f) => ({ ...f, [name]: value }));
   };
@@ -103,7 +113,7 @@ export default function AcademicOfferDetail() {
       mensaje: `Interés en el curso ${course.title}`,
       courseSlug: course.slug,
       courseTitle: course.title,
-      sheet: "Interes Cursos",    // <- pon el nombre exacto de la hoja para registrar interesados
+      sheet: "Interes Cursos", // <- pon el nombre exacto de la hoja para registrar interesados
       type: "course_interest",
       _hp: form._hp,
     });
@@ -158,10 +168,7 @@ export default function AcademicOfferDetail() {
                 [&_a]:hover:text-[#043B81]
               `}
             >
-              <div
-                className="lg:max-w-2xl"
-                dangerouslySetInnerHTML={{ __html: course.text }}
-              />
+              <div className="lg:max-w-2xl" dangerouslySetInnerHTML={{ __html: course.text }} />
               <button
                 onClick={open}
                 className="bg-[#1A3459] text-white px-6 py-2 rounded-lg mt-5 hover:bg-[#12243d] transition-colors duration-200 self-start"
@@ -172,11 +179,7 @@ export default function AcademicOfferDetail() {
 
             {/* image */}
             <div className="flex-shrink-0 sm:w-60 h-60 w-60 lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden mx-auto lg:mx-0 lg:absolute lg:right-[-10%] lg:top-[9%]">
-              <img
-                src={course.image}
-                alt={course.title}
-                className="w-full h-full object-cover shadow-lg"
-              />
+              <img src={course.image} alt={course.title} className="w-full h-full object-cover shadow-lg" />
             </div>
           </div>
 
@@ -200,17 +203,9 @@ export default function AcademicOfferDetail() {
 
       {/* ============== MODAL ============== */}
       {openModal && (
-        <div
-          className="fixed inset-0 z-[9998] flex items-center justify-center p-4"
-          role="dialog"
-          aria-modal="true"
-        >
+        <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4" role="dialog" aria-modal="true">
           {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black/40"
-            onClick={close}
-            aria-hidden="true"
-          />
+          <div className="absolute inset-0 bg-black/40" onClick={close} aria-hidden="true" />
           {/* Card */}
           <div className="relative z-[9999] w-full max-w-md rounded-xl bg-white p-6 shadow-2xl ring-1 ring-black/10">
             <div className="flex items-start justify-between">
@@ -288,12 +283,7 @@ export default function AcademicOfferDetail() {
       )}
 
       {/* Toast */}
-      <Toast
-        open={toastOpen}
-        kind={toastKind}
-        message={toastMsg}
-        onClose={() => setToastOpen(false)}
-      />
+      <Toast open={toastOpen} kind={toastKind} message={toastMsg} onClose={() => setToastOpen(false)} />
     </>
   );
 }

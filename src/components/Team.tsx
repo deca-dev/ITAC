@@ -1,9 +1,9 @@
 import React from "react";
-import { User, Phone, Mail } from "lucide-react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { teamMembers, type TeamMember } from '../assets/team';
+import { Link } from "react-router-dom";
 
 
 const Team = () => {
@@ -49,7 +49,7 @@ const Team = () => {
             <ChevronRight className="text-[#1A3459]" />
           </button>
 
-          <div className="keen-slider max-w-[82%] mx-auto" ref={sliderRef}>
+          <div className="keen-slider max-w-[90%] mx-auto" ref={sliderRef}>
             {teamMembers.map((member, index) => (
               <div
                 key={index}
@@ -105,9 +105,12 @@ const Team = () => {
 
                 {/* Buttons */}
                 <div className="flex gap-2 justify-center pt-8 text-center mt-auto">
-                  <button className="bg-white text-[#5a7e7b] border border-transparent hover:border-[#5a7e7b] px-4 py-2 rounded text-sm font-medium transition-colors">
-                    Ver Perfil
-                  </button>
+                  <Link
+                                      to={`/team/${member.id}`}
+                                      className="bg-white text-[#5a7e7b] border border-transparent hover:border-[#5a7e7b] px-4 py-2 rounded text-sm font-medium transition-colors"
+                                    >
+                                      Ver Perfil
+                                    </Link>
                   <button className="bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-2 rounded text-sm font-medium transition-colors">
                     Contacto
                   </button>

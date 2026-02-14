@@ -279,9 +279,12 @@ export const teamResumes: Record<string, TeamResume> = {
         extracto:
             "Extracto: Psicóloga especializada en el área Clínica bajo una orientación Conductual Contextual.",
         bio: [
-            "Liliana es Licenciada en Psicología por la Facultad de Psicología de la Universidad Autónoma de México (UNAM). Tiene formación en evaluación neuropsicológica e intervención psicoterapéutica Cognitivo Conductual por el Centro de Servicios Psicológicos \"Dr. Guillermo Dávila\" de la Facultad de Psicología de la UNAM, así como formación en la intervención psicoterapéutica Conductual Contextual por el Departamento de Psiquiatría y Salud Mental (DPSM) de la Facultad de Medicina de la UNAM; asimismo, cuenta con formación en la Terapia Dialéctica Conductual (DBT) por el Instituto de Terapia y Análisis de la Conducta (ITAC) y el DPSM, también cuenta con entrenamiento en la Terapia Dialéctica Conductual para Adolescentes (DBT-A) por la institución DBT Iberoamérica, y cuenta con capacitación en intervenciones basadas en evaluaciones funcionales.",
-            "Es Terapeuta en DBT para población adulta y adolescente, así como co-líder y líder de los talleres de Entrenamiento Multifamiliar de Habilidades DBT-A para los programas dirigidos a población adolescente y a los cuidadores. Adicionalmente, brinda atención bajo la Terapia de Activación Conductual para la Depresión y la Terapia de Aceptación y Compromiso.",
+            "Liliana es Licenciada en Psicología por la Facultad de Psicología de la Universidad Autónoma de México (UNAM).",
+            "Tiene formación en evaluación neuropsicológica e intervención psicoterapéutica Cognitivo Conductual por el Centro de Servicios Psicológicos \"Dr. Guillermo Dávila\" de la Facultad de Psicología de la UNAM, así como formación en la intervención psicoterapéutica Conductual Contextual por el Departamento de Psiquiatría y Salud Mental (DPSM) de la Facultad de Medicina de la UNAM; asimismo, cuenta con formación en la Terapia Dialéctica Conductual (DBT) por el Instituto de Terapia y Análisis de la Conducta (ITAC) y el DPSM, también cuenta con entrenamiento en la Terapia Dialéctica Conductual para Adolescentes (DBT-A) por la institución DBT Iberoamérica, y cuenta con capacitación en intervenciones basadas en evaluaciones funcionales.",
+            "Es Terapeuta en DBT para población adulta y adolescente, así como co-líder y líder de los talleres de Entrenamiento Multifamiliar de Habilidades DBT-A para los programas dirigidos a población adolescente y a los cuidadores.",
+            "Adicionalmente, brinda atención bajo la Terapia de Activación Conductual para la Depresión y la Terapia de Aceptación y Compromiso.",
         ],
+
         contacto: {
             phone: "55 55547420",
             emails: ["informes@institutodeterapiacontextual.com"],
@@ -296,9 +299,13 @@ export const teamResumes: Record<string, TeamResume> = {
         bannerImage: "/assets/photos/banners/Fabiola.jpg",
         resumen: "Psicóloga Clínica bajo una orientación Conductual Contextual.",
         bio: [
-            "Licenciada en Psicología, actualmente especializándose en Psicooncología y realizando su Maestría. Formación de diplomados en Psicología Clínica e Intervenciones Psicoterapéuticas (Terapias Contextuales o de Tercera Generación: Terapia de Aceptación y Compromiso (ACT), Terapia Dialéctica Conductual (DBT), Activación Conductual (BA), Mindfulness y Terapia Analítico Funcional (FAP), Cuidados Paliativos, Psicooncología y Fundamentos de Terapia Dialéctica Conductual (DBT). Entrenamiento en Terapia Dialéctica Conductual para Adolescentes (DBT-A), taller de Terapia de Aceptación y Compromiso (ACT) en Niños y Adolescentes, curso-taller de Terapias Contextuales aplicadas a Trauma y taller de Aceptación Radical y Atención Plena basada en el Zen. Psicoterapeuta en el área de Infancia y Adolescencia, terapeuta en Terapia Dialéctica Conductual en adultos y Entrenadora líder en el Grupo de Habilidades Multifamiliar (DBT-A) y de Grupo de adultos (DB) del Instituto de Terapia y Análisis de la Conducta.",
+            "Licenciada en Psicología, actualmente especializándose en Psicooncología y realizando su Maestría.",
+            "Formación de diplomados en Psicología Clínica e Intervenciones Psicoterapéuticas (Terapias Contextuales o de Tercera Generación: Terapia de Aceptación y Compromiso (ACT), Terapia Dialéctica Conductual (DBT), Activación Conductual (BA), Mindfulness y Terapia Analítico Funcional (FAP), Cuidados Paliativos, Psicooncología y Fundamentos de Terapia Dialéctica Conductual (DBT).",
+            "Entrenamiento en Terapia Dialéctica Conductual para Adolescentes (DBT-A), taller de Terapia de Aceptación y Compromiso (ACT) en Niños y Adolescentes, curso-taller de Terapias Contextuales aplicadas a Trauma y taller de Aceptación Radical y Atención Plena basada en el Zen.",
+            "Psicoterapeuta en el área de Infancia y Adolescencia, terapeuta en Terapia Dialéctica Conductual en adultos y Entrenadora líder en el Grupo de Habilidades Multifamiliar (DBT-A) y de Grupo de adultos (DB) del Instituto de Terapia y Análisis de la Conducta.",
             "Actualmente participa como profesora adjunta en el Diplomado de Psicología Clínica e Intervenciones Psicoterapéuticas del Departamento de Psiquiatría y Salud Mental de la Facultad de Medicina de la Universidad Nacional Autónoma de México (UNAM).",
         ],
+
         contacto: {
             phone: "55 55547420",
             emails: ["informes@institutodeterapiacontextual.com"],
@@ -313,7 +320,11 @@ export const teamResumes: Record<string, TeamResume> = {
         bannerImage: "/assets/photos/banners/Uriel.jpg",
         resumen: "Psicólogo entrenado en Intervenciones Psicoterapéuticas Conductuales Contextuales.",
         bio: [
-            "Licenciado en Psicología.  Formado en el Diplomado en Psicología Clínica e Intervenciones Psicoterapéuticas, incluidas terapias contextuales como: Terapia de Aceptación y compromiso (ACT), Terapia Dialéctica Conductual (DBT), Activación Conductual (BA), Mindfulness y Terapia Analítico Funcional (FAP). Entrenamiento en Terapia Dialéctica Conductual para Adolescentes, Talleres en Terapia de Aceptación y Compromiso aplicada al Trastorno de Ansiedad Generalizada, Terapia Conductual Contextual para el Duelo Complicado, Potencializar las habilidades del Terapeuta en FAP. Colaborador en Talleres de Habilidades Socio-emocionales en población infantil en escuelas, así como Manejo del estrés y Regulación emocional en universitarios.  Actualmente entrenador en el Grupo de Habilidades Multifamiliar (DBT-A) del Instituto de Terapia y Análisis de la Conducta.",
+            "Licenciado en Psicología. Formado en el Diplomado en Psicología Clínica e Intervenciones Psicoterapéuticas, incluidas terapias contextuales como: Terapia de Aceptación y compromiso (ACT), Terapia Dialéctica Conductual (DBT), Activación Conductual (BA), Mindfulness y Terapia Analítico Funcional (FAP).",
+            "Entrenamiento en Terapia Dialéctica Conductual para Adolescentes, Talleres en Terapia de Aceptación y Compromiso aplicada al Trastorno de Ansiedad Generalizada, Terapia Conductual Contextual para el Duelo Complicado, Potencializar las habilidades del Terapeuta en FAP.",
+            "Colaborador en Talleres de Habilidades Socio-emocionales en población infantil en escuelas, así como Manejo del estrés y Regulación emocional en universitarios.",
+            "Actualmente entrenador en el Grupo de Habilidades Multifamiliar (DBT-A) del Instituto de Terapia y Análisis de la Conducta.",
         ],
+
     },
 };

@@ -86,54 +86,123 @@ const Services = () => {
             </h3>
           </div>
 
-          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="relative group cursor-pointer"
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
+         {/* MOBILE: horizontal scroll | DESKTOP: normal grid */}
+<div className="max-w-7xl mx-auto">
+  <div
+    className="
+      -mx-4 sm:-mx-6
+      flex items-start
+      overflow-x-auto overflow-y-hidden
+      touch-pan-x
+      overscroll-x-contain
+      snap-x snap-mandatory
+      gap-4
+      px-4 sm:px-6
+      pb-2
+      lg:hidden
+      [-webkit-overflow-scrolling:touch]
+    "
+  >
+    {services.map((service, index) => (
+      <div
+        key={index}
+        className="snap-start flex-shrink-0 w-[75%] sm:w-[45%]"
+      >
+        {/* ✅ your same card */}
+        <div
+          className="relative group cursor-pointer"
+          onMouseEnter={() => setHoveredCard(index)}
+          onMouseLeave={() => setHoveredCard(null)}
+        >
+          <div className="relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 transform group-hover:scale-105">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-64 object-cover transition-all duration-500"
+            />
+
+            <div
+              className={`absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent transition-opacity duration-500 ${
+                hoveredCard === index ? "opacity-90" : "opacity-60"
+              }`}
+            />
+
+            <div className="absolute bottom-0 text-left p-4 flex flex-col">
+              <h4
+                className={`text-white font-semibold transition-all duration-500 ${
+                  hoveredCard === index ? "text-lg mb-3" : "text-base"
+                }`}
               >
-                <div className="relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 transform group-hover:scale-105">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-64 object-cover transition-all duration-500"
-                  />
+                {service.title}
+              </h4>
 
-                  {/* Overlay */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent transition-opacity duration-500 ${
-                      hoveredCard === index ? 'opacity-90' : 'opacity-60'
-                    }`}
-                  />
-
-                  {/* Title & Description */}
-                  <div className="absolute bottom-0 text-left p-4 flex flex-col">
-                    <h4
-                      className={`text-white font-semibold transition-all duration-500 ${
-                        hoveredCard === index ? 'text-lg mb-3' : 'text-base'
-                      }`}
-                    >
-                      {service.title}
-                    </h4>
-
-                    <div
-                      className={`transition-all duration-500 overflow-auto flex-1 ${
-                        hoveredCard === index
-                          ? 'max-h-96 opacity-100 transform translate-y-0'
-                          : 'max-h-0 opacity-0 transform translate-y-4'
-                      }`}
-                    >
-                      <p className="text-white text-sm leading-tight">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div
+                className={`transition-all duration-500 overflow-auto flex-1 ${
+                  hoveredCard === index
+                    ? "max-h-96 opacity-100 transform translate-y-0"
+                    : "max-h-0 opacity-0 transform translate-y-4"
+                }`}
+              >
+                <p className="text-white text-sm leading-tight">
+                  {service.description}
+                </p>
               </div>
-            ))}
+            </div>
           </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* DESKTOP/TABLET: your normal grid */}
+  <div className="hidden lg:grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {services.map((service, index) => (
+      <div
+        key={index}
+        className="relative group cursor-pointer"
+        onMouseEnter={() => setHoveredCard(index)}
+        onMouseLeave={() => setHoveredCard(null)}
+      >
+        <div className="relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 transform group-hover:scale-105">
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full h-64 object-cover transition-all duration-500"
+          />
+
+          <div
+            className={`absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent transition-opacity duration-500 ${
+              hoveredCard === index ? "opacity-90" : "opacity-60"
+            }`}
+          />
+
+          <div className="absolute bottom-0 text-left p-4 flex flex-col">
+            <h4
+              className={`text-white font-semibold transition-all duration-500 ${
+                hoveredCard === index ? "text-lg mb-3" : "text-base"
+              }`}
+            >
+              {service.title}
+            </h4>
+
+            <div
+              className={`transition-all duration-500 overflow-auto flex-1 ${
+                hoveredCard === index
+                  ? "max-h-96 opacity-100 transform translate-y-0"
+                  : "max-h-0 opacity-0 transform translate-y-4"
+              }`}
+            >
+              <p className="text-white text-sm leading-tight">
+                {service.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useContactForm } from "../hooks/useContactForm";
 
-// ---- Toast minimalista (no altera layout) ----
+// ---- Toast modal-ish (CENTERED) but DOES NOT block clicks ----
 type ToastKind = "success" | "error";
 function Toast({
   open,
@@ -19,13 +19,23 @@ function Toast({
     <div
       aria-live="polite"
       aria-atomic="true"
-      className="pointer-events-none fixed inset-0 z-[9999] flex items-end justify-end p-4 sm:p-6"
+      // ✅ Important: outer wrapper never captures clicks
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none"
     >
+      {/* ✅ Backdrop is VISUAL ONLY (does not block clicks) */}
+      <div
+        className={`pointer-events-none absolute inset-0 bg-black/35 transition-opacity duration-300 ${
+          open ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
+      {/* Toast card wrapper (animated) */}
       <div
         className={`transform transition-all duration-300 ${
-          open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+          open ? "translate-y-0 scale-100 opacity-100" : "translate-y-2 scale-[0.98] opacity-0"
         }`}
       >
+        {/* ✅ Only the card should be clickable */}
         <div className="pointer-events-auto max-w-sm rounded-lg shadow-lg ring-1 ring-black/10 bg-white">
           <div className="flex items-start gap-3 p-4">
             <div
@@ -43,7 +53,9 @@ function Toast({
                 </svg>
               )}
             </div>
+
             <div className="flex-1 text-sm text-slate-800">{message}</div>
+
             <button
               type="button"
               onClick={onClose}
@@ -55,7 +67,12 @@ function Toast({
               </svg>
             </button>
           </div>
-          <div className={`h-1 w-full rounded-b-lg ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"}`} />
+
+          <div
+            className={`h-1 w-full rounded-b-lg ${
+              kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+            }`}
+          />
         </div>
       </div>
     </div>
@@ -104,7 +121,6 @@ export default function Contacto() {
     };
 
     await submit(payload);
-    // Quitamos los alert(). El feedback se hace con el toast en useEffect.
   };
 
   // Mostrar toast al cambiar ok/error, y limpiar formulario si ok=true
@@ -183,11 +199,7 @@ export default function Contacto() {
             <div className="flex gap-4">
               <div className="shrink-0 w-11 h-11 rounded-full bg-white shadow ring-1 ring-slate-200 grid place-items-center">
                 {/* Pin icon */}
-                <svg
-                  className="w-5 h-5 text-slate-800"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
+                <svg className="w-5 h-5 text-slate-800" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5Z" />
                 </svg>
               </div>
@@ -202,11 +214,7 @@ export default function Contacto() {
             {/* Teléfono */}
             <div className="flex gap-4">
               <div className="shrink-0 w-11 h-11 rounded-full bg-white shadow ring-1 ring-slate-200 grid place-items-center">
-                <svg
-                  className="w-5 h-5 text-slate-800"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
+                <svg className="w-5 h-5 text-slate-800" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M6.6 10.2a15.1 15.1 0 0 0 7.2 7.2l2.4-2.4a1 1 0 0 1 1-.24 11.6 11.6 0 0 0 3.6.6 1 1 0 0 1 1 1v3.6a1 1 0 0 1-1 1A18.8 18.8 0 0 1 3 5a1 1 0 0 1 1-1h3.6a1 1 0 0 1 1 1 11.6 11.6 0 0 0 .6 3.6 1 1 0 0 1-.24 1Z" />
                 </svg>
               </div>
@@ -224,11 +232,7 @@ export default function Contacto() {
             {/* Correos */}
             <div className="flex gap-4">
               <div className="shrink-0 w-11 h-11 rounded-full bg-white shadow ring-1 ring-slate-200 grid place-items-center">
-                <svg
-                  className="w-5 h-5 text-slate-800"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
+                <svg className="w-5 h-5 text-slate-800" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z" />
                 </svg>
               </div>
@@ -360,7 +364,7 @@ export default function Contacto() {
         </div>
       </section>
 
-      {/* ---- Toast montado al final, fuera del flujo ---- */}
+      {/* ---- Toast mounted at the end, outside layout flow ---- */}
       <Toast
         open={toastOpen}
         kind={toastKind}
