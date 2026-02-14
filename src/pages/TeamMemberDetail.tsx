@@ -1,12 +1,78 @@
 // src/pages/TeamMemberDetail.tsx
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, Phone, Mail } from "lucide-react";
-import { teamMembers } from "../assets/team";
+import { teamMembers, type TeamMember } from "../assets/team";
 import { teamResumes } from "../assets/teamResume";
+import ContactTherapistModal from "../components/ContactTherapistModal";
+import { useContactForm } from "../hooks/useContactForm";
 
 const ensureArr = (val: string | string[]) => (Array.isArray(val) ? val : [val]);
 
+// =======================
+// ✅ Toast (CENTERED)
+// =======================
+type ToastKind = "success" | "error";
+function Toast({
+  open,
+  kind,
+  message,
+  onClose,
+}: {
+  open: boolean;
+  kind: ToastKind;
+  message: string;
+  onClose: () => void;
+}) {
+  return (
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+      className="pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center p-4"
+    >
+      <div
+        className={`transform transition-all duration-300 ${
+          open ? "translate-y-0 opacity-100 scale-100" : "translate-y-2 opacity-0 scale-[0.98]"
+        }`}
+      >
+        <div className="pointer-events-auto max-w-sm rounded-lg shadow-lg ring-1 ring-black/10 bg-white">
+          <div className="flex items-start gap-3 p-4">
+            <div
+              className={`mt-0.5 grid h-6 w-6 place-items-center rounded-full ${
+                kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+              }`}
+            >
+              {kind === "success" ? (
+                <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                </svg>
+              ) : (
+                <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                </svg>
+              )}
+            </div>
+
+            <div className="flex-1 text-sm text-slate-800">{message}</div>
+
+            <button
+              type="button"
+              onClick={onClose}
+              className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md text-slate-500 hover:bg-slate-100 focus:outline-none"
+              aria-label="Cerrar notificación"
+            >
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+              </svg>
+            </button>
+          </div>
+
+          <div className={`h-1 w-full rounded-b-lg ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"}`} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function TeamMemberDetail() {
   const { memberId } = useParams<{ memberId: string }>();
@@ -18,32 +84,109 @@ export default function TeamMemberDetail() {
 
   const resume = useMemo(() => {
     if (!memberId) return null;
-    // teamResumes should be keyed by memberId
     return (teamResumes as any)[memberId] ?? null;
   }, [memberId]);
 
   if (!memberId) return <Navigate to="/team" replace />;
   if (!member) return <Navigate to="/team" replace />;
 
-  // ✅ Use only the “long details” from teamResume.ts (resumen + bio + contacto)
-  const displayName =
-    resume?.displayName ?? `${member.title} ${member.name}`.trim();
-
+  // ✅ Display content
+  const displayName = resume?.displayName ?? `${member.title} ${member.name}`.trim();
   const resumen = resume?.resumen ?? member.description ?? "";
-
   const bio: string[] = Array.isArray(resume?.bio) ? resume.bio : [];
-
   const phone: string | undefined = resume?.contacto?.phone;
-  const emails: string[] = Array.isArray(resume?.contacto?.emails)
-    ? resume.contacto.emails
-    : [];
+  const emails: string[] = Array.isArray(resume?.contacto?.emails) ? resume.contacto.emails : [];
 
-  // const photoKey = member.photo; // reuse team.ts photo key
   const bannerSrc = resume?.bannerImage ?? `/assets/photos/headshots/${member.photo}.png`;
 
   const modes = ensureArr(member.mode);
   const idioms = ensureArr(member.idiom);
   const populations = ensureArr(member.population);
+
+  // =======================
+  // ✅ Contact modal state
+  // =======================
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedTherapist, setSelectedTherapist] = useState<TeamMember | null>(member);
+  const [ctaSource, setCtaSource] = useState<"Agendar cita" | "Contacto" | "Enviar mensaje" | null>(null);
+
+  const [form, setForm] = useState({
+    _nombre: "",
+    _apellido: "",
+    telefono: "",
+    email: "",
+    asunto: "",
+    mensaje: "",
+    canal: "web" as const,
+    _hp: "",
+  });
+
+  const { loading, ok, submit } = useContactForm();
+
+  // =======================
+  // ✅ Toast state
+  // =======================
+  const [toastOpen, setToastOpen] = useState(false);
+  const [toastKind, setToastKind] = useState<ToastKind>("success");
+  const [toastMsg, setToastMsg] = useState("");
+
+  // keep therapist synced with the page member
+  useEffect(() => {
+    setSelectedTherapist(member);
+  }, [member]);
+
+  const openContact = (source: "Agendar cita" | "Contacto" | "Enviar mensaje") => {
+    setCtaSource(source);
+    setSelectedTherapist(member);
+    setOpenModal(true);
+  };
+
+  const closeContact = () => {
+    setOpenModal(false);
+    setCtaSource(null);
+  };
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedTherapist) return;
+
+    await submit({
+      nombre: `${form._nombre ?? ""} ${form._apellido ?? ""}`.trim(),
+      email: form.email,
+      telefono: form.telefono || undefined,
+      asunto: form.asunto || undefined,
+      mensaje:
+        `Terapeuta a contactar: ${selectedTherapist.title} ${selectedTherapist.name}\n` +
+        `Botón: ${ctaSource ?? "N/A"}\n\n` +
+        `${form.mensaje}`,
+      canal: form.canal,
+      _hp: form._hp,
+    });
+  };
+
+  useEffect(() => {
+    if (ok === true) {
+      // ✅ show centered toast
+      setToastKind("success");
+      setToastMsg("¡Gracias! Hemos recibido tu mensaje.");
+      setToastOpen(true);
+      const t = setTimeout(() => setToastOpen(false), 3500);
+
+      setForm({
+        _nombre: "",
+        _apellido: "",
+        telefono: "",
+        email: "",
+        asunto: "",
+        mensaje: "",
+        canal: "web",
+        _hp: "",
+      });
+      closeContact();
+
+      return () => clearTimeout(t);
+    }
+  }, [ok]);
 
   return (
     <section className="bg-[#f3f6f8]">
@@ -64,17 +207,10 @@ export default function TeamMemberDetail() {
       <header className="relative isolate overflow-hidden bg-[#05090b]">
         {/* Background layers */}
         <div className="absolute inset-0 -z-10">
-          {/* base */}
           <div className="absolute inset-0 bg-[#05090b]" />
-
-          {/* teal haze */}
           <div className="absolute inset-0 bg-[radial-gradient(1000px_700px_at_18%_30%,rgba(15,118,110,0.22)_0%,rgba(0,0,0,0)_62%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(800px_560px_at_70%_35%,rgba(15,118,110,0.14)_0%,rgba(0,0,0,0)_60%)]" />
-
-          {/* right wash to match photo blacks */}
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_45%,rgba(5,9,11,0.65)_68%,rgba(5,9,11,0.92)_82%,rgba(5,9,11,1)_100%)]" />
-
-          {/* vignette */}
           <div className="absolute inset-0 bg-[radial-gradient(1200px_700px_at_50%_40%,rgba(0,0,0,0)_0%,rgba(0,0,0,0.58)_68%,rgba(0,0,0,0.92)_100%)]" />
         </div>
 
@@ -102,22 +238,29 @@ export default function TeamMemberDetail() {
               ) : null}
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <button className="rounded-xl bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 text-sm font-semibold transition-colors">
+                {/* ✅ opens modal */}
+                <button
+                  type="button"
+                  onClick={() => openContact("Agendar cita")}
+                  className="rounded-xl bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 text-sm font-semibold transition-colors"
+                >
                   Agendar cita
                 </button>
-                <Link
-                  to="/contacto"
+
+                {/* ✅ opens modal (instead of navigating away) */}
+                <button
+                  type="button"
+                  onClick={() => openContact("Contacto")}
                   className="rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white px-6 py-3 text-sm font-semibold transition-colors"
                 >
                   Contacto
-                </Link>
+                </button>
               </div>
             </div>
 
-            {/* Right: photo fully blended (no visible rectangle) */}
+            {/* Right image (unchanged) */}
             <div className="relative hidden lg:block">
               <div className="relative h-[460px] w-[500px] overflow-visible">
-                {/* Big dark “bed” behind the photo to unify tones */}
                 <div
                   className="pointer-events-none absolute inset-0"
                   style={{
@@ -129,27 +272,20 @@ export default function TeamMemberDetail() {
                   }}
                 />
 
-                {/* Use IMG so mask behaves consistently */}
                 <img
                   src={bannerSrc}
                   alt={displayName}
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{
-                    // IMPORTANT: crop the studio edges away (contain keeps them!)
                     objectPosition: "58% 25%",
-
-                    // This feather kills corners + sides
                     WebkitMaskImage:
                       "radial-gradient(68% 92% at 58% 48%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.55) 74%, rgba(0,0,0,0) 92%)",
                     maskImage:
                       "radial-gradient(68% 92% at 58% 48%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.55) 74%, rgba(0,0,0,0) 92%)",
-
-                    // Lift subject a bit
                     filter: "brightness(1.10) contrast(1.06) saturate(1.03)",
                   }}
                 />
 
-                {/* Seam killer: specifically fades LEFT edge of the image */}
                 <div
                   className="pointer-events-none absolute inset-0"
                   style={{
@@ -160,7 +296,6 @@ export default function TeamMemberDetail() {
                   }}
                 />
 
-                {/* Edge darkener: only affects outer rim so the rectangle disappears */}
                 <div
                   className="pointer-events-none absolute inset-0"
                   style={{
@@ -171,7 +306,6 @@ export default function TeamMemberDetail() {
                   }}
                 />
 
-                {/* Subtle teal tint to match site palette */}
                 <div
                   className="pointer-events-none absolute inset-0"
                   style={{
@@ -183,32 +317,19 @@ export default function TeamMemberDetail() {
                 />
               </div>
             </div>
-
-
-
           </div>
         </div>
       </header>
-
-
-
-
-
 
       {/* CONTENT */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr),360px] items-start">
           {/* Main */}
           <div className="space-y-6">
-            {/* ✅ ONLY long resume content from TeamResume.ts */}
             <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
               <h3 className="text-lg font-bold text-[#0f2f45]">Biografía</h3>
               <div className="mt-4 space-y-4 text-slate-700 leading-relaxed">
-                {bio.length ? (
-                  bio.map((p, idx) => <p key={idx}>{p}</p>)
-                ) : (
-                  <p>{member.description}</p>
-                )}
+                {bio.length ? bio.map((p, idx) => <p key={idx}>{p}</p>) : <p>{member.description}</p>}
               </div>
             </div>
           </div>
@@ -241,16 +362,14 @@ export default function TeamMemberDetail() {
                 ) : null}
               </div>
 
-              {/* <button className="mt-6 w-full bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-3 rounded-md text-sm font-semibold transition-colors">
-                Agendar cita
-              </button> */}
-
-              <Link
-                to="/contacto"
+              {/* ✅ opens modal */}
+              <button
+                type="button"
+                onClick={() => openContact("Enviar mensaje")}
                 className="mt-2 block w-full text-center bg-white border border-slate-200 text-[#0f2f45] hover:bg-slate-50 px-4 py-3 rounded-md text-sm font-semibold transition-colors"
               >
                 Enviar mensaje
-              </Link>
+              </button>
             </div>
 
             {/* Details */}
@@ -268,14 +387,12 @@ export default function TeamMemberDetail() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="font-semibold w-24">Población:</span>
-                  <span className="flex-1">
-                    {populations?.length ? populations.join(", ") : "—"}
-                  </span>
+                  <span className="flex-1">{populations?.length ? populations.join(", ") : "—"}</span>
                 </div>
               </div>
             </div>
 
-            {/* Help banner (like your homepage strip) */}
+            {/* Help banner */}
             <div className="rounded-lg bg-[#b8d0d8] text-[#0f2f45] border border-white/50 p-5">
               <p className="font-semibold">¿Tienes dudas?</p>
               <p className="text-sm mt-1">
@@ -291,6 +408,25 @@ export default function TeamMemberDetail() {
           </aside>
         </div>
       </div>
+
+      {/* ✅ Modal (same component as Team.tsx) */}
+      <ContactTherapistModal
+        open={openModal}
+        therapist={selectedTherapist}
+        form={form}
+        setForm={setForm}
+        loading={loading}
+        onSubmit={onSubmit}
+        onClose={closeContact}
+      />
+
+      {/* ✅ Centered Toast */}
+      <Toast
+        open={toastOpen}
+        kind={toastKind}
+        message={toastMsg}
+        onClose={() => setToastOpen(false)}
+      />
     </section>
   );
 }

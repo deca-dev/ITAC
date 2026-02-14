@@ -43,7 +43,7 @@ export function useContactForm() {
                     return fd;
                 })(),
             });
-     
+
 
             const json = await res.json().catch(() => ({}));
             if (!json.ok) throw new Error(json.error || "No se pudo enviar");
