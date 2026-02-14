@@ -357,7 +357,7 @@ export default function TeamMemberDetail() {
 
                 {!phone && emails.length === 0 ? (
                   <p className="text-sm text-slate-500">
-                    Para agendar, visita nuestra página de contacto.
+                    Para agendar, enviar un mensaje o cualquier consulta, haz clic en el botón de abajo para contactarnos.
                   </p>
                 ) : null}
               </div>

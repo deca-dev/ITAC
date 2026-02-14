@@ -34,11 +34,11 @@ const SectionCard: React.FC<SectionProps> = ({
       >
         <div className="relative w-48 h-48">
           {/* Reemplaza imgSrc por tu archivo final */}
-          <img
+          {/* <img
             src={imgSrc}
             alt={imgAlt}
             className="absolute inset-0 w-full h-full object-contain"
-          />
+          /> */}
           {/* Marco de reserva visible si la imagen falta */}
           {/* <div className="absolute inset-0 border-2 border-dashed border-slate-300 rounded-xl" /> */}
         </div>
