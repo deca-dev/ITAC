@@ -1,30 +1,25 @@
 // src/pages/TeamGeneral.tsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { teamMembers, type TeamMember } from "../assets/team";
+import { Link } from "react-router-dom";
+
 
 export default function TeamGeneral() {
   const [searchName, setSearchName] = useState<string>("");
-  const [filterSpecialty, setFilterSpecialty] = useState<string>("");
   const [filterMode, setFilterMode] = useState<string>("");
   const [filterIdiom, setFilterIdiom] = useState<string>("");
   const [filterPopulation, setFilterPopulation] = useState<string>("");
 
   // helper to ensure we always get an array
-  const ensureArr = (val: string | string[]) =>
-    Array.isArray(val) ? val : [val];
+  const ensureArr = (val: string | string[]) => (Array.isArray(val) ? val : [val]);
 
-  // derive unique filter options by flattening and sort alphabetically
-  const specialties = Array.from(
-    new Set(teamMembers.map((m) => m.specialty))
-  ).sort((a, b) => a.localeCompare(b));
+  const modes = Array.from(new Set(teamMembers.flatMap((m) => ensureArr(m.mode)))).sort((a, b) =>
+    a.localeCompare(b)
+  );
 
-  const modes = Array.from(
-    new Set(teamMembers.flatMap((m) => ensureArr(m.mode)))
-  ).sort((a, b) => a.localeCompare(b));
-
-  const idioms = Array.from(
-    new Set(teamMembers.flatMap((m) => ensureArr(m.idiom)))
-  ).sort((a, b) => a.localeCompare(b));
+  const idioms = Array.from(new Set(teamMembers.flatMap((m) => ensureArr(m.idiom)))).sort((a, b) =>
+    a.localeCompare(b)
+  );
 
   const populations = Array.from(
     new Set(teamMembers.flatMap((m) => ensureArr(m.population)))
@@ -32,39 +27,22 @@ export default function TeamGeneral() {
 
   // apply filters
   const visibleMembers = teamMembers.filter((m: TeamMember) => {
-    const nameMatch = m.name
-      .toLowerCase()
-      .includes(searchName.toLowerCase());
+    const nameMatch = m.name.toLowerCase().includes(searchName.toLowerCase());
 
-    const specialtyMatch = filterSpecialty
-      ? m.specialty === filterSpecialty
-      : true;
+    const modeMatch = filterMode ? ensureArr(m.mode).includes(filterMode) : true;
 
-    const modeMatch = filterMode
-      ? ensureArr(m.mode).includes(filterMode)
-      : true;
-
-    const idiomMatch = filterIdiom
-      ? ensureArr(m.idiom).includes(filterIdiom)
-      : true;
+    const idiomMatch = filterIdiom ? ensureArr(m.idiom).includes(filterIdiom) : true;
 
     const populationMatch = filterPopulation
       ? ensureArr(m.population).includes(filterPopulation)
       : true;
 
-    return (
-      nameMatch &&
-      specialtyMatch &&
-      modeMatch &&
-      idiomMatch &&
-      populationMatch
-    );
+    return nameMatch && modeMatch && idiomMatch && populationMatch;
   });
 
   // reset all filters
   const resetFilters = () => {
     setSearchName("");
-    setFilterSpecialty("");
     setFilterMode("");
     setFilterIdiom("");
     setFilterPopulation("");
@@ -78,8 +56,7 @@ export default function TeamGeneral() {
           <div className="bg-[url('/assets/bg/bg-team-banner-green-texture.jpg')]">
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* waves overlay */}
-              <div className="absolute inset-0 opacity-30 pointer-events-none">
-              </div>
+              <div className="absolute inset-0 opacity-30 pointer-events-none"></div>
 
               {/* grid avoids overlap; stacks on <md */}
               <div className="relative grid grid-cols-1 md:grid-cols-[1fr,320px] lg:grid-cols-[1fr,380px] gap-8 items-center py-10 md:py-14 lg:py-16 min-h-[240px]">
@@ -111,11 +88,9 @@ export default function TeamGeneral() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* filter row with labels */}
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
             <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Nombre
-              </label>
+              <label className="block text-sm font-medium text-gray-700">Nombre</label>
               <input
                 type="text"
                 placeholder="Buscar por nombre"
@@ -126,27 +101,7 @@ export default function TeamGeneral() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Especialidad
-              </label>
-              <select
-                value={filterSpecialty}
-                onChange={(e) => setFilterSpecialty(e.target.value)}
-                className="mt-1 w-full border border-gray-300 rounded p-2"
-              >
-                <option value="">Todos</option>
-                {specialties.map((spec) => (
-                  <option key={spec} value={spec}>
-                    {spec}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Modalidad
-              </label>
+              <label className="block text-sm font-medium text-gray-700">Modalidad</label>
               <select
                 value={filterMode}
                 onChange={(e) => setFilterMode(e.target.value)}
@@ -162,9 +117,7 @@ export default function TeamGeneral() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Idioma
-              </label>
+              <label className="block text-sm font-medium text-gray-700">Idioma</label>
               <select
                 value={filterIdiom}
                 onChange={(e) => setFilterIdiom(e.target.value)}
@@ -180,9 +133,7 @@ export default function TeamGeneral() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Población
-              </label>
+              <label className="block text-sm font-medium text-gray-700">Población</label>
               <select
                 value={filterPopulation}
                 onChange={(e) => setFilterPopulation(e.target.value)}
@@ -229,44 +180,25 @@ export default function TeamGeneral() {
 
                 <div className="space-y-2 text-xs pt-4 border-t border-gray-200">
                   <div className="flex items-center gap-2">
-                    <img
-                      src="/assets/icons/education-vector.png"
-                      alt=""
-                      className="w-4 h-4"
-                    />
+                    <img src="/assets/icons/education-vector.png" alt="" className="w-4 h-4" />
                     <p>{member.specialty}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <img
-                      src="/assets/icons/briefcase-vector.png"
-                      alt=""
-                      className="w-4 h-4"
-                    />
+                    <img src="/assets/icons/briefcase-vector.png" alt="" className="w-4 h-4" />
                     <p>{member.years}</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <img
-                      src="/assets/icons/checklist.png"
-                      alt=""
-                      className="w-4 h-4"
-                    />
+                    <img src="/assets/icons/checklist.png" alt="" className="w-4 h-4" />
                     <p>{member.description}</p>
                   </div>
+
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-semibold">Modalidad:</span>
-                    <p>
-                      {filterMode
-                        ? filterMode
-                        : ensureArr(member.mode).join(", ")}
-                    </p>
+                    <p>{filterMode ? filterMode : ensureArr(member.mode).join(", ")}</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-semibold">Idioma:</span>
-                    <p>
-                      {filterIdiom
-                        ? filterIdiom
-                        : ensureArr(member.idiom).join(", ")}
-                    </p>
+                    <p>{filterIdiom ? filterIdiom : ensureArr(member.idiom).join(", ")}</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-semibold">Población:</span>
@@ -279,13 +211,21 @@ export default function TeamGeneral() {
                 </div>
 
                 <div className="flex gap-2 justify-center pt-8 mt-auto">
-                  <button className="bg-white text-[#5a7e7b] border border-transparent  hover:border-[#5a7e7b]  px-4 py-2 rounded text-sm font-medium transition-colors">
+                  <Link
+                    to={`/team/${member.id}`}
+                    className="bg-white text-[#5a7e7b] border border-transparent hover:border-[#5a7e7b] px-4 py-2 rounded text-sm font-medium transition-colors"
+                  >
                     Ver Perfil
-                  </button>
-                  <button className="bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-2 rounded text-sm font-medium transition-colors">
+                  </Link>
+
+                  <Link
+                    to="/contacto"
+                    className="bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-2 rounded text-sm font-medium transition-colors text-center"
+                  >
                     Contacto
-                  </button>
+                  </Link>
                 </div>
+
               </div>
             ))}
           </div>

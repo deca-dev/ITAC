@@ -1,133 +1,296 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Phone, Mail, ArrowLeft } from 'lucide-react';
+// src/pages/TeamMemberDetail.tsx
+import React, { useMemo } from "react";
+import { useParams, Link, Navigate } from "react-router-dom";
+import { ArrowLeft, Phone, Mail } from "lucide-react";
+import { teamMembers } from "../assets/team";
+import { teamResumes } from "../assets/teamResume";
 
-const TeamMemberDetail = () => {
-  const { memberId } = useParams();
+const ensureArr = (val: string | string[]) => (Array.isArray(val) ? val : [val]);
+
+
+export default function TeamMemberDetail() {
+  const { memberId } = useParams<{ memberId: string }>();
+
+  const member = useMemo(() => {
+    if (!memberId) return null;
+    return teamMembers.find((m) => m.id === memberId) ?? null;
+  }, [memberId]);
+
+  const resume = useMemo(() => {
+    if (!memberId) return null;
+    // teamResumes should be keyed by memberId
+    return (teamResumes as any)[memberId] ?? null;
+  }, [memberId]);
+
+  if (!memberId) return <Navigate to="/team" replace />;
+  if (!member) return <Navigate to="/team" replace />;
+
+  // ✅ Use only the “long details” from teamResume.ts (resumen + bio + contacto)
+  const displayName =
+    resume?.displayName ?? `${member.title} ${member.name}`.trim();
+
+  const resumen = resume?.resumen ?? member.description ?? "";
+
+  const bio: string[] = Array.isArray(resume?.bio) ? resume.bio : [];
+
+  const phone: string | undefined = resume?.contacto?.phone;
+  const emails: string[] = Array.isArray(resume?.contacto?.emails)
+    ? resume.contacto.emails
+    : [];
+
+  // const photoKey = member.photo; // reuse team.ts photo key
+  const bannerSrc = resume?.bannerImage ?? `/assets/photos/headshots/${member.photo}.png`;
+
+  const modes = ensureArr(member.mode);
+  const idioms = ensureArr(member.idiom);
+  const populations = ensureArr(member.population);
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <Link 
-            to="/team" 
-            className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-4"
+    <section className="bg-[#f3f6f8]">
+      {/* Back bar */}
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <Link
+            to="/equipo"
+            className="inline-flex items-center gap-2 text-[#0f2f45] hover:text-[#0b2333] text-sm font-medium"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver al Equipo
+            <ArrowLeft className="w-4 h-4" />
+            Volver al equipo
           </Link>
         </div>
+      </div>
 
-        <div className="bg-gray-900 text-white py-12 px-8 rounded-lg mb-12 relative overflow-hidden">
-          <div className="absolute right-8 top-1/2 transform -translate-y-1/2">
-            <div className="w-48 h-48 bg-white bg-opacity-20 rounded-lg">
-              <img 
-                src="https://images.pexels.com/photos/7176319/pexels-photo-7176319.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=1"
-                alt="Mtra. A. Sarai Sánchez Morales"
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
-          </div>
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold mb-4">Mtra. A. Sarai Sánchez Morales</h2>
-            <p className="text-lg">
-              Psicoterapeuta Conductual Contextual especializada en niños y adolescentes. 
-              Maestra en Terapia Cognitivo Conductual, con especialidad en Terapia de 
-              Aceptación y Compromiso y en la Terapia Dialéctica Conductual e instructora de 
-              Mindfulness.
-            </p>
-          </div>
+      {/* HERO */}
+      <header className="relative isolate overflow-hidden bg-[#05090b]">
+        {/* Background layers */}
+        <div className="absolute inset-0 -z-10">
+          {/* base */}
+          <div className="absolute inset-0 bg-[#05090b]" />
+
+          {/* teal haze */}
+          <div className="absolute inset-0 bg-[radial-gradient(1000px_700px_at_18%_30%,rgba(15,118,110,0.22)_0%,rgba(0,0,0,0)_62%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(800px_560px_at_70%_35%,rgba(15,118,110,0.14)_0%,rgba(0,0,0,0)_60%)]" />
+
+          {/* right wash to match photo blacks */}
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_45%,rgba(5,9,11,0.65)_68%,rgba(5,9,11,0.92)_82%,rgba(5,9,11,1)_100%)]" />
+
+          {/* vignette */}
+          <div className="absolute inset-0 bg-[radial-gradient(1200px_700px_at_50%_40%,rgba(0,0,0,0)_0%,rgba(0,0,0,0.58)_68%,rgba(0,0,0,0.92)_100%)]" />
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2 space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <div className="w-8 h-8 bg-blue-100 rounded mr-3 flex items-center justify-center">
-                  <span className="text-blue-600 font-bold">📚</span>
-                </div>
-                Educación
-              </h3>
-              <ul className="space-y-4 text-gray-700">
-                <li>• Maestría en Terapia Cognitivo Conductual.</li>
-                <li>• Especialista en Terapia de Aceptación y Compromiso con niños y adolescentes por el Madrid Institute of Contextual Psychology</li>
-                <li>• Especialista en Mindfulness aplicado en la terapia con adolescentes por el Center for Adolescent Studies (California, EUA).</li>
-                <li>• Instructora de Mindfulness en el contexto escolar por Mindful Schools Organization (California, EUA).</li>
-                <li>• Especialista en Terapia de Aceptación y Compromiso por:</li>
-                <li className="ml-6">• Instituto ACT España</li>
-                <li className="ml-6">• Madrid Institute of Contextual Psychology</li>
-                <li className="ml-6">• Association for Contextual Behavioral Science</li>
-                <li className="ml-6">• Latinoamérica Contextual</li>
-                <li>• Entrenamiento en Análisis Conductual Aplicado (ABA).</li>
-                <li>• Entrenamiento en Activación Conductual para la Depresión (BA).</li>
-                <li>• Entrenamiento en Terapia de Procesamiento Cognitivo (CPT) con R. Robinow y K. Strachan.</li>
-                <li>• Entrenamiento certificado en Terapia Dialéctica Conductual (DBT), incluyendo:</li>
-                <li className="ml-6">• DBT para adolescentes y adultos</li>
-                <li className="ml-6">• DBT para TEPT Complejo</li>
-                <li className="ml-6">• Exposición Prolongada</li>
-                <li className="ml-6">• Terapia de Procesamiento Cognitivo</li>
-                <li>• Todos avalados por Behavioral Tech del Linehan Institute y DBT Iberoamérica</li>
-              </ul>
-            </div>
+        {/* subtle waves */}
+        <div className="absolute inset-0 opacity-[0.06] pointer-events-none -z-10">
+          <img
+            src="/assets/images/bg-nosotros-main-banner-waves.png"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
 
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-0">
+          <div className="grid gap-10 lg:grid-cols-[1fr,460px] items-center">
+            {/* Left */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <div className="w-8 h-8 bg-blue-100 rounded mr-3 flex items-center justify-center">
-                  <span className="text-blue-600 font-bold">💼</span>
-                </div>
-                Experiencia
-              </h3>
-              <div className="space-y-4 text-gray-700">
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <p className="font-semibold text-blue-900 mb-2">Tipografía en azul</p>
-                </div>
-                <ul className="space-y-2">
-                  <li>• Psicoterapeuta Conductual Contextual especializada en niños y adolescentes</li>
-                  <li>• Coordinadora del área de Mindfulness en el Instituto de Terapia y Análisis de la Conducta, tratamientos y privados.</li>
-                  <li>• Terapeuta integrante al trabajo clínico con niños, adolescentes y sus familias.</li>
-                  <li>• Docente de Diplomado en Psicología Clínica e Intervenciones Psicoterapéuticas en la UNAM (Facultad de Medicina)</li>
-                  <li>• Supervisora de estudiantes de psicología en prácticas profesionales en México y Argentina.</li>
-                  <li>• Supervisora Clínica individual y grupal en México y Argentina.</li>
-                  <li>• Miembro del equipo de investigación en Terapia Dialéctica Conductual (CDMX), equipo verificado por Behavioral Tech y el Linehan Institute.</li>
-                  <li>• Miembro del equipo DBT México – Clínica de Especialidad en Terapia Dialéctica Conductual (CDMX), equipo verificado por Behavioral Tech y el Linehan Institute.</li>
-                  <li>• Instructora de Mindfulness en el contexto escolar.</li>
-                </ul>
+              <p className="text-white/70 text-sm mb-2">{member.specialty}</p>
+
+              <h1 className="text-white text-3xl sm:text-4xl font-bold leading-tight">
+                {displayName}
+              </h1>
+
+              {resumen ? (
+                <p className="mt-6 text-white/85 leading-relaxed max-w-2xl">{resumen}</p>
+              ) : null}
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <button className="rounded-xl bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 text-sm font-semibold transition-colors">
+                  Agendar cita
+                </button>
+                <Link
+                  to="/contacto"
+                  className="rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white px-6 py-3 text-sm font-semibold transition-colors"
+                >
+                  Contacto
+                </Link>
               </div>
             </div>
-          </div>
 
+            {/* Right: photo fully blended (no visible rectangle) */}
+            <div className="relative hidden lg:block">
+              <div className="relative h-[460px] w-[500px] overflow-visible">
+                {/* Big dark “bed” behind the photo to unify tones */}
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "radial-gradient(85% 90% at 58% 52%, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.92) 100%)",
+                    filter: "blur(22px)",
+                    transform: "scale(1.10)",
+                    opacity: 0.95,
+                  }}
+                />
+
+                {/* Use IMG so mask behaves consistently */}
+                <img
+                  src={bannerSrc}
+                  alt={displayName}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{
+                    // IMPORTANT: crop the studio edges away (contain keeps them!)
+                    objectPosition: "58% 25%",
+
+                    // This feather kills corners + sides
+                    WebkitMaskImage:
+                      "radial-gradient(68% 92% at 58% 48%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.55) 74%, rgba(0,0,0,0) 92%)",
+                    maskImage:
+                      "radial-gradient(68% 92% at 58% 48%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.55) 74%, rgba(0,0,0,0) 92%)",
+
+                    // Lift subject a bit
+                    filter: "brightness(1.10) contrast(1.06) saturate(1.03)",
+                  }}
+                />
+
+                {/* Seam killer: specifically fades LEFT edge of the image */}
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(5,9,11,1) 0%, rgba(5,9,11,0.75) 14%, rgba(5,9,11,0.25) 28%, rgba(5,9,11,0) 45%)",
+                    mixBlendMode: "multiply",
+                    opacity: 1,
+                  }}
+                />
+
+                {/* Edge darkener: only affects outer rim so the rectangle disappears */}
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "radial-gradient(75% 95% at 58% 48%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.20) 74%, rgba(0,0,0,0.90) 100%)",
+                    mixBlendMode: "multiply",
+                    opacity: 0.95,
+                  }}
+                />
+
+                {/* Subtle teal tint to match site palette */}
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "radial-gradient(60% 75% at 58% 42%, rgba(15,118,110,0.09) 0%, rgba(15,118,110,0) 70%)",
+                    mixBlendMode: "soft-light",
+                    opacity: 0.85,
+                  }}
+                />
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </header>
+
+
+
+
+
+
+      {/* CONTENT */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr),360px] items-start">
+          {/* Main */}
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h4 className="text-xl font-bold text-gray-900 mb-4">Contacto</h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-teal-600" />
-                  <span className="text-gray-700">55-55-547420</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-teal-600" />
-                  <span className="text-gray-700">sarai.sanchez@itst-mexico.com</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-teal-600" />
-                  <span className="text-gray-700">sarai.sanchez@institutoterapiaconductual.com</span>
-                </div>
-              </div>
-              <button className="w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                Agendar Cita
-              </button>
-            </div>
-
-            <div className="bg-teal-100 p-6 rounded-lg">
-              <div className="w-32 h-32 bg-teal-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <div className="w-24 h-24 bg-teal-300 rounded-full"></div>
+            {/* ✅ ONLY long resume content from TeamResume.ts */}
+            <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
+              <h3 className="text-lg font-bold text-[#0f2f45]">Biografía</h3>
+              <div className="mt-4 space-y-4 text-slate-700 leading-relaxed">
+                {bio.length ? (
+                  bio.map((p, idx) => <p key={idx}>{p}</p>)
+                ) : (
+                  <p>{member.description}</p>
+                )}
               </div>
             </div>
           </div>
+
+          {/* Sidebar */}
+          <aside className="space-y-6 lg:sticky lg:top-24">
+            {/* Contact */}
+            <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
+              <h4 className="text-base font-bold text-[#0f2f45] mb-4">Contacto</h4>
+
+              <div className="space-y-3">
+                {phone ? (
+                  <div className="flex items-center gap-3 text-slate-700">
+                    <Phone className="w-5 h-5 text-[#6b8f8c]" />
+                    <span>{phone}</span>
+                  </div>
+                ) : null}
+
+                {emails.map((email) => (
+                  <div key={email} className="flex items-center gap-3 text-slate-700">
+                    <Mail className="w-5 h-5 text-[#6b8f8c]" />
+                    <span className="break-all">{email}</span>
+                  </div>
+                ))}
+
+                {!phone && emails.length === 0 ? (
+                  <p className="text-sm text-slate-500">
+                    Para agendar, visita nuestra página de contacto.
+                  </p>
+                ) : null}
+              </div>
+
+              {/* <button className="mt-6 w-full bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-3 rounded-md text-sm font-semibold transition-colors">
+                Agendar cita
+              </button> */}
+
+              <Link
+                to="/contacto"
+                className="mt-2 block w-full text-center bg-white border border-slate-200 text-[#0f2f45] hover:bg-slate-50 px-4 py-3 rounded-md text-sm font-semibold transition-colors"
+              >
+                Enviar mensaje
+              </Link>
+            </div>
+
+            {/* Details */}
+            <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
+              <h4 className="text-base font-bold text-[#0f2f45] mb-4">Detalles</h4>
+
+              <div className="space-y-3 text-sm text-slate-700">
+                <div className="flex items-start gap-3">
+                  <span className="font-semibold w-24">Modalidad:</span>
+                  <span className="flex-1">{modes?.length ? modes.join(", ") : "—"}</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="font-semibold w-24">Idioma:</span>
+                  <span className="flex-1">{idioms?.length ? idioms.join(", ") : "—"}</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="font-semibold w-24">Población:</span>
+                  <span className="flex-1">
+                    {populations?.length ? populations.join(", ") : "—"}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Help banner (like your homepage strip) */}
+            <div className="rounded-lg bg-[#b8d0d8] text-[#0f2f45] border border-white/50 p-5">
+              <p className="font-semibold">¿Tienes dudas?</p>
+              <p className="text-sm mt-1">
+                Déjanos saber y con gusto te ayudamos a encontrar la mejor opción.
+              </p>
+              <Link
+                to="/contacto"
+                className="inline-block mt-4 bg-white/90 hover:bg-white text-[#0f2f45] px-4 py-2 rounded-md text-sm font-semibold transition-colors"
+              >
+                Más información
+              </Link>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
   );
-};
-
-export default TeamMemberDetail;
+}
