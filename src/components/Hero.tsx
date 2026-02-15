@@ -99,15 +99,20 @@ export default function Hero() {
 
       {/* Slide 1 */}
       <div
-        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-          current === 0 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
-        }`}
+        className={`absolute inset-0 transition-all duration-700 ease-in-out ${current === 0 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+          }`}
       >
         <img
           src="/assets/bg/bg-banner-homepage-1.jpg"
-          alt="background"
+          alt="Fundamentos de Terapia Dialéctica Conductual"
           className="absolute inset-0 w-full h-full object-cover object-left z-0"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          width={1920}
+          height={1080}
         />
+
         <div className="relative h-full flex items-center z-10">
           <div className="sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-[#1A2F3F]">
@@ -115,7 +120,7 @@ export default function Hero() {
                 Diplomado en <strong>Fundamentos de Terapia Dialéctica Conductual</strong>
               </h2>
               <div className="flex justify-content-space-around gap-6 mt-lg-12">
-               <div>
+                <div>
                   <p className="text-sm uppercase opacity-80">Fechas:</p>
                   <p className="text-base">12, 13 y 14 de Junio</p>
                 </div>
@@ -132,20 +137,25 @@ export default function Hero() {
 
       {/* Slide 2 */}
       <div
-        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-          current === 1 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
-        }`}
+        className={`absolute inset-0 transition-all duration-700 ease-in-out ${current === 1 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+          }`}
       >
-        <img
-          src="/assets/bg/bg-banner-homepage-2.jpg"
-          alt="background"
-          className="absolute inset-0 w-full h-full object-cover object-left md:object-right z-0"
-        />
+        {current === 1 && (
+          <img
+            src="/assets/bg/bg-banner-homepage-2.jpg"
+            alt="background"
+            className="absolute inset-0 w-full h-full object-cover object-left md:object-right z-0"
+            loading="lazy"
+            decoding="async"
+            width={1920}
+            height={1080}
+          />
+        )}
         <div className="relative h-full flex items-center z-10">
           <div className="sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 w-full lg:flex">
             <div className="text-white w-full md:w-[60%]">
               <h2 className="text-3xl md:text-4xl mb-2">
-               Curso: <br></br> <strong>Para entrenar habilidades DBT</strong>
+                Curso: <br></br> <strong>Para entrenar habilidades DBT</strong>
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -161,15 +171,20 @@ export default function Hero() {
 
       {/* Slide 3 */}
       <div
-        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-          current === 2 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
-        }`}
+        className={`absolute inset-0 transition-all duration-700 ease-in-out ${current === 2 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+          }`}
       >
-        <img
-          src="/assets/bg/bg-banner-homepage-3.jpg"
-          alt="background"
-          className= "mx-auto absolute inset-0 w-full h-full object-cover object-left z-0"
-        />
+        {current === 2 && (
+          <img
+            src="/assets/bg/bg-banner-homepage-3.jpg"
+            alt="background"
+            className="mx-auto absolute inset-0 w-full h-full object-cover object-left z-0"
+            loading="lazy"
+            decoding="async"
+            width={1920}
+            height={1080}
+          />
+        )}
         <div className="sm:max-w-[90%] mx-auto relative h-full flex items-center z-10">
           <div className="w-full md:w-[68%] px-4 sm:px-6 lg:px-8">
             <div className="text-white">
@@ -182,10 +197,10 @@ export default function Hero() {
                   <p className="text-base">12, 13 y 14 de Junio</p>
                 </div>
               </div>
-               <div>
-                  <p className="text-sm uppercase opacity-80 mt-2">Modalidad:</p>
-                  <p className="text-base ">Híbrido</p>
-                </div>
+              <div>
+                <p className="text-sm uppercase opacity-80 mt-2">Modalidad:</p>
+                <p className="text-base ">Híbrido</p>
+              </div>
             </div>
           </div>
         </div>
@@ -193,15 +208,20 @@ export default function Hero() {
 
       {/* Slide 4 */}
       <div
-        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-          current === 3 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
-        }`}
+        className={`absolute inset-0 transition-all duration-700 ease-in-out ${current === 3 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+          }`}
       >
-        <img
-          src="/assets/bg/bg-banner-homepage-4.jpg"
-          alt="background"
-          className="absolute inset-0 w-full h-full object-cover object-left lg:object-right z-0"
-        />
+        {current === 3 && (
+          <img
+            src="/assets/bg/bg-banner-homepage-4.jpg"
+            alt="background"
+            className="absolute inset-0 w-full h-full object-cover object-left lg:object-right z-0"
+            loading="lazy"
+            decoding="async"
+            width={1920}
+            height={1080}
+          />
+        )}
         <div className="relative h-full flex items-center z-10">
           <div className="sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 w-full lg:flex">
             <div className="text-[#000000]">
@@ -212,12 +232,12 @@ export default function Hero() {
                 <div>
                   <p className="text-sm uppercase opacity-80">Fechas:</p>
                   <p className="text-base">22 y 23 de agosto</p>
-                </div> 
+                </div>
               </div>
               <div>
-                  <p className="text-sm uppercase opacity-80 mt-2">Modalidad:</p>
-                  <p className="text-base ">Híbrido</p>
-                </div>
+                <p className="text-sm uppercase opacity-80 mt-2">Modalidad:</p>
+                <p className="text-base ">Híbrido</p>
+              </div>
             </div>
           </div>
         </div>
@@ -245,11 +265,10 @@ export default function Hero() {
           <button
             key={idx}
             onClick={() => goTo(idx)}
-            className={`transition-all duration-300 ${
-              idx === current
+            className={`transition-all duration-300 ${idx === current
                 ? `${isLight ? 'bg-white' : 'bg-black'} w-12 h-3 rounded-full`
                 : `${isLight ? 'bg-white/50 hover:bg-white/75' : 'bg-black/50 hover:bg-black/75'} w-3 h-3 rounded-full`
-            }`}
+              }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}
