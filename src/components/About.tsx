@@ -25,9 +25,13 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center mb-4 lg:mb-0">
             <img
-              src="/assets/photos/Team_1.png"
+              src="/assets/photos/Team_1.webp"
               alt="Profesional de la salud mental"
               className="max-width-80 object-cover"
+              loading="lazy"
+              decoding="async"
+              width={468}
+              height={595}
             />
           </div>
           <div>
@@ -62,6 +66,10 @@ const About = () => {
                         src={stat.icon}
                         alt={`Icono ${stat.label}`}
                         className="w-16 md:w-17 object-contain filter-invert"
+                        loading="lazy"
+                        decoding="async"
+                        width={55}
+                        height={55}
                       />
                     </div>
                     <div>

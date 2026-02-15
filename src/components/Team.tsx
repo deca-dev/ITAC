@@ -27,16 +27,14 @@ function Toast({
       className="pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center p-4"
     >
       <div
-        className={`transform transition-all duration-300 ${
-          open ? "translate-y-0 opacity-100 scale-100" : "translate-y-2 opacity-0 scale-[0.98]"
-        }`}
+        className={`transform transition-all duration-300 ${open ? "translate-y-0 opacity-100 scale-100" : "translate-y-2 opacity-0 scale-[0.98]"
+          }`}
       >
         <div className="pointer-events-auto max-w-sm rounded-lg shadow-lg ring-1 ring-black/10 bg-white">
           <div className="flex items-start gap-3 p-4">
             <div
-              className={`mt-0.5 grid h-6 w-6 place-items-center rounded-full ${
-                kind === "success" ? "bg-emerald-500" : "bg-rose-500"
-              }`}
+              className={`mt-0.5 grid h-6 w-6 place-items-center rounded-full ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+                }`}
             >
               {kind === "success" ? (
                 <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -64,9 +62,8 @@ function Toast({
           </div>
 
           <div
-            className={`h-1 w-full rounded-b-lg ${
-              kind === "success" ? "bg-emerald-500" : "bg-rose-500"
-            }`}
+            className={`h-1 w-full rounded-b-lg ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+              }`}
           />
         </div>
       </div>
@@ -223,8 +220,12 @@ const Team = () => {
                 <div className="flex justify-center gap-2 items-center">
                   <div className="w-[80px] h-[80px] rounded-full mb-4 flex items-center justify-center">
                     <img
-                      src={`/assets/photos/headshots/${member.photo}.png`}
+                      src={`/assets/photos/headshots/${member.photo}.webp`}
                       alt={member.name}
+                      loading="lazy"
+                      decoding="async"
+                      width={68}
+                      height={68}
                     />
                   </div>
                   <div className="flex flex-col items-start">
@@ -235,15 +236,24 @@ const Team = () => {
 
                 <div className="space-y-2 text-xs pt-4 border-t border-gray-200">
                   <div className="flex items-center gap-2">
-                    <img src="/assets/icons/education-vector.png" alt="" className="w-4 h-4" />
+                    <img src="/assets/icons/education-vector.png" alt="Especialidad" className="w-4 h-4" loading="lazy"
+                      decoding="async"
+                      width={16}
+                      height={16} />
                     <p>{member.specialty}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <img src="/assets/icons/briefcase-vector.png" alt="" className="w-4 h-4" />
+                    <img src="/assets/icons/briefcase-vector.png" alt="Años de experiencia" className="w-4 h-4" loading="lazy"
+                      decoding="async"
+                      width={16}
+                      height={16} />
                     <p>{member.years}</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <img src="/assets/icons/checklist.png" alt="" className="w-4 h-4" />
+                    <img src="/assets/icons/checklist.png" alt="Resumen autobiográfico" className="w-4 h-4" loading="lazy"
+                      decoding="async"
+                      width={16}
+                      height={16} />
                     <p>{member.description}</p>
                   </div>
                 </div>

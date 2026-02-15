@@ -23,7 +23,7 @@ export const courses: Course[] = [
   {
     id: 1,
     slug: "diplomado-fundamentos-dbt",
-    image: "/assets/images/FormacionAcademica-card-1.jpg",
+    image: "/assets/images/FormacionAcademica-card-1.webp",
     title: "Diplomado en Fundamentos de Terapia Dialéctica Conductual",
     subtitle:
       "Formación teórico-práctica para desarrollar habilidades clínicas basadas en ACT, con énfasis en valores, mindfulness y flexibilidad psicológica.",
@@ -73,7 +73,7 @@ export const courses: Course[] = [
 //   {
 //     id: 2,
 //     slug: "curso-dbt-teams",
-//     image: "/assets/images/FormacionAcademica-card-2.jpg",
+//     image: "/assets/images/FormacionAcademica-card-2.webp",
 //     title: "Curso-Taller: DBT TEAMS",
 //     subtitle: "Logrando los más altos estándares de calidad en DBT.",
 //     dates: "31 mayo y 1 junio, 2025",
@@ -107,7 +107,7 @@ export const courses: Course[] = [
   {
     id: 3,
     slug: "dbt-c-poblacion-infantil",
-    image: "/assets/images/FormacionAcademica-card-3.jpg",
+    image: "/assets/images/FormacionAcademica-card-2.webp",
     title: "Entrenamiento Intensivo en DBT‑C",
     subtitle: "Terapia Dialéctica Conductual para población infantil.",
     dates: "5-7 diciembre, 2025 y 24-26 julio, 2026",
@@ -146,7 +146,7 @@ Francheska Perepletchikova, Ph.D. y María Ignacia Montt, Psic. Francheska Perep
   {
     id: 4,
     slug: "retiro-mindfulness-zen",
-    image: "/assets/images/FormacionAcademica-card-4.jpg",
+    image: "/assets/images/FormacionAcademica-card-4.webp",
     title: "Retiro de Mindfulness Zen",
     subtitle: "Encuentro intensivo de práctica contemplativa y meditación.",
     dates: "Continuo",
@@ -175,7 +175,7 @@ Habitación individual por participante<br/>
 //   {
 //     id: 5,
 //     slug: "curso-dbt-teams-2",
-//     image: "/assets/images/FormacionAcademica-card-5.jpg",
+//     image: "/assets/images/FormacionAcademica-card-5.webp",
 //     title: "Curso-Taller: DBT-TEAMS 2",
 //     subtitle: "Capacitación avanzada en DBT con Kelly Koerner, PhD.",
 //     dates: "6-7 junio, 2026",
