@@ -159,7 +159,7 @@ export default function Publicaciones() {
                   title="Libros"
                   description="Nuestro equipo de psicólogos combina la práctica diaria con la pasión por compartir conocimiento. Cada uno ha contribuido con capítulos en obras que tocan temas que realmente importan, nutriendo su enfoque terapéutico con investigación y reflexión continua."
                   hasButton
-                  buttonTo="/libros" 
+                  buttonTo="/libros"
                   buttonLabel="Saber más"
                 />
 
@@ -173,11 +173,12 @@ export default function Publicaciones() {
                   title="Capítulos de Libros"
                   description="Nuestros psicólogos han participado en numerosas obras colectivas aportando capítulos especializados donde comparten investigaciones y reflexiones sobre áreas específicas de la salud mental. Estas contribuciones permiten profundizar en temas concretos desde múltiples perspectivas, enriqueciendo el diálogo académico mientras mantienen un pie en la realidad cotidiana de la consulta."
                   items={[
-                    "Reyes, M. A., (2019) Intervención integrativa y transdiagnóstica dirigida a la regulación emocional. En A.Tena Suck (Comp). Psicoterapia Integrativa. Una aproximación a la psicoterapia basada en la evidencia. El Manual Moderno.",
-                    "Reyes, M. A., Ascanio Guirado, M. & Kanter J. W. (2016) Consciencia, Valor y Amor como Procesos Transdiagnósticos y Blancos de Tratamiento en Psicoterapia Analítica Funcional. En J.R. Rodriguez (Comp) Psicología Comportamental-Contextual latinoamericana. Asociación Latinoamericana de Modificación de Conducta.",
-                    "Reyes, M. A. & Vargas Salinas A. N. (2016) Terapia Conductual Contextual integrativa para el Trastorno Límite de la Personalidad. En J.R. Rodriguez (Comp). Psicología Comportamental latinoamericana. Asociación Latinoamericana de Modificación de Conducta.",
-                    "Reyes, M. A., Vargas A. N. & Díaz, F. (2016) Historia de la Terapia conductual Contextual en México y Latinoamérica. En J.R. Rodriguez (Comp). Historia de la Modificación de Conducta Latinoamericana. Asociación Latinoamericana de Modificación de Conducta",
-                  ]}
+                    "Reyes, M. A., (2019) Intervención integrativa y transdiagnóstica dirigida a la regulación emocional. En A.Tena Suck. (Comp). Psicoterapia Integrativa: Una aproximación a la clínica basada en evidencias. El Manual Moderno.",
+                    "Reyes, M. A., Ascencio Guirado, M. & Kanter J. W. (2016) Consciencia, Valor y Amor como Procesos Transdiagnósticos y Blancos de Tratamiento en Psicoterapia Analítica Funcional. En J.R. Rodríguez (Comp) Psicología Comportamental latinoamericana. Asociación Latinoamericana de Modificación de Conducta.",
+                    "Reyes, M. A. & Vargas Salinas A. N. (2016) Terapia Conductual Contextual Integrativa para el Trastorno Límite de la Personalidad. En J.R. Rodríguez (Comp). Psicología Comportamental latinoamericana. Asociación Latinoamericana de Modificación de Conducta.",
+                    "Reyes, M. A., Vargas, A. N. & Olaz, F. (2016) Historia de la Terapia conductual Contextual en México y Latinoamérica. En J.R. Rodríguez (Comp). Historia de la Modificación de Conducta Latinoamericana. Asociación Latinoamericana de Modificación de Conducta"
+                  ]
+                  }
                 />
 
                 <PublicationCard
@@ -205,7 +206,7 @@ export default function Publicaciones() {
                   description="Participamos activamente en el proceso editorial como revisores técnicos, asegurando la precisión y relevancia de publicaciones especializadas antes de llegar al público. Esta labor silenciosa pero crucial garantiza la calidad de la literatura psicológica, verificando que los conceptos se presenten con rigor científico pero manteniendo la claridad necesaria para su difusión educativa efectiva."
                   items={[
                     "Barlow, D. H (2018). Manual clínico de trastornos psicológicos: Tratamiento paso a paso. Ciudad de México., El Manual Moderno.",
-                    "De la Rosa Gómez, A. (2019). Intervención Transdiagnóstica para la Regulación Emocional en Adolescentes en Conflicto con la Ley. Ciudad de México., Universidad Nacional Autónoma de México - Facultad de Estudios Superiores Iztacala.",
+                    "De la Rosa Gómez, A. (2019). Intervención Transdiagnóstica para la Regulación Emocional en Adolescentes en Conflicto con la Ley. Ciudad de México., Universidad Nacional Autónoma de México – Facultad de Estudios Superiores Iztacala.",
                   ]}
                 />
               </div>

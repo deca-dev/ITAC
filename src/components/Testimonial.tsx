@@ -1,5 +1,5 @@
 // src/components/AcademicFormation.tsx
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from "react";
 
 const testimonials = [
   {
@@ -34,39 +34,112 @@ const testimonials = [
 
 export default function AcademicFormation() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const slideWidth =  containerRef.current?.firstChild instanceof HTMLElement
-    ? (containerRef.current.firstChild as HTMLElement).offsetWidth + 32
-    : 0;
+  const [slideWidth, setSlideWidth] = useState(0);
+  const [paused, setPaused] = useState(false);
 
+  // measure slide width (including gap) on mount + resize
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!containerRef.current) return;
+    const measure = () => {
       const el = containerRef.current;
-      // scroll by one slide width, loop
-      if (el.scrollLeft + el.clientWidth >= el.scrollWidth) {
-        el.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        el.scrollBy({ left: slideWidth, behavior: 'smooth' });
-      }
+      if (!el) return;
+
+      const first = el.querySelector<HTMLElement>("[data-slide]");
+      if (!first) return;
+
+      // gap is coming from space-x-8 => 2rem => 32px
+      setSlideWidth(first.offsetWidth + 32);
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  const goNext = () => {
+    const el = containerRef.current;
+    if (!el || !slideWidth) return;
+
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 2;
+    if (atEnd) el.scrollTo({ left: 0, behavior: "smooth" });
+    else el.scrollBy({ left: slideWidth, behavior: "smooth" });
+  };
+
+  const goPrev = () => {
+    const el = containerRef.current;
+    if (!el || !slideWidth) return;
+
+    const atStart = el.scrollLeft <= 1;
+    if (atStart) {
+      // jump to last full slide
+      const last = Math.max(0, el.scrollWidth - el.clientWidth);
+      el.scrollTo({ left: last, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: -slideWidth, behavior: "smooth" });
+    }
+  };
+
+  // auto-slide
+  useEffect(() => {
+    if (!slideWidth || paused) return;
+
+    const interval = setInterval(() => {
+      goNext();
     }, 5000);
+
     return () => clearInterval(interval);
-  }, [slideWidth]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slideWidth, paused]);
 
   return (
     <section className="py-16 bg[#D9D9D9]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div
-          ref={containerRef}
-          className="overflow-x-auto flex space-x-8 snap-x snap-mandatory -mx-4 px-4 scroll-smooth"
-        >
-          {testimonials.map((t, idx) => (
-            <div key={idx} className="snap-start flex-shrink-0 w-full px-4 font-serif font-bold">
-              <blockquote className="text-lg md:text-xl font-light text-gray-700 mb-4">
-                “{t.quote}”
-              </blockquote>
-              <cite className="block text-sm text-gray-600">- {t.author}</cite>
-            </div>
-          ))}
+         <h2 className="text-4xl text-gray-900 mb-6 !font-barlowCond">Testimonios</h2>
+        <div className="relative">
+          {/* Left arrow */}
+          <button
+            type="button"
+            onClick={goPrev}
+            aria-label="Anterior"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/90 hover:bg-white shadow ring-1 ring-black/10 p-2"
+          >
+            <svg className="h-5 w-5 text-slate-800" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+          </button>
+
+          {/* Right arrow */}
+          <button
+            type="button"
+            onClick={goNext}
+            aria-label="Siguiente"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/90 hover:bg-white shadow ring-1 ring-black/10 p-2"
+          >
+            <svg className="h-5 w-5 text-slate-800" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+            </svg>
+          </button>
+
+          <div
+            ref={containerRef}
+            className="overflow-x-auto flex space-x-8 snap-x snap-mandatory -mx-4 px-4 scroll-smooth"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onTouchStart={() => setPaused(true)}
+            onTouchEnd={() => setPaused(false)}
+          >
+            {testimonials.map((t, idx) => (
+              <div
+                key={idx}
+                data-slide
+                className="snap-start flex-shrink-0 w-full px-4 font-serif font-bold"
+              >
+                <blockquote className="text-lg md:text-xl font-light text-gray-700 mb-4">
+                  “{t.quote}”
+                </blockquote>
+                <cite className="block text-sm text-gray-600">- {t.author}</cite>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

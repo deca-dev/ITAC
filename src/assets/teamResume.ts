@@ -92,6 +92,15 @@ export const teamResumes: Record<string, TeamResume> = {
             "Ponente en el Congreso Internacional 2020 de la Association for Contextual Behavioral Science (ACBS), de la International Obsessive and Compulsive Disorder Conference y ponente en diversos congresos nacionales e internacionales de habla hispana.",
             "Miembro del equipo DBT México - Clínica de Especialidad en Terapia Dialéctica Conductual en CDMX, equipo verificado por Behavioral Tech y el Linehan Institute.",
             "Instructora de Mindfulness en el contexto clínico y escolar.",
+            "Cuenta con diversos entrenamientos y especialidades como:",
+            "·        Especialidad en Terapia de Aceptación y Compromiso con niños y adolescentes, por parte del Madrid Institute of Contextual Psychology (MICPSY). Con grado de Maestría en Terapia Cognitivo Conductual. Instructora de Mindfulness en el contexto escolar por Mindful Schools Organization y especialista en Mindfulness aplicado en la terapia en adolescentes por el Center for Adolescents Studies, ambas instituciones en California, EUA.",
+            "·        Entrenamientos especializados en Terapia de Aceptación y Compromiso con el Instituto ACT España, Madrid Institute of Contextual Psychology, la Association for Contextual Behavioral Science y Latinoamérica Contextual.",
+            "·        Entrenamientos y supervisión con especialistas a nivel internacional, en Terapia de Aceptación y Compromiso en niños y adolescentes, así como entrenamiento en el modelo DNA-V; todos con especialistas avalados por la Association for Contextual Behavioral Science.",
+            "·        Entrenamientos en Terapia de Aceptación y Compromiso Focalizada (fACT) con los especialistas P. Robinson y K. Strosahl.",
+            "·        Entrenamientos en Análisis Conductual Aplicado (ABA), Entrenamiento en Activación Conductual para la Depresión (BA), Entrenamientos certificados en Psicoterapia Analítica Funcional (FAP) con aval por la Association for Contextual Behavioral Science y Latinoamérica Contextual.",
+            "·        Además de entrenamientos certificados en Terapia Dialéctica Conductual y especialidad en Terapia Dialéctica Conductual para: niños dirigido a clínicos expertos, para adolescentes, para Trastorno por Estrés Postraumático Complejo, para Exposición Prolongada y de Entrenamiento de Habilidades con adultos y adolescentes, avalados todos por Behavioral Tech del Linehan Institute. Así como entrenamientos especializados en DBT por parte de DBT Iberoamérica."
+
+
         ],
         educacion: [
             "Cuenta con diversos entrenamientos y especialidades como:",
@@ -297,7 +306,7 @@ export const teamResumes: Record<string, TeamResume> = {
     "fabiola-mora-sanchez": {
         displayName: "Psic. Fabiola Mora Sánchez",
         bannerImage: "/assets/photos/banners/Fabiola.jpg",
-        resumen: "Psicóloga Clínica bajo una orientación Conductual Contextual.",
+        resumen: "Psicóloga clínica especializada en Terapias Conductuales Contextuales, terapeuta individual DBT para adolescentes y adultos, entrenadora líder en Grupo Multifamiliar de Habilidades y en grupo de adultos DBT.",
         bio: [
             "Licenciada en Psicología, actualmente especializándose en Psicooncología y realizando su Maestría.",
             "Formación de diplomados en Psicología Clínica e Intervenciones Psicoterapéuticas (Terapias Contextuales o de Tercera Generación: Terapia de Aceptación y Compromiso (ACT), Terapia Dialéctica Conductual (DBT), Activación Conductual (BA), Mindfulness y Terapia Analítico Funcional (FAP), Cuidados Paliativos, Psicooncología y Fundamentos de Terapia Dialéctica Conductual (DBT).",

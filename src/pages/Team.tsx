@@ -25,16 +25,14 @@ function Toast({
       className="pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center p-4"
     >
       <div
-        className={`transform transition-all duration-300 ${
-          open ? "translate-y-0 opacity-100 scale-100" : "translate-y-2 opacity-0 scale-[0.98]"
-        }`}
+        className={`transform transition-all duration-300 ${open ? "translate-y-0 opacity-100 scale-100" : "translate-y-2 opacity-0 scale-[0.98]"
+          }`}
       >
         <div className="pointer-events-auto max-w-sm rounded-lg shadow-lg ring-1 ring-black/10 bg-white">
           <div className="flex items-start gap-3 p-4">
             <div
-              className={`mt-0.5 grid h-6 w-6 place-items-center rounded-full ${
-                kind === "success" ? "bg-emerald-500" : "bg-rose-500"
-              }`}
+              className={`mt-0.5 grid h-6 w-6 place-items-center rounded-full ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+                }`}
             >
               {kind === "success" ? (
                 <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -62,9 +60,8 @@ function Toast({
           </div>
 
           <div
-            className={`h-1 w-full rounded-b-lg ${
-              kind === "success" ? "bg-emerald-500" : "bg-rose-500"
-            }`}
+            className={`h-1 w-full rounded-b-lg ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+              }`}
           />
         </div>
       </div>
@@ -361,10 +358,15 @@ export default function TeamGeneral() {
                   </div>
                 </div>
 
-                <div className="flex gap-2 justify-center pt-8 mt-auto">
+                <div className="flex gap-2 justify-center pt-8 text-center mt-auto">
                   <Link
                     to={`/team/${member.id}`}
-                    className="bg-white text-[#5a7e7b] border border-transparent hover:border-[#5a7e7b] px-4 py-2 rounded text-sm font-medium transition-colors"
+                    className="
+      bg-white text-[#5a7e7b]
+      border border-[#5a7e7b]
+      hover:bg-[#1A3459] hover:text-white hover:border-[#1A3459]
+      px-4 py-2 rounded text-sm font-medium transition-colors
+    "
                   >
                     Ver Perfil
                   </Link>
@@ -372,11 +374,17 @@ export default function TeamGeneral() {
                   <button
                     type="button"
                     onClick={() => openContact(member)}
-                    className="bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-2 rounded text-sm font-medium transition-colors text-center"
+                    className="
+      bg-[#6b8f8c] text-white
+      border border-transparent
+      hover:bg-white hover:text-[#6b8f8c] hover:border-[#6b8f8c]
+      px-4 py-2 rounded text-sm font-medium transition-colors
+    "
                   >
                     Contacto
                   </button>
                 </div>
+
               </div>
             ))}
           </div>

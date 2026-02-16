@@ -262,18 +262,31 @@ const Team = () => {
                 <div className="flex gap-2 justify-center pt-8 text-center mt-auto">
                   <Link
                     to={`/team/${member.id}`}
-                    className="bg-white text-[#5a7e7b] border border-transparent hover:border-[#5a7e7b] px-4 py-2 rounded text-sm font-medium transition-colors"
+                    className="
+      bg-white text-[#5a7e7b]
+      border border-[#5a7e7b]
+      hover:bg-[#1A3459] hover:text-white hover:border-[#1A3459]
+      px-4 py-2 rounded text-sm font-medium transition-colors
+    "
                   >
                     Ver Perfil
                   </Link>
+
                   <button
                     type="button"
                     onClick={() => openContact(member)}
-                    className="bg-[#6b8f8c] hover:bg-[#5a7e7b] text-white px-4 py-2 rounded text-sm font-medium transition-colors"
+                    className="
+      bg-[#6b8f8c] text-white
+      border border-transparent
+      hover:bg-white hover:text-[#6b8f8c] hover:border-[#6b8f8c]
+      px-4 py-2 rounded text-sm font-medium transition-colors
+    "
                   >
                     Contacto
                   </button>
                 </div>
+
+
               </div>
             ))}
           </div>

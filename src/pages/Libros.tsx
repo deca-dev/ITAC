@@ -19,7 +19,7 @@ const books: Book[] = [
         citation:
             "Reyes, M. A. (2024).​ Activación Conductual Adaptada para el Tratamiento del Estrés Postraumático (AC-TEPT). Córdoba, Brujas.",
         blurb:
-             "",
+            "",
         buyUrl: "https://wa.link/animxn",
     },
     {
@@ -30,7 +30,7 @@ const books: Book[] = [
         citation:
             "Reyes, M. A. & Téllez, J. (2024).​ Activación conductual para depresión resistente al tratamiento. Córdoba, Brujas.",
         blurb:
-             "",
+            "",
         buyUrl: "https://wa.link/b68hvc",
     },
     {
@@ -77,7 +77,7 @@ const books: Book[] = [
             "",
         buyUrl: "https://www.amazon.com.mx/Regulaci%C3%B3n-emocional-pr%C3%A1ctica-cl%C3%ADnica-terapeutas/dp/6074485704/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1614027408&sr=8-1",
     },
-     {
+    {
         id: "itac-07",
         cover: "/assets/books/manual-programa-grupal-individual.jpg",
         title:
@@ -115,7 +115,7 @@ export default function Libros() {
                                     Libros Terapias Contextuales
                                 </h1>
                                 <p className="mt-3 max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed">
-                                    Una lista de libros escritos por miembros de nuestro equipo y publicados por editoriales de prestigio que cuentan con revisión de calidad por pares. 
+                                    Una lista de libros escritos por miembros de nuestro equipo y publicados por editoriales de prestigio que cuentan con revisión de calidad por pares.
                                 </p>
                             </div>
 
@@ -126,6 +126,10 @@ export default function Libros() {
                                         src="/assets/images/woman-book.png"
                                         alt="Portada libros"
                                         className="absolute inset-0 w-full  object-cover"
+                                        loading="lazy"
+                                        decoding="async"
+                                        width={272}
+                                        height={409}
                                     />
                                 </div>
                             </div>
@@ -152,6 +156,10 @@ export default function Libros() {
                                                 src={b.cover}
                                                 alt={b.title}
                                                 className="w-full h-auto object-contain rounded"
+                                                loading="lazy"
+                                                decoding="async"
+                                                width={156}
+                                                height={242}
                                             />
                                             <figcaption className="mt-3 text-xs font-semibold text-slate-800 leading-snug">
                                                 {b.title}

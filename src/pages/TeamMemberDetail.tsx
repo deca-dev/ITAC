@@ -31,16 +31,14 @@ function Toast({
       className="pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center p-4"
     >
       <div
-        className={`transform transition-all duration-300 ${
-          open ? "translate-y-0 opacity-100 scale-100" : "translate-y-2 opacity-0 scale-[0.98]"
-        }`}
+        className={`transform transition-all duration-300 ${open ? "translate-y-0 opacity-100 scale-100" : "translate-y-2 opacity-0 scale-[0.98]"
+          }`}
       >
         <div className="pointer-events-auto max-w-sm rounded-lg shadow-lg ring-1 ring-black/10 bg-white">
           <div className="flex items-start gap-3 p-4">
             <div
-              className={`mt-0.5 grid h-6 w-6 place-items-center rounded-full ${
-                kind === "success" ? "bg-emerald-500" : "bg-rose-500"
-              }`}
+              className={`mt-0.5 grid h-6 w-6 place-items-center rounded-full ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+                }`}
             >
               {kind === "success" ? (
                 <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -220,6 +218,10 @@ export default function TeamMemberDetail() {
             src="/assets/images/bg-nosotros-main-banner-waves.png"
             alt=""
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+            width={696}
+            height={464}
           />
         </div>
 
@@ -276,6 +278,10 @@ export default function TeamMemberDetail() {
                   src={bannerSrc}
                   alt={displayName}
                   className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width={500}
+                  height={460}
                   style={{
                     objectPosition: "58% 25%",
                     WebkitMaskImage:

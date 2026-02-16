@@ -1,6 +1,6 @@
 // src/pages/AcercaDe.tsx
 import React from "react";
-import { Link } from "react-router-dom";
+
 
 type SectionProps = {
   id: string;
@@ -27,9 +27,8 @@ const SectionCard: React.FC<SectionProps> = ({
     >
       {/* Contenedor ilustración lateral (reserva de imagen) */}
       <div
-        className={`hidden md:flex absolute inset-y-6 w-48 ${
-          hasLeft ? "left-8 justify-start" : "right-8 justify-end"
-        }`}
+        className={`hidden md:flex absolute inset-y-6 w-48 ${hasLeft ? "left-8 justify-start" : "right-8 justify-end"
+          }`}
         aria-hidden
       >
         <div className="relative w-48 h-48">
@@ -79,8 +78,8 @@ export default function AcercaDe() {
                   Acerca de
                 </h1>
                 <p className="mt-3 max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed">
-                   Formamos profesionales expertos en ciencia y práctica {" "}
-                <br />de Terapia Contextual.
+                  Formamos profesionales expertos en ciencia y práctica {" "}
+                  <br />de Terapia Contextual.
                 </p>
               </div>
 
@@ -101,7 +100,7 @@ export default function AcercaDe() {
 
       {/* ============== STATEMENT BAND (ilustración izq + texto der) ============== */}
       <section className="relative">
-       
+
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
           <div className="rounded-2xl x-6 sm:px-10 py-8 grid grid-cols-1 md:grid-cols-[320px,1fr] gap-6 items-center">
             <div className="mx-auto md:mx-0">
@@ -120,19 +119,19 @@ export default function AcercaDe() {
             </p>
           </div>
         </div>
-          <div className="absolute left-0 top-0 h-full pointer-events-none">
-              <img
-                src="/assets/images/bg-nosotros-left-vector.png" 
-                alt=""
-              />
-            </div>
-          <div className="absolute right-0 top-0 h-full pointer-events-none">
-              <img
-                src="/assets/images/bg-nosotros-right-vector.png" 
-                alt=""
-                className="w-72"
-              />
-            </div>
+        <div className="absolute left-0 top-0 h-full pointer-events-none">
+          <img
+            src="/assets/images/bg-nosotros-left-vector.png"
+            alt=""
+          />
+        </div>
+        <div className="absolute right-0 top-0 h-full pointer-events-none">
+          <img
+            src="/assets/images/bg-nosotros-right-vector.png"
+            alt=""
+            className="w-72"
+          />
+        </div>
       </section>
 
       {/* ============== PANEL AZUL CON TARJETAS ============== */}
@@ -172,11 +171,13 @@ export default function AcercaDe() {
               Conoce más sobre las terapias contextuales (
               <a
                 className="text-sky-700 hover:text-sky-900"
-                href="#"
-                onClick={(e) => e.preventDefault()}
+                href="https://www.researchgate.net/publication/337144826_Caracteristicas_distintivas_de_las_terapias_conductuales_de_tercera_generacion"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Reyes-Ortega, 2017
               </a>
+
               ).
             </p>
           </SectionCard>
@@ -194,8 +195,9 @@ export default function AcercaDe() {
               La Activación Conductual (BA, en adelante) puede definirse como un
               tratamiento estructurado, parsimonioso en su aplicación,
               teóricamente fundamentado y ya bien establecido como terapia con
-              fuerte apoyo empírico para el tratamiento de la depresión (APA
-              Division 12, 2015). Si se tiene en cuenta la duración de la
+              fuerte apoyo empírico para el tratamiento de la depresión (<a className="text-sky-700 hover:text-sky-900" href="https://div12.org/treatment/behavioral-activation-for-depression/" target="_blank"
+                rel="noopener noreferrer">APA
+                Division 12, 2015</a>). Si se tiene en cuenta la duración de la
               intervención y el número de estrategias empleadas, la severidad de
               los cuadros en que ha tenido éxito, el rango de cambio en las
               puntuaciones de los cuestionarios con propiedades psicométricas
@@ -203,8 +205,9 @@ export default function AcercaDe() {
               tratamiento, el abandono de fármacos antidepresivos y el rigor
               metodológico de los ensayos clínicos aleatorizados presentados
               como evidencia, la AC se corona como la opción terapéutica que
-              aúna más ventajas para el clínico y el consultante (Barraca,
-              2009). La AC no parte de un modelo psicopatológico, aboga, en
+              aúna más ventajas para el clínico y el consultante (<a className="text-sky-700 hover:text-sky-900" href="https://www.researchgate.net/publication/319557694_LA_ACTIVACION_CONDUCTUAL_AC_Y_LA_TERAPIA_DE_ACTIVACION_CONDUCTUAL_PARA_LA_DEPRESION_TACD_DOS_PROTOCOLOS_DE_TRATAMIENTO_DESDE_EL_MODELO_DE_LA_ACTIVACION_CONDUCTUAL" target="_blank"
+                rel="noopener noreferrer">Barraca,
+                2009</a>). La AC no parte de un modelo psicopatológico, aboga, en
               cambio, por el uso de conceptos filosóficos o históricos que
               despatologizan (o desmedicalizan) los estados de ánimo bajos. La
               depresión, se vería como una respuesta normal o esperable ante un
@@ -241,16 +244,18 @@ export default function AcercaDe() {
               con la depresión y las adicciones (
               <a
                 className="text-sky-700 hover:text-sky-900"
-                href="#"
-                onClick={(e) => e.preventDefault()}
+                href="https://www.researchgate.net/publication/342846339_Propuesta_de_un_programa_de_tratamiento_para_dejar_de_fumar_basado_en_la_Activacion_Conductual"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Sánchez-Anguiano et al., 2020
               </a>
               ) y de la adaptación de instrumentos para evaluar sus mecanismos (
               <a
                 className="text-sky-700 hover:text-sky-900"
-                href="#"
-                onClick={(e) => e.preventDefault()}
+                href="https://www.redalyc.org/articulo.oa?id=180657436007"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Sánchez-Anguiano et al., 2018
               </a>
@@ -301,12 +306,27 @@ export default function AcercaDe() {
               condiciones de sufrimiento humano, en aislamiento o combinación (
               <a
                 className="text-sky-700 hover:text-sky-900"
-                href="#"
-                onClick={(e) => e.preventDefault()}
+                href="https://www.sciencedirect.com/science/article/pii/S2212144720301940"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Gloster et al. 2020 y APA División 12, 2020.
+                Gloster et al. 2020</a> y  <a className="text-sky-700 hover:text-sky-900"
+                  href="https://div12.org/treatments/"
+                  target="_blank"
+                  rel="noopener noreferrer">APA División 12, 2020.
               </a>
               )
+            </p>
+            <p>En México, miembros de nuestro equipo han participado en investigaciones sobre los impactos de ACT sobre trastornos de la personalidad (<a className="text-sky-700 hover:text-sky-900"
+              href="https://pubmed.ncbi.nlm.nih.gov/31071663/"
+              target="_blank"
+              rel="noopener noreferrer">Arango et al. 2019; Reyes-Ortega et al. 2020</a>), y han publicado manuales sobre su aplicación en duelo (<a className="text-sky-700 hover:text-sky-900"
+                href="https://tienda.manualmoderno.com/gpd-duelo-9786074486308-9786074486353.html"
+                target="_blank"
+                rel="noopener noreferrer">Cruz-Gaitán, Reyes-Ortega & Corona-Chavez, 2017</a>) y comportamiento suicida (<a className="text-sky-700 hover:text-sky-900"
+                  href="https://tienda.manualmoderno.com/guia-clinica-de-evaluacion-y-tratamiento-del-comportamiento-suicida-9786074488364-9786074488319.html"
+                  target="_blank"
+                  rel="noopener noreferrer">Reyes-Ortega & Strosahl, 2020</a>).
             </p>
             {/* pega aquí el resto de tus párrafos y referencias exactas */}
           </SectionCard>
@@ -330,7 +350,8 @@ export default function AcercaDe() {
               en el que pueden ocurrir problemáticas similares a las que el
               consultante experimenta en su vida diaria, y donde pueden
               intentarse soluciones equivalentes a las que podrían intentarse
-              ahí. FAP hace uso del reforzamiento natural positivo y el
+              ahí.</p>
+            <p>FAP hace uso del reforzamiento natural positivo y el
               moldeamiento para desarrollar y fortalecer clases de
               comportamientos alternativos que sirvan como facilitadores de una
               mejor interacción con uno mismo, las demás personas, y los
@@ -340,16 +361,65 @@ export default function AcercaDe() {
               como el trastorno depresivo, el trastorno por estrés
               postraumático, trastornos de personalidad, tabaquismo, problemas
               en la relación de parejas, o aspectos psicológicos del dolor
-              crónico (Kanter et al. 2017). Otra de sus aportaciones es su
+              crónico (<a className="text-sky-700 hover:text-sky-900"
+              href="https://www.x-mol.com/paper/1212918684140249098"
+              target="_blank"
+              rel="noopener noreferrer">Kanter et al. 2017</a>K). Otra de sus aportaciones es su
               teoría de la personalidad, donde se explica cómo surge el concepto
               de “uno  mismo” como un fenómeno de conducta verbal
-              (Fernández-Parra & Ferro García, 2006). En México, miembros de
-              nuestro equipo han participado en investigaciones sobre los
-              impactos de FAP en la fatiga de profesionales de la salud mental
-              (Reyes-Ortega et al. 2019), trastornos de la personalidad (Arango
-              et al. 2019; Reyes-Ortega et al. 2020), investigaciones sobre su
-              eficacia (Kanter et al. 2017), y han publicado manuales sobre su
-              aplicación (Reyes-Ortega & Kanter, 2017).
+              (<a className="text-sky-700 hover:text-sky-900"
+              href="https://dialnet.unirioja.es/servlet/articulo?codigo=2147834"
+              target="_blank"
+              rel="noopener noreferrer">Fernández-Parra & Ferro García, 2006</a>). </p>
+              <p> En México, miembros de
+                nuestro equipo han participado en investigaciones sobre los
+                impactos de FAP en la fatiga de profesionales de la salud mental
+                (<a className="text-sky-700 hover:text-sky-900"
+              href="https://link.springer.com/article/10.1007/s40732-019-00338-5"
+              target="_blank"
+              rel="noopener noreferrer">Reyes-Ortega et al. 2019</a>), trastornos de la personalidad (<a className="text-sky-700 hover:text-sky-900"
+              href="https://pubmed.ncbi.nlm.nih.gov/31071663/"
+              target="_blank"
+              rel="noopener noreferrer">Arango
+                et al. 2019; Reyes-Ortega et al. 2020</a>), investigaciones sobre su
+                eficacia (<a className="text-sky-700 hover:text-sky-900"
+              href="https://www.x-mol.com/paper/1212918684140249098"
+              target="_blank"
+              rel="noopener noreferrer">Kanter et al. 2017</a>), y han publicado manuales sobre su
+                aplicación (<a className="text-sky-700 hover:text-sky-900"
+              href="https://bibliotecadigital.editorialbrujas.com.ar/library/filter?author=Reyes%20Ortega%20Michel%20A.%2C%20Kanter%20W.%20Jonathan"
+              target="_blank"
+              rel="noopener noreferrer">Reyes-Ortega & Kanter, 2017</a>).
+            </p>
+          </SectionCard>
+
+          {/* --- ACT (derecha) --- */}
+          <SectionCard
+            id="act"
+            title="Terapia dialéctica conductual"
+            side="right"
+            imgSrc="/assets/images/act-image.jpg"
+            imgAlt="ACT"
+          >
+            {/* COPIA EXACTA AQUÍ: NO MODIFICAR */}
+            <p>
+              Como mencionan Soler, Elices y Carmona (<a  className="text-sky-700 hover:text-sky-900"
+                href="http://rabida.uhu.es/dspace/bitstream/handle/10272/12313/Terapia-Dialectica.pdf?sequence=2"
+                target="_blank"
+                rel="noopener noreferrer">2016</a>) La Terapia Dialéctica Conductual (DBT, por sus siglas en inglés) es un tratamiento ampliamente divulgado para trabajar con personas diagnosticadas con Trastorno Límite de la Personalidad (TLP) y otros problemas relacionados a la regulación emocional y la impulsividad. En la DBT se combinan tres pilares fundamentales, el análisis de la conducta clínica, el budismo Zen y de la filosofía dialéctica. La DBT es una terapia multimodal que incluye 4 componentes: terapia individual, entrenamiento grupal en habilidades, soporte telefónico y un grupo de consulta para los terapeutas. Como lo demuestran distintos ensayos clínicos controlados y aleatorizados, la DBT es hoy en día uno de dos tratamientos para el TLP que ha sido suficientemente investigado como para considerarse con una fuerte evidencia (<a  className="text-sky-700 hover:text-sky-900"
+                href="https://www.cochrane.org/CD012955/BEHAV_psychological-therapies-people-borderline-personality-disorder"
+                target="_blank"
+                rel="noopener noreferrer">Storebø, et al. 2020</a>). La DBT también ha sido adaptada para el tratamiento de otras patologías vinculadas a la inestabilidad emocional, lo que ha contribuido a ampliar su aplicación a otras poblaciones clínicas como niños y adolescentes, y adultos con estrés postraumático, trauma complejo, trastornos de la conducta alimentaria, y abuso de sustancias. El entrenamiento en habilidades de DBT, como elemento único de tratamiento, ha acumulado cada vez más evidencia en relación a su eficacia. 
+
+            </p>
+            <p>
+             En México, miembros de nuestro equipo han participado en investigaciones sobre los impactos de formas abreviadas de DBT en trastornos de la personalidad (<a  className="text-sky-700 hover:text-sky-900"
+                href="https://pubmed.ncbi.nlm.nih.gov/31246370/"
+                target="_blank"
+                rel="noopener noreferrer">Reyes-Ortega et al. 2020</a>), y sus adaptaciones para población estudiantil (<a  className="text-sky-700 hover:text-sky-900"
+                href="https://psicologiaysalud.uv.mx/index.php/psicysalud/article/view/2680"
+                target="_blank"
+                rel="noopener noreferrer">Huerta et al. 2017</a>).
             </p>
           </SectionCard>
         </div>

@@ -14,11 +14,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "¿Qué padecimientos o trastornos se tratan con estas terapias?",
-    answer: `Activación Conductual – Es el tratamiento con fuerte apoyo empírico para la depresión.\nTerapia de Aceptación y Compromiso – Trastorno de ansiedad generalizada, trastorno de angustia, trastorno depresivo, trastorno obsesivo-compulsivo que desde esta terapia se denominan trastorno de evitación experiencial.\nPsicoterapia Analítica Funcional – Dificultades en las relaciones interpersonales para desarrollar y fortalecer clases de comportamientos alternativos que sirvan como facilitadores de una mejor interacción con uno mismo, las demás personas y los desafíos que la vida plantea.\nTerapia Dialéctica Conductual – Es un tratamiento ampliamente divulgado para trabajar con personas diagnosticadas con Trastorno Límite de la Personalidad (TLP) y otros problemas relacionados a la regulación emocional y la impulsividad.`,
+    answer: `Activación Conductual – Es el tratamiento con fuerte apoyo empírico para la depresión.\nTerapia de Aceptación y Compromiso – Trastorno de ansiedad generalizada, trastorno de angustia, trastorno depresivo, trastorno obsesivo-compulsivo que desde esta terapia se denominan trastorno de evitación experiencial.\nPsicoterapia Analítica Funcional – Dificultades en las relaciones interpersonales para desarrollar y fortalecer clases de comportamientos alternativos que sirvan como facilitadores de una mejor interacción con uno mismo, las demás personas, y los desafíos que la vida plantea.\nTerapia Dialéctica Conductual – Es un tratamiento ampliamente divulgado para trabajar con personas diagnosticadas con Trastorno Límite de la Personalidad (TLP) y otros problemas relacionados a la regulación emocional y la impulsividad.`,
   },
   {
     question: "¿Puedo saber la duración de las terapias que ofrecen?",
-    answer: `La duración del proceso terapéutico varía, ya que cada persona requiere una valoración y plan de tratamiento personalizado. Y al finalizar la valoración, el consultor (terapeuta) del caso informa el panorama del camino psicoterapéutico que iniciarán.`,
+    answer: `La duración del proceso terapéutico varía, ya que, cada persona requiere una valoración y plan de tratamiento personalizado. Y al finalizar la valoración, el consultor (terapeuta) del caso informa el panorama del camino psicoterapéutico que iniciarán.`,
   },
   {
     question: "¿Todas las terapias tienen el mismo costo?",
@@ -34,11 +34,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "¿Con qué preparación académica cuentan los consultores (terapeutas) del Instituto?",
-    answer: `El mínimo grado de estudios con el que cuentan los profesionales del Instituto son estudios de maestría y el máximo con Doctorado. Además, todos los consultores han realizado estudios especializados, certificaciones, entrenamientos dentro y fuera de México con representantes de las Terapias Contextuales a nivel internacional y por instituciones acreditadas. Y cada año realizan un mínimo de 48 horas de capacitación, además de supervisión.`,
+    answer: `El mínimo grado de estudios con el que cuentan los profesionales del Instituto, son estudios de maestría y el máximo con Doctorado. Además todos los consultores han realizado estudios especializados, certificaciones, entrenamientos dentro y fuera de México con representantes de las Terapias Contextuales a nivel internacional y por instituciones acreditadas. Y cada año realizan un mínimo de 48 horas de capacitación, además de supervisión.`,
   },
   {
     question: "¿Cuál es su oferta académica?",
-    answer: `El Instituto de Terapia Contextual enseña y divulga la Ciencia y Terapia Contextual desde el año 2010; nuestros objetivos son la formación teórico-práctica en Análisis del Comportamiento Clínico y sus encarnaciones más conocidas como Terapia de Aceptación y Compromiso (ACT), Psicoterapia Analítica Funcional (FAP), Activación Conductual (BA), Terapia Dialéctica Conductual y otras metodologías de Terapia de Conducta (como Exposición y Prevención de Respuesta, Entrevista Motivacional, etc.). Durante el año se llevan a cabo diferentes entrenamientos en diferentes formatos como talleres, diplomados o cursos, tanto presenciales como en línea.`,
+    answer: `El Instituto de Terapia Contextual, enseña y divulga la Ciencia y Terapia Contextual desde el año 2010; nuestros objetivos son la formación teórico-práctica en Análisis del Comportamiento Clínico y sus encarnaciones más conocidas como Terapia de Aceptación y Compromiso (ACT), Psicoterapia Analítica Funcional (FAP), Activación Conductual (BA), Terapia Dialéctica Conductual y otras metodologías de Terapia de Conducta (como Exposición y Prevención de Respuesta, Entrevista Motivacional, etc.). Durante el año se llevan a cabo diferentes entrenamientos, en diferentes formatos como talleres, diplomados o cursos, tanto presenciales como en línea.`,
   },
 ];
 
