@@ -25,9 +25,8 @@ export const courses: Course[] = [
     slug: "diplomado-fundamentos-dbt",
     image: "/assets/images/FormacionAcademica-card-1.webp",
     title: "Diplomado en Fundamentos de Terapia Dialéctica Conductual",
-    subtitle:
-      "Formación teórico-práctica para desarrollar habilidades clínicas basadas en ACT, con énfasis en valores, mindfulness y flexibilidad psicológica.",
-    dates: "Continuo",
+    subtitle: "Competencias DBT para el tratamiento de adultos y adolescentes.",
+    dates: "Anual",
     schedule: "Jueves 19hrs - 20hrs, Viernes 17hrs - 21hrs",
     mode: "Presencial y Online",
     address:
@@ -68,74 +67,125 @@ export const courses: Course[] = [
   <strong>Informes e inscripción:</strong><br/>
   <a href="mailto:diplomadositac@gmail.com">diplomadositac@gmail.com</a>
 </p>
+<p>
+  <strong>Whatsapp:</strong><br/>
+  <a href="https://wa.link/mrznze">5565383566</a>
+</p>
     `,
   },
-//   {
-//     id: 2,
-//     slug: "curso-dbt-teams",
-//     image: "/assets/images/FormacionAcademica-card-2.webp",
-//     title: "Curso-Taller: DBT TEAMS",
-//     subtitle: "Logrando los más altos estándares de calidad en DBT.",
-//     dates: "31 mayo y 1 junio, 2025",
-//     schedule: "Intensivo de fin de semana",
-//     mode: "Presencial en CDMX y Online",
-//     address:
-//       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.1234567890123!2d-99.164321!3d19.357890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff1234567890%3A0xabcdef1234567890!2sC.%20Belisario%20Dom%C3%ADnguez%2C%20Coyoac%C3%A1n!5e0!3m2!1ses!2smx!4v1698781234567",
-//     text: `
-// <p><strong>PONENTE:</strong><br/>
-// Ronda Reitz, PhD. La Dra. Reitz es capacitadora y consultora internacional de DBT para Behavioral Tech, institución fundada por la Dra. Marsha Linehan y es miembro de la junta y consultora del Instituto Linehan. Ha sido líder en la enseñanza e implementación de la Terapia Dialéctica Conductual (DBT) durante 25 años. Actualmente es Coordinadora de DBT en el Departamento de Salud Mental de Missouri, EUA., responsable de la capacitación, consultación, implementación, evaluación y supervisión de los servicios de DBT en todo el estado. Es colaboradora en investigación y desarrollo para el uso de habilidades de DBT para afrontar el cáncer. Doctorada en Psicología por la Universidad de Kansas. Ha sido estudiante de Rinzai Zen durante más de 20 años y estudió con Roshi Marsha Linehan y Roshi Alice Cabotaje.</p>
-// <p><strong>Fechas:</strong><br/>31 de mayo y 1º de junio de 2025</p>
-// <p><strong>Horario:</strong><br/>9am a 6pm</p>
-// <p><strong>Modalidad:</strong><br/>Presencial en CDMX y Online</p>
-// <p><strong>Dirigido a:</strong><br/>Psicólogos y Psiquiatras que cuentan con formación de los fundamentos de DBT.</p>
-// <p><strong>Objetivos:</strong></p>
-// <ul>
-//   <li>Proveer a los equipos herramientas y habilidades para lograr la más alta calidad de tratamiento DBT para los consultantes, de acuerdo a los estándares de certificación de la DBT Linehan Board of Certification.</li>
-//   <li>Metodología como consultoría extendida.</li>
-// </ul>
-// <p><strong>Inscripciones:</strong><br/>
-// informes@institutodeterapiacontextual.com<br/>
-// +52 55 5554 7420
-// </p>
-// <p>
-//   <strong>Informes e inscripción:</strong><br/>
-//   <a href="mailto:informes@institutodeterapiacontextual.com">informes@institutodeterapiacontextual.com</a> <br>
-//   +52 55 5554 7420
-// </p>
-//     `,
-//   },
+  {
+    id: 2,
+    slug: "curso-entrenar-habilidades-dbt",
+    image: "/assets/images/FormacionAcademica-card-2.webp",
+    title: "Curso-Taller: para entrenar habilidades DBT",
+    subtitle: "Cómo enseñar habilidades DBT en consulta individual y grupal.",
+    dates: "22 - 24 mayo 2026",
+    schedule: "Intensivo de fin de semana",
+    mode: "Híbrida",
+    address:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.1234567890123!2d-99.164321!3d19.357890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff1234567890%3A0xabcdef1234567890!2sC.%20Belisario%20Dom%C3%ADnguez%2C%20Coyoac%C3%A1n!5e0!3m2!1ses!2smx!4v1698781234567",
+    text: `
+<p><strong>PONENTE:</strong><br/>
+Mtra. A. Sarai Sánchez Morales</p>
+<p><strong>Objetivos:</strong></p>
+<p>Este curso-taller se centra en las habilidades básicas de la DBT. Aprenderás a utilizar y enseñar la atención plena, la regulación emocional, la efectividad interpersonal y la tolerancia al malestar con tus consultantes que experimentan abrumo emocional, comportamiento impulsivo, conflictos interpersonales y sentirse como atrapada/o en el sufrimiento. Aprenderás a utilizarlos en ambientes grupales e individuales. Aprenderás cómo funciona cada habilidad, cuándo utilizarla y cómo enseñarla de una manera atractiva, enfocada, estructurada y clínicamente útil para tus consultantes. Identificarás cómo adaptarlas a tu estilo clínico y a las necesidades de tus consultantes, manteniéndose dentro del marco de la DBT. Participar de juegos de roles y demostraciones clínicas.
+</p><br/>
+<p><strong>Objetivos específicos:</strong></p>
+<ul>
+  <li>Comprensión y sobre todo práctica de cómo enseñar las habilidades de la DBT tanto en entornos individuales como grupales.</li>
+  <li>Estrategias para integrar las habilidades de DBT en su trabajo terapéutico actual.</li>
+  <li>Construir maestría para introducir las habilidades de manera flexible y completa, según las necesidades de los consultantes.</li>
+  <li>Herramientas para ayudar a los consultantes a desarrollar una mayor estabilidad, conexión y dirección hacia su vida valiosa.</li>
+</ul>
+<p><strong>Temario:</strong></p>
+<ul>
+  <li>Estructura del grupo y del Entrenamiento de Habilidades DBT</li>
+  <li>Mindfulness o Atención Plena</li>
+  <li>Tolerancia al Malestar</li>
+  <li>Regulación Emocional</li>
+  <li>Efectividad Interpersonal</li>
+  <li>Habilidades terapéuticas del Entrenador/Entrenadora de Habilidades DBT</li>
+  <li>Manteniendo la adherencia al Entrenamiento de Habilidades DBT</li>
+  <li>Manejando los desafíos que implica entrenar en Habilidades DBT</li>
+</ul>
+<p><strong>Fechas:</strong><br/>Mayo 2026<br/></p>
+<ul>
+    <li>Viernes 22</li>
+    <li>Sábado 23</li>
+    <li>Domingo 24</li>
+</ul>
+<p><strong>Horario:</strong><br/>9am a 5pm</p>
+<p><strong>Modalidad:</strong><br/>Híbrida<br/></p>
+<ul>
+    <li><strong>Presencial:</strong> Cjón. Belisario Domínguez #141. Coyoacán, CdMx</li>
+    <li><strong>En línea:</strong> Plataforma Zoom</li>
+</ul>
+<p><strong>Dirigido a:</strong><br/>Psicólogos y Psiquiatras que cuentan con formación de los fundamentos de DBT.</p>
+<p><strong>Inscripciones:</strong><br/>
+informes@institutodeterapiacontextual.com<br/>
++52 55 5554 7420
+</p>
+  `,
+  },
   {
     id: 3,
-    slug: "dbt-c-poblacion-infantil",
-    image: "/assets/images/FormacionAcademica-card-2.webp",
-    title: "Entrenamiento Intensivo en DBT‑C",
-    subtitle: "Terapia Dialéctica Conductual para población infantil.",
-    dates: "5-7 diciembre, 2025 y 24-26 julio, 2026",
+    slug: "dbt-familias",
+    image: "/assets/images/FormacionAcademica-card-3.webp",
+    title: "Curso-Taller: DBT Familias",
+    subtitle: "Intervenciones DBT para familiares y allegados.",
+    dates: "12 -14 junio 2026",
     schedule: "Sesiones prácticas y supervisión clínica",
     mode: "Presencial en CDMX, México",
     address:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.1234567890123!2d-99.164321!3d19.357890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff1234567890%3A0xabcdef1234567890!2sC.%20Belisario%20Dom%C3%ADnguez%2C%20Coyoac%C3%A1n!5e0!3m2!1ses!2smx!4v1698781234567",
     text: `
 <p><strong>PONENTE:</strong><br/>
-Francheska Perepletchikova, Ph.D. y María Ignacia Montt, Psic. Francheska Perepletchikova, clínica certificada por la Junta del DBT-Linehan, especialista en servicios psicológicos para niños y adolescentes con desregulación emocional y conductas graves. Fue estudiante de posgrado del Dr. Alan Kazdin en la Universidad de Yale y recibió capacitaciones avanzadas en DBT con el Linehan Institute Behavioral Tech. En 2009 fue reconocida como terapeuta con adherencia al tratamiento y evaluadora de adherencia a DBT por la Universidad de Washington. Es consultora de equipos de DBT en EUA, Rusia, Noruega y América Latina y miembro del Grupo Internacional de Planificación Estratégica de DBT.</p>
-<p><strong>Fechas:</strong><br/>1ra parte: 5, 6 y 7 de diciembre de 2025<br/>2da parte: 24, 25 y 26 de julio de 2026</p>
-<p><strong>Duración:</strong><br/>48 horas en total</p>
-<p><strong>Horario:</strong><br/>9am a 6pm</p>
-<p><strong>Modalidad:</strong><br/>Presencial en CDMX, México</p>
-<p><strong>Idioma:</strong><br/>Inglés con traducción simultánea al español</p>
-<p><strong>Dirigido a:</strong><br/>Psicólogos y Psiquiatras que cuentan con formación de los fundamentos de DBT.</p>
+Mtra. Alejandra M. Castellanos Espinosa
+</p>
 <p><strong>Objetivos:</strong></p>
+<p>Al finalizar este curso, comprenderás y serás capaz de aplicar técnicas de DBT para el trabajo con familiares y allegados de personas con dificultades en la regulación emocional, así como orientar a las familias para poder lograr una vida que merezca la pena ser vivida.</p>
+<br/>
+<p><strong>Objetivos específicos:</strong></p>
 <ul>
-  <li>Describir quién se beneficia de DBT-C y cómo se desarrolló a partir de DBT estándar.</li>
-  <li>Explicar el modelo biosocial para desregulación emocional y la jerarquía de tratamiento de DBT-C.</li>
-  <li>Organizar DBT-C para cumplir funciones requeridas y enseñar a los padres sobre dilemas dialécticos y modelo de cambio de conducta.</li>
-  <li>Enseñar técnicas de modificación de conducta y planes de manejo de conducta.</li>
-  <li>Crear entorno de validación y superar dificultades en la implementación.</li>
-  <li>Participar en resolución de problemas y reestructuración cognitiva.</li>
-  <li>Realizar análisis conductuales con los niños.</li>
-  <li>Comprender emociones y describir modelo de cambio de emociones.</li>
-  <li>Enseñar habilidades de DBT-C y adaptarlas al entorno.</li>
+  <li>Comprender la relevancia del trabajo con familiares y allegados desde DBT.</li>
+  <li>Comprender y aplicar el modelo transaccional en las interacciones familiares.</li>
+  <li>Familiarizarse con la expresión precisa desde el tratamiento para familiares y allegados, así como el entrenamiento en validación.</li>
+  <li>Identificar los principales elementos de la atención plena de las relaciones.</li>
+  <li>Comprender el mecanismo de la reactividad emocional para ser capaces de disminuirla y posteriormente reactivar y recondicionar las relaciones.</li>
+  <li>Hacer uso de las estrategias de cambio identificando los procesos familiares coercitivos que se han establecido a lo largo de los años.</li>
+  <li>Planear de manera efectiva para el establecimiento de límites.</li>
+  <li>Hacer uso de estrategias de efectividad interpersonal, así como de aceptación radical y autovalidación.</li>
 </ul>
+<p><strong>Temario:</strong></p>
+<ul>
+  <li>Relevancia del trabajo con familiares y allegados</li>
+  <li>Modelo transaccional</li>
+  <li>Expresión precisa</li>
+  <li>Entrenamiento en validación</li>
+  <li>Atención plena de las relaciones</li>
+  <li>Disminuyendo la reactividad emocional</li>
+  <li>Reactivando y recondicionando las relaciones</li>
+  <li>Estrategias de cambio</li>
+  <li>Procesos familiares coercitivos</li>
+  <li>Límites</li>
+  <li>Efectividad interpersonal</li>
+  <li>Aceptación radical</li>
+  <li>Autovalidación</li>
+</ul>
+<p><strong>Fechas:</strong><br/>Junio 2026<br/></p>
+<ul>
+    <li>Viernes 12</li>
+    <li>Sábado 13</li>
+    <li>Domingo 14</li>
+</ul>
+<p><strong>Duración:</strong><br/>21 horas en total</p>
+<p><strong>Horario:</strong><br/>9am a 5pm</p>
+<p><strong>Modalidad:</strong><br/>Híbrida<br/></p>
+<ul>
+    <li><strong>Presencial:</strong> Cjón. Belisario Domínguez #141. Coyoacán, CdMx</li>
+    <li><strong>En línea:</strong> Plataforma Zoom</li>
+</ul>
+<p><strong>Dirigido a:</strong><br/>Psicólogos y Psiquiatras que cuentan con formación de los fundamentos de DBT.</p>
 <p>
   <strong>Inscripciones:</strong><br/>
   <a href="mailto:informes@institutodeterapiacontextual.com">informes@institutodeterapiacontextual.com</a> <br>
@@ -148,8 +198,8 @@ Francheska Perepletchikova, Ph.D. y María Ignacia Montt, Psic. Francheska Perep
     slug: "retiro-mindfulness-zen",
     image: "/assets/images/FormacionAcademica-card-4.webp",
     title: "Retiro de Mindfulness Zen",
-    subtitle: "Encuentro intensivo de práctica contemplativa y meditación.",
-    dates: "Continuo",
+    subtitle: "Práctica contemplativa intensiva de atención plena en silencio.",
+    dates: "Anual",
     schedule: "Retiro residencial de 4 días",
     mode: "Presencial",
     address:
@@ -164,7 +214,7 @@ Habitación individual por participante<br/>
 10 de Mayo #12, Santiago Cuauhtenco, Amecameca, Edo. de México.<br/>
 <a href="https://goo.gl/maps/m65jWgusHiZd5W5F7" target="_blank" rel="noopener">Ver en Google Maps</a>
 </p>
-<p><strong>Fecha:</strong><br/>Continuo</p>
+<p><strong>Fecha:</strong><br/>Anual</p>
 <p>
   <strong>Inscripciones:</strong><br/>
   <a href="mailto:informes@institutodeterapiacontextual.com">informes@institutodeterapiacontextual.com</a> <br>
@@ -172,27 +222,109 @@ Habitación individual por participante<br/>
 </p>
     `,
   },
-//   {
-//     id: 5,
-//     slug: "curso-dbt-teams-2",
-//     image: "/assets/images/FormacionAcademica-card-5.webp",
-//     title: "Curso-Taller: DBT-TEAMS 2",
-//     subtitle: "Capacitación avanzada en DBT con Kelly Koerner, PhD.",
-//     dates: "6-7 junio, 2026",
-//     schedule: "9am a 6pm",
-//     mode: "Presencial en Guadalajara, México",
-//     address:
-//       "",
-//     text: `
-// <p><strong>PONENTE:</strong><br/>Kelly Koerner, PhD</p>
-// <p>Kelly es una terapeuta experta, supervisora clínica y entrenadora internacional de DBT, reconocida por su estilo cálido, interesante y práctico. Fue profesora en la Universidad de Washington y ha publicado numerosos artículos y libros, incluyendo capítulos en “Process-Based CBT: The Science and Core Clinical Competencies of Cognitive Behavioral Therapy”. Autora de "Doing Dialectical Behavior Therapy: A Practical Guide" y coautora de "Dialectical Behavior Therapy in Clinical Practice: Second Edition".</p>
-// <p><strong>Fecha:</strong><br/>6 y 7 de junio de 2026</p>
-// <p><strong>Duración:</strong><br/>16 horas en total</p>
-// <p><strong>Horario:</strong><br/>9am a 6pm</p>
-// <p><strong>Modalidad:</strong><br/>Presencial en Guadalajara, México</p>
-// <p><strong>Idioma:</strong><br/>Inglés con traducción simultánea al español</p>
-// <p><strong>Dirigido a:</strong><br/>Psicólogos y Psiquiatras que cuentan con formación de los fundamentos de DBT.</p>
-// <p><strong>Próximamente más información.</strong></p>
-//     `,
-//   },
+  {
+    id: 5,
+    slug: "curso-nivel-inicial-ro-dbt",
+    image: "/assets/images/FormacionAcademica-card-5.webp",
+    title: "Nivel inicial RO-DBT ",
+    subtitle: "RO-DBT: sobrecontrol y conexión social como mecanismo de cambio.",
+    dates: "22 y 23 agosto 2026",
+    schedule: "9am a 5pm",
+    mode: "Híbrido",
+    address:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.1234567890123!2d-99.164321!3d19.357890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff1234567890%3A0xabcdef1234567890!2sC.%20Belisario%20Dom%C3%ADnguez%2C%20Coyoac%C3%A1n!5e0!3m2!1ses!2smx!4v1698781234567",
+    text: `
+  <p><strong>PONENTE:</strong><br/>Mtra. Karla Y. López Villagrán</p>
+  <p><strong>Objetivos:</strong></p>
+<p>Al finalizar este curso, comprenderás los fundamentos teóricos y clínicos de la Terapia Dialéctica Conductual Radicalmente Abierta (RO-DBT), el modelo biosocial del sobre control, la población objetivo, los principios del tratamiento, la postura terapéutica radicalmente abierta y los mecanismos de cambio basados en la conexión social.</p>
+<br/>
+<p><strong>Objetivos específicos:</strong></p>
+<ul> 
+  <li>Explicar qué es RO-DBT, su origen, sus fundamentos y sus diferencias con la DBT estándar.</li> <li>Comprender el modelo biopsicosocial del sobre control, incluyendo vulnerabilidades temperamentales y contextos de aprendizaje.</li> <li>Diferenciar clínicamente el sobre control y el bajo control, reconociendo las implicaciones de esta distinción para la práctica terapéutica.</li> <li>Identificar la población clínica para la cual RO-DBT está indicada, así como sus principales aplicaciones transdiagnósticas.</li> <li>Reconocer los objetivos terapéuticos centrales de RO-DBT y entender la conexión social como mecanismo principal de cambio.</li> <li>Comprender la estructura general del tratamiento RO-DBT y el rol activo del terapeuta dentro del modelo.</li> <li>Reconocer la postura terapéutica radicalmente abierta, incluyendo el uso clínico de la autenticidad, la auto revelación estratégica y la cercanía relacional.</li> <li>Identificar las principales áreas de habilidades de RO-DBT, a nivel introductorio.</li> <li>Reconocer los alcances, límites y requisitos formativos posteriores a este nivel introductorio.</li> 
+</ul>
+<p><strong>Temario:</strong></p>
+<ul> 
+  <li>Fundamentos y marco general de RO-DBT</li> 
+  <li>Modelo biosocial del sobrecontrol</li> 
+  <li>Diferencias entre sobrecontrol y bajo control</li> <li>Población objetivo y aplicaciones técnicas</li> 
+  <li>Objetivos terapéuticos y mecanismos de cambio</li> 
+  <li>Estructura general del tratamiento RO-DBT</li> <
+  li>Principios y postura terapéutica en RO DBT</li> 
+  <li>Introducción a las habilidades de RO-DBT</li> 
+</ul>
+  <p><strong>Fechas:</strong><br/>Agosto 2026<br/></p>
+<ul>
+    <li>Sábado 22</li>
+    <li>Domingo 23</li>
+</ul>
+<p><strong>Duración:</strong><br/>14 horas en total</p>
+<p><strong>Horario:</strong><br/>9am a 5pm</p>
+<p><strong>Modalidad:</strong><br/>Híbrida<br/></p>
+<ul>
+    <li><strong>Presencial:</strong> Cjón. Belisario Domínguez #141. Coyoacán, CdMx</li>
+    <li><strong>En línea:</strong> Plataforma Zoom</li>
+</ul>
+  <p><strong>Dirigido a:</strong><br/>Psicólogos y Psiquiatras que cuentan con formación de los fundamentos de DBT.</p>
+
+<p>
+  <strong>Inscripciones:</strong><br/>
+  <a href="mailto:informes@institutodeterapiacontextual.com">informes@institutodeterapiacontextual.com</a> <br>
+  +52 55 5554 7420
+</p>
+      `,
+  },
+  {
+    id: 6,
+    slug: "curso-activacion-conductual",
+    image: "/assets/images/FormacionAcademica-card-6.webp",
+    title: "Curso-Taller: Activación Conductual",
+    subtitle: "Activación Conductual: análisis funcional y programación de actividades.",
+    dates: "23 - 25 octubre 2026",
+    schedule: "9am a 5pm",
+    mode: "Híbrido",
+    address:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.1234567890123!2d-99.164321!3d19.357890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff1234567890%3A0xabcdef1234567890!2sC.%20Belisario%20Dom%C3%ADnguez%2C%20Coyoac%C3%A1n!5e0!3m2!1ses!2smx!4v1698781234567",
+    text: `
+  <p><strong>PONENTE:</strong><br/>Dr. Michel Reyes O.</p>
+  <p><strong>Objetivos:</strong></p>
+<p>Ensayar las competencias básicas de la activación conductual y conocer sus adaptaciones para diferentes problemáticas clínicas.</p>
+<br/>
+<p><strong>Objetivos específicos:</strong></p>
+<ul> 
+  <li>Análisis funcional y formulación de caso.</li> 
+  <li>Establecimiento del contrato terapéutico.</li> 
+  <li>Diseño de plan de programación de actividades personalizado.</li> 
+  <li>Resolución de problemas emergentes en el tratamiento.</li> 
+  <li>Desarrollo de plan de prevención de recaídas.</li> 
+</ul>
+
+<p><strong>Temario:</strong></p>
+<ul> 
+  <li>Teoría de la Activación Conductual.</li> 
+  <li>Las 4 competencias básicas de la activación conductual.</li> 
+  <li>La activación conductual simple y compleja.</li> 
+  <li>Adaptaciones para depresión, ansiedad, trauma y trastorno bipolar.</li> 
+</ul>
+  <p><strong>Fechas:</strong><br/>Octubre 2026<br/></p>
+<ul>
+    <li>Viernes 23</li>
+    <li>Sábado 24</li>
+    <li>Domingo 25</li>
+</ul>
+<p><strong>Duración:</strong><br/>21 horas en total</p>
+<p><strong>Horario:</strong><br/>9am a 5pm</p>
+<p><strong>Modalidad:</strong><br/>Híbrida<br/></p>
+<ul>
+    <li><strong>Presencial:</strong> Cjón. Belisario Domínguez #141. Coyoacán, CdMx</li>
+    <li><strong>En línea:</strong> Plataforma Zoom</li>
+</ul>
+  <p><strong>Dirigido a:</strong><br/>Psicólogos y Psiquiatras que cuentan con formación de los fundamentos de DBT.</p>
+
+<p>
+  <strong>Inscripciones:</strong><br/>
+  <a href="mailto:informes@institutodeterapiacontextual.com">informes@institutodeterapiacontextual.com</a> <br>
+  +52 55 5554 7420
+</p>
+      `,
+  },
 ]

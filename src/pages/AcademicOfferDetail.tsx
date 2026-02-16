@@ -3,6 +3,9 @@ import { useParams, Navigate } from "react-router-dom";
 import { courses, type Course } from "../assets/courses";
 import React, { useEffect, useState } from "react";
 import { useCourseInterest } from "../hooks/useCourseInterest";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+
 
 function Toast({
   open,
@@ -24,22 +27,19 @@ function Toast({
     >
       {/* ✅ Backdrop (visual only, does NOT block clicks) */}
       <div
-        className={`pointer-events-none absolute inset-0 bg-black/35 transition-opacity duration-300 ${
-          open ? "opacity-100" : "opacity-0"
-        }`}
+        className={`pointer-events-none absolute inset-0 bg-black/35 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"
+          }`}
       />
 
       <div
-        className={`transform transition-all duration-300 ${
-          open ? "translate-y-0 scale-100 opacity-100" : "translate-y-2 scale-[0.98] opacity-0"
-        }`}
+        className={`transform transition-all duration-300 ${open ? "translate-y-0 scale-100 opacity-100" : "translate-y-2 scale-[0.98] opacity-0"
+          }`}
       >
         <div className="pointer-events-auto max-w-sm rounded-lg shadow-lg ring-1 ring-black/10 bg-white">
           <div className="flex items-start gap-3 p-4">
             <div
-              className={`mt-0.5 grid h-6 w-6 place-items-center rounded-full ${
-                kind === "success" ? "bg-emerald-500" : "bg-rose-500"
-              }`}
+              className={`mt-0.5 grid h-6 w-6 place-items-center rounded-full ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+                }`}
             >
               {kind === "success" ? (
                 <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -64,9 +64,8 @@ function Toast({
             </button>
           </div>
           <div
-            className={`h-1 w-full rounded-b-lg ${
-              kind === "success" ? "bg-emerald-500" : "bg-rose-500"
-            }`}
+            className={`h-1 w-full rounded-b-lg ${kind === "success" ? "bg-emerald-500" : "bg-rose-500"
+              }`}
           />
         </div>
       </div>
@@ -142,6 +141,15 @@ export default function AcademicOfferDetail() {
   return (
     <>
       <section className="py-16 bg-gray-50 bg-pattern">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+          <Link
+            to="/formacion-academica" 
+            className="inline-flex items-center gap-2 text-[#0f2f45] hover:text-[#0b2333] text-sm font-medium"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Volver a formación académica
+          </Link>
+        </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* title + subtitle */}
           <h1 className="text-4xl font-bold mb-4 font-barlowCond">{course.title}</h1>
