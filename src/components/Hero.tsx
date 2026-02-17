@@ -49,7 +49,7 @@ export default function Hero() {
         </>
       ),
       metaLeftLabel: "Fechas:",
-      metaLeftValue: "12, 13 y 14 de Junio",
+      metaLeftValue: "12, 13 y 14 de junio 2026",
       metaRightLabel: "Modalidad:",
       metaRightText: "Híbrido",
       cta: { label: "Ver curso", url: "/formacion-academica/diplomado-fundamentos-dbt" },
@@ -63,7 +63,7 @@ export default function Hero() {
         </>
       ),
       metaLeftLabel: "Fechas:",
-      metaLeftValue: "22, 23 y 24 de Mayo.",
+      metaLeftValue: "22, 23 y 24 de mayo 2026",
       metaRightLabel: "Modalidad:",
       metaRightText: "Híbrido",
 
@@ -78,7 +78,7 @@ export default function Hero() {
         </>
       ),
       metaLeftLabel: "Fechas:",
-      metaLeftValue: "12, 13 y 14 de Junio",
+      metaLeftValue: "12, 13 y 14 de junio 2026",
       metaRightLabel: "Modalidad:",
       metaRightText: "Híbrido",
 
@@ -93,7 +93,7 @@ export default function Hero() {
         </>
       ),
       metaLeftLabel: "Fechas:",
-      metaLeftValue: "22 y 23 de agosto",
+      metaLeftValue: "22 y 23 de agosto 2026",
       metaRightLabel: "Modalidad:",
       metaRightText: "Híbrido",
 
