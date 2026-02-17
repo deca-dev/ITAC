@@ -1,24 +1,28 @@
-// src/components/AcademicFormation.tsx
+// src/components/AcademicOfferHome.tsx
 import { courses, type Course } from "../assets/courses";
 import { Link } from "react-router-dom";
 
-export default function AcademicFormation() {
+export default function AcademicOfferHome() {
+  const featured = courses.slice(0, 3);
+
   return (
     <section className="pb-16 bg-white pt-[100px] bg-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <h2 className="text-4xl text-gray-900 mb-8 !font-barlowCond">
-          Formación Académica
-        </h2>
+        <div className="flex items-end justify-between gap-4 mb-8">
+          <h2 className="text-4xl text-gray-900 !font-barlowCond">
+            Formación Académica
+          </h2>
+        </div>
 
-        {/* Grid of course cards */}
+        {/* Grid of course cards (first 3) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course: Course) => (
+          {featured.map((course: Course) => (
             <div
               key={course.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col relative group"
             >
-              {/* Link que cubre toda la tarjeta */}
+              {/* Link overlay */}
               <Link
                 to={`/formacion-academica/${course.slug}`}
                 className="absolute inset-0 z-10"
@@ -44,7 +48,7 @@ export default function AcademicFormation() {
                   {course.title}
                 </h3>
 
-                <p className="text-sm  flex-grow whitespace-pre-wrap">
+                <p className="text-sm flex-grow whitespace-pre-wrap">
                   {course.subtitle}
                 </p>
 
@@ -52,7 +56,7 @@ export default function AcademicFormation() {
                   {course.dates}
                 </p>
 
-                {/* "Ver más" se mantiene con sus clases, pero debe ir arriba del overlay */}
+                {/* "Ver más" above overlay */}
                 <Link
                   to={`/formacion-academica/${course.slug}`}
                   className="mt-6 inline-flex items-center font-medium text-sm relative z-20"
@@ -71,6 +75,25 @@ export default function AcademicFormation() {
           ))}
         </div>
 
+        {/* Mobile button */}
+        <div className="sm:hidden mt-8">
+          <Link
+            to="/formacion-academica"
+            className="inline-flex w-full items-center justify-center rounded-md bg-[#1E5864] text-white px-4 py-3 text-sm font-semibold hover:bg-[#16464f] transition-colors"
+          >
+            Ver más cursos
+          </Link>
+        </div>
+
+        {/* Desktop button (bottom-right) */}
+        <div className="hidden sm:flex justify-end mt-8">
+          <Link
+            to="/formacion-academica"
+            className="inline-flex items-center justify-center rounded-md bg-[#1E5864] text-white px-4 py-2 text-sm font-semibold hover:bg-[#16464f] transition-colors"
+          >
+            Ver más cursos
+          </Link>
+        </div>
       </div>
     </section>
   );

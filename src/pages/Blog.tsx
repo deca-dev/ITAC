@@ -174,7 +174,7 @@ export default function Blog() {
               onClick={() => { setQ(""); setCat("all"); setYr("all"); }}
               className="h-11 px-4 rounded-md bg-slate-100 border border-slate-300 text-sm hover:bg-slate-200"
             >
-              Reset
+              Borrar filtros
             </button>
           </div>
         </div>
