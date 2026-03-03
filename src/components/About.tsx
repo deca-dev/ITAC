@@ -46,7 +46,7 @@ const About = () => {
               <span className="text-sm">Nuestras publicaciones</span>
             </div>
             <h2 className="text-3xl  text-gray-900 mb-6 !font-barlowCond">
-              Creando una Sociedad Mentalmente Saludable
+              Construyendo puentes hacia una Sociedad Mentalmente Saludable
             </h2>
             <p className="text-lg text-gray-600 mb-8">
               Nuestro compromiso es difundir el conocimiento a través de
