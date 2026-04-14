@@ -162,7 +162,7 @@ export const teamResumes: Record<string, TeamResume> = {
     // Amalia
     // ─────────────────────────────────────────────────────────
     "amalia-castillo-rosales": {
-        displayName: "Psic. Amalia Castillo Rosales",
+        displayName: "Mtra. Amalia Castillo Rosales",
         bannerImage: "/assets/photos/banners/Amalia.jpg",
         resumen:
             "Psicóloga clínica especializada en Terapias Conductuales Contextuales, Terapia Dialéctica Conductual (DBT), Terapia de Aceptación y compromiso (ACT), Psicoterapia Analítica Funcional (FAP) y Mindfulness.",

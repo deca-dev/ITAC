@@ -51,7 +51,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "amalia-castillo-rosales",
     name: "Amalia Castillo Rosales",
-    title: "Psic.",
+    title: "Mtra.",
     specialty: "Maestría en Psicoterapia",
     description:
       "Psicóloga clínica especializada en Terapias Conductuales Contextuales, Terapia Dialéctica Conductual (DBT), Terapia de Aceptación y compromiso (ACT), Psicoterapia Analítica Funcional (FAP) y Mindfulness.",
@@ -156,7 +156,7 @@ export const teamMembers: TeamMember[] = [
     years: "Terapeuta Individual y Entrenadora de Habilidades",
     certification: "Maestra",
     photo: "nancy-leal",
-    mode: ["En línea", "Presencial"],
+    mode: ["En línea"],
     idiom: ["Español"],
     population: ["Adolescencia", "Adultos"],
   },
@@ -198,7 +198,7 @@ export const teamMembers: TeamMember[] = [
     years: "Terapeuta Individual y co-entrenadora.",
     certification: "Maestra",
     photo: "susana-morelos",
-    mode: ["En línea", "Presencial"],
+    mode: ["En línea"],
     idiom: ["Español"],
     population: ["Adultos"],
   },

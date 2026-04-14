@@ -42,7 +42,7 @@ const Services = () => {
           <img className="w-16" src="/assets/logo/logo-main.png" alt="Logo" />
           <h2 className="text-3xl font-bold text-gray-900 mb-4 ">Quienes somos</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Somos una institución especializada en Terapia Contextual que forma, investiga y brinda atención psicológica desde 2010. Ofrecemos capacitación en Análisis del Comportamiento Clínico y métodos como ACT, FAP y BA. Además, asesoramos a instituciones en investigación y capacitación sobre estos enfoques. Colaboramos con programas de formación en México, América Latina y España, y participamos en congresos e investigaciones internacionales.
+            Somos una institución especializada en Terapia Contextual que forma, investiga y brinda atención psicológica desde 2010. Ofrecemos capacitación en Análisis del Comportamiento Clínico y métodos como DBT, ACT, FAP y BA. Además, asesoramos a instituciones en investigación y capacitación sobre estos enfoques. Colaboramos con programas de formación en México, América Latina y España, y participamos en congresos e investigaciones internacionales.
           </p>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
             Conoce más sobre terapias contextuales{" "}

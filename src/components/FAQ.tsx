@@ -9,7 +9,7 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "¿Qué terapias ofrece el Instituto de Terapia y Análisis de la Consulta CDMX?",
+    question: "¿Qué terapias ofrece el Instituto de Terapia y Análisis de la Conducta CDMX?",
     answer: `Terapias denominadas como Contextuales o de 3ra. generación, dentro de las cuales se encuentran: la Terapia de Aceptación y Compromiso (ACT), Psicoterapia Analítica Funcional (FAP), Activación Conductual (BA), Terapia Dialéctica Conductual y otras metodologías de Terapia de Conducta (como Exposición y Prevención de Respuesta).`,
   },
   {
